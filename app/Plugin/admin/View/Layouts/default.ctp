@@ -17,33 +17,34 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('title', 'Kibow Koshien : Admin site');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('/admin/css/style');
-		//echo $this->Html->css('cake.generic');
 
-		//echo $this->fetch('meta');
-		//echo $this->fetch('css');
-		//echo $this->fetch('script');
+		//echo $this->Html->css('/admin/css/cake.generic');
+		echo $this->Html->css('/admin/css/style');
+		/*
+		echo $this->fetch('meta');
+		echo $this->fetch('css');
+		echo $this->fetch('script');
+		 * */
+		 
 	?>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			
+			<?= $this->element('banner');?>
+			<?= $this->element('hor_menu')?>
 		</div>
 		<div id="content">
-
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>

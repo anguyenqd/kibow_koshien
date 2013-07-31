@@ -107,3 +107,9 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+/*Load plugin*/
+CakePlugin::loadAll(array(
+    'admin' => array('bootstrap' => true, 'routes' => true),
+));
+
