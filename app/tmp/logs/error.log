@@ -1493,3 +1493,13 @@ Request URL: /kibow_koshien/admin/edit?school_id=1
 Stack Trace:
 #0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-08-01 06:47:42 Error: Fatal Error (4): syntax error, unexpected '}' in [/Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/View/Bets/betform.ctp, line 9]
+2013-08-01 06:47:42 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /kibow_koshien/bets/betform
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/X...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/X...', 9, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(930): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/X...', 9, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(903): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
