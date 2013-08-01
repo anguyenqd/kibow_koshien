@@ -31,7 +31,7 @@ class SchoolsController extends AppController {
 			$data['map_img_url'] = $mapUrl;
 			$data['logo_url'] = $logoUrl;
 			$this -> School -> addSchool($data);
-			$this -> redirect('index');
+			$this -> redirect(array('action' => 'index'));
 		}
 	}
 
@@ -74,7 +74,7 @@ class SchoolsController extends AppController {
 				unset($data['map_img_url_file']);
 				unset($data['logo_url_file']);
 				$this -> School -> updateSchool($id, $data);
-				$this -> redirect('index');
+				$this -> redirect(array('action' => 'index'));
 			}
 		}
 	}
@@ -82,7 +82,7 @@ class SchoolsController extends AppController {
 	public function delete() {
 		$id = isset($_GET['school_id']) ? $_GET['school_id'] : '';
 		$this -> School -> deleteSchool($id);
-		$this -> redirect('index');
+		$this -> redirect(array('action' => 'index'));
 	}
 
 }

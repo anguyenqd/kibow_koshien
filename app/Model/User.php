@@ -22,11 +22,11 @@ class User extends AppModel {
 	}
 
 	public function isExist($sns_account) {
-		return $this -> find('first', array('conditions' => array('User.sns_account' => $sns_account)));
+		return $this -> find('first', array('conditions' => array('User.sns_account' => $sns_account), 'fields' => array('user_id')));
 	}
 	
-	public function deleteUser($sns_account)
+	public function deleteUser($sns_account, $sns_type)
 	{
-		return $this -> deleteAll(array('User.sns_account' => $sns_account), false);
+		return $this -> deleteAll(array('User.sns_account' => $sns_account,'User.sns_type' => $sns_type), false);
 	}
 }

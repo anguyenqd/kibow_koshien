@@ -5,6 +5,7 @@ echo $this->Form->label('logo_url');
 echo $this -> Form -> file('logo_url');
 echo $this->Form->label('map_img_url');
 echo $this -> Form -> file('map_img_url');
+echo $this -> Form -> input('video_url');
 echo $this -> Form -> input('description');
 echo $this -> Form -> input('odds');
 echo $this -> Form -> end('Update');

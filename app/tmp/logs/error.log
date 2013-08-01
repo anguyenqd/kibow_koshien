@@ -1363,3 +1363,133 @@ Stack Trace:
 #3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(MoviesController), Object(CakeRequest), Object(CakeResponse))
 #4 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2013-07-31 08:34:41 Error: [MissingControllerException] Controller class BetController could not be found.
+Exception Attributes: array (
+  'class' => 'BetController',
+  'plugin' => NULL,
+)
+Request URL: /kibow_koshien/bet/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-31 09:00:26 Error: Fatal Error (4): syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in [/Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php, line 16]
+2013-07-31 09:00:26 Error: [FatalErrorException] syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/X...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/X...', 16, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(930): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/X...', 16, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(903): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-31 09:32:43 Error: Fatal Error (1): Call to a member function insertBet() on a non-object in [/Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php, line 43]
+2013-07-31 09:32:43 Error: [FatalErrorException] Call to a member function insertBet() on a non-object
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Applications/X...', 43)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Applications/X...', 43, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(930): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Applications/X...', 43, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(903): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-31 09:32:57 Error: Fatal Error (64): Cannot redeclare BetDetail::getBetDetailsByBet() in [/Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Model/BetDetail.php, line 34]
+2013-07-31 09:32:58 Error: [FatalErrorException] Cannot redeclare BetDetail::getBetDetailsByBet()
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Applications/X...', 34)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Applications/X...', 34, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(930): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Applications/X...', 34, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(903): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-31 09:43:15 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '09:43:15  WHERE `Bet`.`user_id` = 3' at line 1
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('UPDATE `kb_kosh...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/Database/Mysql.php(378): DboSource->execute('UPDATE `kb_kosh...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Model.php(2381): Mysql->update(Object(Bet), Array, NULL, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Model/Bet.php(37): Model->updateAll(Array, Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php(29): Bet->updateBetByUser('3', Array)
+#6 [internal function]: BetsController->index()
+#7 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(BetsController), Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BetsController), Object(CakeRequest), Object(CakeResponse))
+#10 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2013-07-31 09:45:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'BetDetail.id' in 'field list'
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `BetDeta...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `BetDeta...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `BetDeta...', false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Model.php(2697): DboSource->read(Object(BetDetail), Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Model/BetDetail.php(27): Model->find('list', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php(33): BetDetail->getBetDetailsByBet('2')
+#7 [internal function]: BetsController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(BetsController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BetsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-07-31 09:47:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'BetDetail.id' in 'field list'
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `BetDeta...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `BetDeta...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `BetDeta...', false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Model.php(2697): DboSource->read(Object(BetDetail), Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Model/BetDetail.php(27): Model->find('list', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php(33): BetDetail->getBetDetailsByBet('2')
+#7 [internal function]: BetsController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(BetsController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BetsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-07-31 09:48:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'BetDetail.id' in 'field list'
+Request URL: /kibow_koshien/bets/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(460): PDOStatement->execute(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(426): DboSource->_execute('SELECT `BetDeta...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('SELECT `BetDeta...', Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Datasource/DboSource.php(1077): DboSource->fetchAll('SELECT `BetDeta...', false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Model/Model.php(2697): DboSource->read(Object(BetDetail), Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Model/BetDetail.php(27): Model->find('list', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php(33): BetDetail->getBetDetailsByBet('2')
+#7 [internal function]: BetsController->index()
+#8 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Controller/Controller.php(486): ReflectionMethod->invokeArgs(Object(BetsController), Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#10 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BetsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2013-07-31 10:57:13 Error: Fatal Error (4): syntax error, unexpected '[' in [/Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/Controller/BetsController.php, line 21]
+2013-07-31 10:57:13 Error: [FatalErrorException] syntax error, unexpected '['
+Request URL: /kibow_koshien/bets/history
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Applications/X...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Applications/X...', 21, Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(930): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Applications/X...', 21, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/lib/Cake/Core/App.php(903): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-31 12:20:51 Error: [MissingControllerException] Controller class EditController could not be found.
+Exception Attributes: array (
+  'class' => 'EditController',
+  'plugin' => 'Admin',
+)
+Request URL: /kibow_koshien/admin/edit?school_id=1
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-31 12:20:54 Error: [MissingControllerException] Controller class EditController could not be found.
+Exception Attributes: array (
+  'class' => 'EditController',
+  'plugin' => 'Admin',
+)
+Request URL: /kibow_koshien/admin/edit?school_id=1
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

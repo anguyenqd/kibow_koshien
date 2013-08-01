@@ -37,7 +37,7 @@ class School extends AppModel {
 	public function getSchoolsListWithBetAmount() {
 		return $this -> query("SELECT COUNT(schools.school_id) AS 'count_school', 
 								schools.school_id, school_name, logo_url,
-								map_img_url, description, odds 
+								map_img_url,video_url, description, odds 
 								FROM schools, bet_details 
 								WHERE schools.school_id = bet_details.school_id 
 								GROUP BY schools.school_id");
