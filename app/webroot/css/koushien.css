@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import url(_reset.css);
 /*
  * @Author: Phan Viet Duc
@@ -27,6 +28,8 @@ body {
 body {
   background-color: #f4f4f4;
   font-size: 12px; }
+  body h2 {
+    font-size: 40px; }
   body #main_wrapper {
     width: 986px;
     margin: 0 auto;
@@ -181,7 +184,7 @@ body {
           body #main_wrapper .wrapper section .school .school_address {
             font-weight: normal;
             margin-top: 4px;
-            font-size: 11px; }
+            font-size: 14px; }
           body #main_wrapper .wrapper section .school .odd_vote {
             margin-left: 10px;
             margin-top: 5px;
@@ -195,7 +198,8 @@ body {
               color: #f07700; }
               body #main_wrapper .wrapper section .school .odd_vote span.odd_number {
                 position: absolute;
-                bottom: 2px; }
+                bottom: 2px;
+                font-size: 16px; }
               body #main_wrapper .wrapper section .school .odd_vote span.vote_number {
                 position: absolute;
                 bottom: 3px;

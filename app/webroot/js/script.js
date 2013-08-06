@@ -25,9 +25,11 @@ $(document).ready(function(){
       var map_url = $(this).attr("data-map");
       var element_position = $(this).parent().position();
       var element_height = $(this).parent().height();
-      $(".hover").append("<img class=\"map_image\" width=\"172\" src=\""+map_url+"\" /><p>"+$(this).attr("data-desc")+"</p>");
-      var hover_height = $(".hover").css("display","block").height();
-      $(".hover").css("top",element_position.top-hover_height-135).css("left",element_position.left);
+      $(".hover").append("<img class=\"map_image\" width=\"172\" height=\"163\" src=\""+map_url+"\" /><p>"+$(this).attr("data-desc")+"</p>");
+      $(".hover").css("display","block");
+      var hover_height = $(".hover").height();
+      console.log(hover_height);
+      $(".hover").css("top",element_position.top-hover_height).css("left",element_position.left);
     },
     function(){//out
       $(this).animate({opacity:1},70);

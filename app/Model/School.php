@@ -54,7 +54,7 @@ class School extends AppModel {
 
 	public function getCurrentRankUser($user_id = 0) {
 		if ($user_id != 0) {
-			return $this -> query("");
+			return $this -> query("SELECT (count(*) + 1) AS 'rank'  from `users` where balance > (SELECT balance FROM `users` where user_id = " . $user_id . ")");
 		}
 		return null;
 	}

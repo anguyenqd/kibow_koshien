@@ -1,6 +1,9 @@
 body{
   background-color:$background_color;
   font-size:12px;
+    h2{
+      font-size:40px;
+    }
     #main_wrapper{
     width:986px;
     @include align_center;
@@ -196,7 +199,7 @@ body{
             @extend .school_name;
             font-weight:normal;
             margin-top:4px;
-            font-size:11px;
+            font-size:14px;
           }
           .odd_vote{
             margin-left:10px;
@@ -212,6 +215,7 @@ body{
               &.odd_number{
                 position:absolute;
                 bottom:2px;
+                font-size:16px;
               }
               &.vote_number{
                 position:absolute;
