@@ -24,7 +24,6 @@
 			<?=$school['schools']['address']?>
 		</div>
 		<div class="odd_vote">
-			<img src="img/odd_vote.png" />
 			<span data-school-id="<?=$school['schools']['SI']?>" class="odd_number"><?=$school['schools']['odds_top8']?></span>
 			<span class="vote_number"><?=$school['0']['count_school']?></span>
 		</div>

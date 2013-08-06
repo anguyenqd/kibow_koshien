@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import url(_reset.css);
 /*
  * @Author: Phan Viet Duc
@@ -183,7 +184,10 @@ body {
           body #main_wrapper .wrapper section .school .odd_vote {
             margin-left: 10px;
             margin-top: 5px;
-            position: relative; }
+            position: relative;
+            background: url(../img/odd_vote.png) no-repeat;
+            height: 16px;
+            overflow: hidden; }
             body #main_wrapper .wrapper section .school .odd_vote span {
               left: 50px;
               font-size: 12px;
