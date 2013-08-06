@@ -4,6 +4,7 @@
 /build
 /dist
 /tags
+/app/tmp
 
 # OS generated files #
 ######################
