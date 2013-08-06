@@ -73,6 +73,7 @@ $(document).ready(function(){
           $(this).parent().parent().clone().appendTo(third_section_right);
         }
         var second_round_selected = $(this).attr("data-school-id");
+        $("#koushien_third_round .school .odd_vote .odd_number[data-school-id='"+second_round_selected+"']").html($(this).attr("data-top-4"));
         var second_round_input = $("#form_submit .second_round");
         for(var i = 0; i < second_round_input.length; i++ ){
           if($(second_round_input[i]).attr("value") == 0){
@@ -95,6 +96,7 @@ $(document).ready(function(){
         $(this).css("opacity",1);
         $(this).parent().parent().clone().appendTo(champion_selected);
         var third_round_selected = $(this).attr("data-school-id");
+        $("#champion .school .odd_vote .odd_number[data-school-id='"+second_round_selected+"']").html($(this).attr("data-top-1"));
         var third_round_input = $("#form_submit .champion");
         for(var i = 0; i < third_round_input.length; i++ ){
           if($(third_round_input[i]).attr("value") == 0){
