@@ -18,7 +18,7 @@
 		</div>
 		<div class="odd_vote">
 			<img src="img/odd_vote.png" />
-			<span class="odd_number"><?=$school['schools']['odds']?></span>
+			<span class="odd_number"><?=$school['schools']['odds_top8']?></span>
 			<span class="vote_number"><?=$school['0']['count_school']?></span>
 		</div>
 	</div>

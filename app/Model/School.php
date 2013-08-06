@@ -36,7 +36,7 @@ class School extends AppModel {
 
 	public function getSchoolsListWithBetAmount() {
 		return $this -> query("SELECT schools.school_id AS SI, school_name, logo_url,
-								map_img_url,video_url,background_url,address, description, odds, (SELECT COUNT(DISTINCT bet_details.bet_id)
+								map_img_url,video_url,background_url,address, description, odds_top8, odds_top4, odds_top1, (SELECT COUNT(DISTINCT bet_details.bet_id)
 								FROM schools, bet_details, bets
 								WHERE schools.school_id = bet_details.school_id 
 								
@@ -45,7 +45,7 @@ class School extends AppModel {
 
 	public function getSchoolsListWithBetAmountByID($id) {
 		return $this -> query("SELECT schools.school_id, school_name, logo_url,
-								map_img_url,video_url,background_url,address, description, odds, (SELECT COUNT(DISTINCT bet_details.bet_id)
+								map_img_url,video_url,background_url,address, description, odds_top8, odds_top4, odds_top1, (SELECT COUNT(DISTINCT bet_details.bet_id)
 								FROM schools, bet_details, bets
 								WHERE schools.school_id = bet_details.school_id 
 								
