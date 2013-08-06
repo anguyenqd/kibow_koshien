@@ -51,5 +51,14 @@ class School extends AppModel {
 								
 								AND schools.school_id = " . $id . ") AS 'count_school' FROM schools WHERE schools.school_id = " . $id);
 	}
+	
+	public function getCurrentRankUser($user_id = 0)
+	{
+		if($user_id != 0)
+		{
+			return $this->query("");
+		}	
+		return null;
+	}
 
 }

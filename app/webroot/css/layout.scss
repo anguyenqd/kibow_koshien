@@ -1,5 +1,6 @@
 body{
   background-color:$background_color;
+  font-size:12px;
     #main_wrapper{
     width:986px;
     @include align_center;
@@ -475,6 +476,93 @@ body{
           position:absolute;
           top: 30px;
           left:445px;
+        }
+      }
+      #side_navi{
+        width:15%;
+        margin-top:50px;
+        float:left;
+        ul{
+          li{
+            a{
+              padding:4px 10px;
+              display:block;
+            }
+          }
+        }
+      }
+      #user_page{
+        width:84%;
+        display:inline-block;
+        table{
+          width:100%;
+          font-size:12px;
+          thead{
+            text-align:center;
+            
+            tr{
+              background-color:#ccc;
+              td{
+                border-right:1px solid #fff;
+                &:last-child{
+                  border-right:none;
+                }
+              }
+            }
+          }
+          tbody{
+            tr{
+              &.even{
+                  background-color:lighten(#ccc,10%);
+                  &:hover{
+                    background-color:#ccc;
+                  }
+                }
+              td{
+                border:1px solid darken(#ccc,20%);
+              }
+            }
+          }
+          tr{
+            &:hover{
+              background-color:#ccc;
+            }
+          }
+          td{
+            padding:10px;
+          }
+        }
+        .user_info{
+          width:100%;
+          .user_img{
+            width:100px;
+            height:100px;
+            float:left;
+          }
+          .info{
+            margin-top:20px;
+            width:300px;
+            float:left;
+            .current_ranking{
+              font-weight:bold;
+              font-size:14px;
+            }
+          }
+          .sharing{
+            float:right;
+            width:290px;
+            .info{
+              margin-top:20px;
+              float:right;
+              width:205px;
+            }
+            .social_sharing{
+              float:right;
+            }
+          }
+        }
+        #ranking_table{
+          margin-top:125px;
         }
       }
     }
