@@ -58,10 +58,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'kb_koshien',
+		'host' => 'mysql453.db.sakura.ne.jp',
+		'login' => 'kibow',
+		'password' => 'kibow-123site',
+		'database' => 'kibow_koushien',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

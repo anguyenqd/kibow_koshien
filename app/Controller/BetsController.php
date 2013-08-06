@@ -4,12 +4,16 @@ class BetsController extends AppController {
 	public $uses = array('User', 'BetDetail', 'Bet', 'School');
 
 	public function index() {
+		//Load all school with votes
+		$this -> Set('schools', $this -> School -> getSchoolsListWithBetAmount());
 
 	}
 
 	public function betForm() {
 		//Receive data from choose school page
-
+		if (!$this -> Session -> check('User')) {
+			$this -> redirect(array('controller' => 'Users', 'action' => 'login'));
+		}
 		//FakeData
 		if (!empty($this -> request -> data)) {
 			$step = isset($_POST['step']) ? $_POST['step'] : 1;
@@ -25,15 +29,17 @@ class BetsController extends AppController {
 					//Get school list from ID
 					$school8List = array();
 					foreach ($firstSection as $schoolID) {
-						$school8List = array_merge($school8List, array($this -> School -> getSchoolById($schoolID)));
+						if ($schoolID != 0)
+							$school8List = array_merge($school8List, array($this -> School -> getSchoolsListWithBetAmountByID($schoolID)));
 					}
 
 					$school4List = array();
 					foreach ($secondSection as $schoolID) {
-						$school4List = array_merge($school4List, array($this -> School -> getSchoolById($schoolID)));
+						if ($schoolID != 0)
+							$school4List = array_merge($school4List, array($this -> School -> getSchoolsListWithBetAmountByID($schoolID)));
 					}
 
-					$finalSchool = $this -> School -> getSchoolById($thirtSection);
+					$finalSchool = $this -> School -> getSchoolsListWithBetAmountByID($thirtSection);
 
 					$this -> set('school8List', $school8List);
 					$this -> set('school4List', $school4List);
@@ -52,19 +58,23 @@ class BetsController extends AppController {
 
 					$schoolBetData = array();
 					$i = 0;
-					foreach ($school8List as $schoolID => $schoolBet) {
-						if ($schoolBet > 0 && $schoolBet != '') {
-							$type = 3;
-							$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
-							$i++;
+					if ($school8List != null) {
+						foreach ($school8List as $schoolID => $schoolBet) {
+							if ($schoolBet > 0 && $schoolBet != '') {
+								$type = 3;
+								$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
+								$i++;
+							}
 						}
 					}
 
-					foreach ($school4List as $schoolID => $schoolBet) {
-						if ($schoolBet > 0 && $schoolBet != '') {
-							$type = 2;
-							$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
-							$i++;
+					if ($school4List != null) {
+						foreach ($school4List as $schoolID => $schoolBet) {
+							if ($schoolBet > 0 && $schoolBet != '') {
+								$type = 2;
+								$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
+								$i++;
+							}
 						}
 					}
 					if ($finalSchool != null) {
@@ -76,8 +86,8 @@ class BetsController extends AppController {
 							}
 						}
 					}
-					
-					$this->bet($schoolBetData);
+
+					$this -> bet($schoolBetData);
 				}
 			}
 
@@ -87,34 +97,22 @@ class BetsController extends AppController {
 
 	}
 
+	public function success() {
+
+	}
+
+	public function error() {
+		$this -> set('error', $this -> Session -> read('error'));
+	}
+
 	private function bet($schoolBetData = null) {
 		//Get info from form
-
-		//Fake data
-		/*
-		$schoolBetData = array();
-		$schoolBetData[0] = array('id' => 1, 'amount' => 100, 'type' => 1);
-		$schoolBetData[1] = array('id' => 2, 'amount' => 200, 'type' => 2);
-		$schoolBetData[2] = array('id' => 3, 'amount' => 300, 'type' => 1);
-		$schoolBetData[3] = array('id' => 4, 'amount' => 400, 'type' => 3);
-		 * 
-		 */
-
-		//Insert user first
-		$userData = array();
-		$userData['User']['sns_account'] = 'a1provip004';
-		$userData['User']['sns_type'] = 'facebook';
-		$userData['User']['balance'] = 1000;
-		$userIdList = $this -> User -> isExist($userData['User']['sns_account'], $userData['User']['sns_type']);
-		$userId = $userIdList['User']['user_id'];
-		if ($userId == 0 || $userId == null) {
-			$userId = $this -> User -> insertUser($userData);
-		}
-
-		if ($userId != 0 && $userId != null) {
+		//Check user session
+		if ($this -> Session -> check('User')) {
+			$userData = $this -> Session -> read('User');
 			$betData = array();
 			$betData['Bet']['bet_date'] = date('Y-m-d H:i:s');
-			$betData['Bet']['user_id'] = $userId;
+			$betData['Bet']['user_id'] = $userData['User']['user_id'];
 
 			$betID = $this -> Bet -> insertBet($betData);
 			foreach ($schoolBetData as $betDetail) {
@@ -123,12 +121,19 @@ class BetsController extends AppController {
 				$betDetailData['BetDetail']['school_id'] = $betDetail['id'];
 				$betDetailData['BetDetail']['bet_type'] = $betDetail['type'];
 				$betDetailData['BetDetail']['bet_amount'] = $betDetail['amount'];
-				$this -> BetDetail -> addBetDetail($betDetailData);
+				$userData['User']['balance'] -= $betDetail['amount'];
+				if ($userData['User']['balance'] >= 0) {
+					$this -> BetDetail -> addBetDetail($betDetailData);
+				}
 			}
 
-			echo 'Bet success';
+			//Update amount for user
+			$this -> User -> updateUserBalance($userData['User']['user_id'], $userData['User']['balance']);
+			$this -> Session -> write('User', $userData);
+
+			$this -> redirect(array('action' => 'success'));
 		} else {
-			echo 'Bet error';
+			$this -> redirect(array('action' => 'error'));
 		}
 	}
 

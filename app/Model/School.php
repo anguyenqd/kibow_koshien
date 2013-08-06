@@ -35,12 +35,21 @@ class School extends AppModel {
 	}
 
 	public function getSchoolsListWithBetAmount() {
-		return $this -> query("SELECT COUNT(schools.school_id) AS 'count_school', 
-								schools.school_id, school_name, logo_url,
-								map_img_url,video_url, description, odds 
-								FROM schools, bet_details 
+		return $this -> query("SELECT schools.school_id AS SI, school_name, logo_url,
+								map_img_url,video_url,background_url,address, description, odds, (SELECT COUNT(DISTINCT bet_details.bet_id)
+								FROM schools, bet_details, bets
 								WHERE schools.school_id = bet_details.school_id 
-								GROUP BY schools.school_id");
+								
+								AND schools.school_id = SI) AS 'count_school' FROM schools");
+	}
+
+	public function getSchoolsListWithBetAmountByID($id) {
+		return $this -> query("SELECT schools.school_id, school_name, logo_url,
+								map_img_url,video_url,background_url,address, description, odds, (SELECT COUNT(DISTINCT bet_details.bet_id)
+								FROM schools, bet_details, bets
+								WHERE schools.school_id = bet_details.school_id 
+								
+								AND schools.school_id = " . $id . ") AS 'count_school' FROM schools WHERE schools.school_id = " . $id);
 	}
 
 }

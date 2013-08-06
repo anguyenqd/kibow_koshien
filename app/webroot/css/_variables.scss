@@ -1,0 +1,89 @@
+//google font --------------------
+
+//clearfix -----------------------
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+// font-family --------------------
+$koushien_font:Arial,Helvetica,sans-serif;
+$font_size:10pt;
+//Color variables --------------------
+$main_color:#000000;
+$hover_color:#f07700;
+$background_color:#f4f4f4;
+
+// size -------------------------------
+
+$width:990px;
+
+// mixin ------------------------------
+
+@mixin rounded_corners($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin box_shadow($shadow){
+  box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+}
+
+@mixin background_size($size){
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin align_center{
+  margin:0 auto;
+  padding:0;
+}
+
+@mixin transition_mod($transtion){
+  -webkit-transition:$transtion;
+  -moz-transition:$transtion;
+  -ms-transition:$transtion;
+  -o-transition:$transtion;
+  transition:$transtion;
+}
+// a ------------------------------
+
+a{
+  color:$main_color;
+  text-decoration:none;
+  &:hover{
+    text-decoration:underline;
+    color:$hover_color;
+  }
+}
+
+// div ---------------------------
+
+// body ---------------------------
+body{
+  font-family:$koushien_font;
+  background-color:$background_color;
+}
+// p -------------------------------
+p{
+
+}
+// h -------------------------------
+h1{}
+h2{}
+h3{}
+// span ----------------------------
+span{
+}

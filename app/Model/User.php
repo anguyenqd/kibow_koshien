@@ -15,18 +15,22 @@ class User extends AppModel {
 		return null;
 	}
 
+	public function updateUserBalance($user_id, $newBalance) {
+		return $this -> updateAll(array('User.balance' . $column => $newBalance), array('User.user_id = ' => $user_id));
+	}
+
 	public function insertUser($userData) {
 		$this -> create($userData);
 		$this -> save($userData);
 		return $this -> getLastInsertID();
 	}
 
-	public function isExist($sns_account) {
-		return $this -> find('first', array('conditions' => array('User.sns_account' => $sns_account), 'fields' => array('user_id')));
+	public function isExist($sns_account, $sns_type) {
+		return $this -> find('first', array('conditions' => array('User.sns_account' => $sns_account, 'User.sns_type' => $sns_type)));
 	}
-	
-	public function deleteUser($sns_account, $sns_type)
-	{
-		return $this -> deleteAll(array('User.sns_account' => $sns_account,'User.sns_type' => $sns_type), false);
+
+	public function deleteUser($sns_account, $sns_type) {
+		return $this -> deleteAll(array('User.sns_account' => $sns_account, 'User.sns_type' => $sns_type), false);
 	}
+
 }
