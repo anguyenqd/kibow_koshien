@@ -5,15 +5,6 @@
 	<li>
 		<a href="<?=BASE_URL?>">Home</a>
 	</li>
-	<li>
-		<a href="#">Schools</a>
-	</li>
-	<li>
-		<a href="#">Leaders</a>
-	</li>
-	<li>
-		<a href="#">Odds</a>
-	</li>
 </ul>
 <ul id="main_sns">
 	<li>

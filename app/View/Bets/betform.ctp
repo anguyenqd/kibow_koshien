@@ -1,4 +1,4 @@
-<form name="bet-form" method="post" id="form_submit">
+<form name="bet-form" id="bet-form" method="post" id="form_submit">
 	<input name="step" type="hidden" value="2" />
 	<?php if($finalSchool != null) {?>
 	<section id="champion_place_bet">
@@ -182,7 +182,7 @@
 		</div>
 	</section>
 	<?php } ?>
-	<div class="confirm_chosen_school">
-		Confirm The Chosen Schools
+	<div class="confirm_chosen_school" id="facebook">
+		Sign un with Facebook
 	</div>
 </form>

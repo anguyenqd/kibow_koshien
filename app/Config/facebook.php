@@ -13,8 +13,8 @@
 
 $config = array(
   'Facebook' => array(
-  	'appId' => '537593262973234',
-    'secret' => 'fefd55ee390bcc4ca346de3ecfb0f398',
+  	'appId' => '321585494644165',
+    'secret' => '72267050a8db67053f9df839709d2d43',
   )
 );
 

@@ -57,7 +57,8 @@ $cakeDescription = __d('title', 'Kibow Koshien : Admin site');
 			width:600,
 			height:300,
             callback: function(){
-                window.location.reload();
+                //window.location.reload();
+                $('#bet-form').submit();
             }
         });
 		e.preventDefault();

@@ -1,1 +1,1 @@
-<?=$error?>
+<?=$this->Session->flash();?>

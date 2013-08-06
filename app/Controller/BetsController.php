@@ -11,9 +11,10 @@ class BetsController extends AppController {
 
 	public function betForm() {
 		//Receive data from choose school page
-		if (!$this -> Session -> check('User')) {
-			$this -> redirect(array('controller' => 'Users', 'action' => 'login'));
-		}
+		/*
+		 if (!$this -> Session -> check('User')) {
+		 $this -> redirect(array('controller' => 'Users', 'action' => 'login'));
+		 }*/
 		//FakeData
 		if (!empty($this -> request -> data)) {
 			$step = isset($_POST['step']) ? $_POST['step'] : 1;
@@ -46,6 +47,7 @@ class BetsController extends AppController {
 					$this -> set('finalSchool', $finalSchool);
 				}
 			} else {
+
 				//Bet submit data
 				$school8List = isset($this -> request -> data['8school']) ? $this -> request -> data['8school'] : null;
 				$school4List = isset($this -> request -> data['4school']) ? $this -> request -> data['4school'] : null;
@@ -54,7 +56,6 @@ class BetsController extends AppController {
 				if ($school8List == null && $school4List == null && $finalSchool == null) {
 					echo 'bet error';
 				} else {
-					//Insert bet
 
 					$schoolBetData = array();
 					$i = 0;
@@ -92,7 +93,12 @@ class BetsController extends AppController {
 			}
 
 		} else {
-			$this -> redirect(array('action' => 'index'));
+			if (!$this -> Session -> check('Bet')) {
+				$this -> redirect(array('action' => 'index'));
+			} else {
+
+			}
+
 		}
 
 	}
@@ -115,23 +121,32 @@ class BetsController extends AppController {
 			$betData['Bet']['user_id'] = $userData['User']['user_id'];
 
 			$betID = $this -> Bet -> insertBet($betData);
+
+			$totalBet = 0;
 			foreach ($schoolBetData as $betDetail) {
-				$betDetailData = array();
-				$betDetailData['BetDetail']['bet_id'] = $betID;
-				$betDetailData['BetDetail']['school_id'] = $betDetail['id'];
-				$betDetailData['BetDetail']['bet_type'] = $betDetail['type'];
-				$betDetailData['BetDetail']['bet_amount'] = $betDetail['amount'];
-				$userData['User']['balance'] -= $betDetail['amount'];
-				if ($userData['User']['balance'] >= 0) {
-					$this -> BetDetail -> addBetDetail($betDetailData);
-				}
+				$totalBet += $betDetail['amount'];
 			}
 
-			//Update amount for user
-			$this -> User -> updateUserBalance($userData['User']['user_id'], $userData['User']['balance']);
-			$this -> Session -> write('User', $userData);
+			if ($totalBet - $userData['User']['balance'] <= 0) {
+				foreach ($schoolBetData as $betDetail) {
+					$betDetailData = array();
+					$betDetailData['BetDetail']['bet_id'] = $betID;
+					$betDetailData['BetDetail']['school_id'] = $betDetail['id'];
+					$betDetailData['BetDetail']['bet_type'] = $betDetail['type'];
+					$betDetailData['BetDetail']['bet_amount'] = $betDetail['amount'];
+					$userData['User']['balance'] -= $betDetail['amount'];
+					$this -> BetDetail -> addBetDetail($betDetailData);
+				}
 
-			$this -> redirect(array('action' => 'success'));
+				//Update amount for user
+				$this -> User -> updateUserBalance($userData['User']['user_id'], $userData['User']['balance']);
+				$this -> Session -> write('User', $userData);
+
+				$this -> redirect(array('action' => 'success'));
+			}
+			$this -> Session -> setFlash('You don\'t have enough Zenny to bet');
+			$this -> redirect(array('action' => 'error'));
+
 		} else {
 			$this -> redirect(array('action' => 'error'));
 		}
