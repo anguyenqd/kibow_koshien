@@ -3,7 +3,7 @@
 	<h2>Choose the best 8 schools</h2>
 	<?php foreach ($schools as $school) {?>
 	<div class="school">
-		<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'].DS.'img'.DS.$school['schools']['map_img_url']?>" >
+		<div class="school_uniform" data-desc="<?= $school['schools']['description'] ?>" data-map="<?=$_SERVER['REQUEST_URI'].DS.'img'.DS.$school['schools']['map_img_url']?>" >
 			<?=$this->html->image($school['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image'))?>
 			<?=$this->html->image($school['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform'))?>
 			<a class="select_button" 
@@ -70,3 +70,15 @@
 
 	<input name="thirt-section" class="champion" type="hidden" value="0" />
 </form>
+<div id="user_choice_dashboard" style="display:none">
+  <h2>Your choice</h2>
+  <div class="top-8">
+    <p><span class="title">Top 8:</span> <span class="total_choices_8">0</span>/8</p>
+  </div>
+  <div class="top-4">
+    <p><span class="title">Top 4:</span> <span class="total_choices_4">0</span>/4</p>
+  </div>
+  <div class="top-1">
+    <p><span class="title">Champion:</span> <span class="total_choices_1">0</span>/1</p>
+  </div>
+</div>
