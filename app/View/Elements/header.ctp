@@ -1,5 +1,5 @@
 <div id="logo">
-	<a href="<?=BASE_URL?>"> <?=$this -> Html -> image('logo.gif') ?> </a>
+	<a href="<?=BASE_URL?>"> <?=$this -> Html -> image('logo.png') ?> </a>
 </div>
 <ul id="main_nav">
 	<li>
