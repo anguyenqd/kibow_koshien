@@ -10,8 +10,8 @@ echo $this -> Form -> file('background_url');
 echo $this -> Form -> input('video_url');
 echo $this -> Form -> input('address');
 echo $this -> Form -> input('description');
-echo $this -> Form -> input('odds_top8');
-echo $this -> Form -> input('odds_top4');
-echo $this -> Form -> input('odds_top1');
+echo $this -> Form -> input('odds_top8',array('default' => 0));
+echo $this -> Form -> input('odds_top4',array('default' => 0));
+echo $this -> Form -> input('odds_top1',array('default' => 0));
 echo $this -> Form -> end('Update');
 ?>

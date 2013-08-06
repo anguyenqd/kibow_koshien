@@ -37,6 +37,13 @@ class SchoolsController extends AppController {
 				$backgroundUrl = 'uploads' . DS . $fileName;
 			}
 
+			if ($data['odds_top8'] == null)
+				$data['odds_top8'] = 0;
+			if ($data['odds_top4'] == null)
+				$data['odds_top4'] = 0;
+			if ($data['odds_top1'] == null)
+				$data['odds_top1'] = 0;
+
 			$data['map_img_url'] = $mapUrl;
 			$data['logo_url'] = $logoUrl;
 			$data['background_url'] = $backgroundUrl;

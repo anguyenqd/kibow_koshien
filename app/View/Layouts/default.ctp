@@ -71,8 +71,7 @@ $title_for_layout = 'Summer Koushien Betting';
 			$(document).ready(function(){
 			$('#facebook').click(function(e){
 			$.oauthpopup({
-			path: '<?=BASE_URL ?>
-				facebook_cps / login',
+			path: '<?=BASE_URL ?>facebook_cps/login',
 				width:600,
 				height:300,
 				callback: function(){

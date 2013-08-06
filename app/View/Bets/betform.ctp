@@ -32,16 +32,22 @@
 	<?php } ?>
 	<section class="initial_deposit">
 		<h2>Initial Deposit <span class="balance_number">1000</span> zenny</h2>
+		<?php if($this->Session->check('User')){?>
 		<table>
 			<tr>
 				<td class="left">Balance</td>
-				<td class="right"><?=$this->Session->read('User')['User']['balance']?> Zenny</td>
+				<td class="right">
+					<?php
+					$userData = $this->Session->read('User');
+					echo $userData['User']['balance']?> Zenny
+					</td>
 			</tr>
 			<tr style="display:none">
 				<td class="left">Return</td>
 				<td class="right">1000 zenny</td>
 			</tr>
 		</table>
+		<?php } ?>
 	</section>
 	<?php 
 	if($school4List != null) {?>
@@ -54,8 +60,8 @@
 			if($school != null && $i < 3){?>
 			<div class="school">
 				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
-					<?=$this -> html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
-					<?=$this -> html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
 				<div class="school_name">
 					<?=$school[0]['schools']['school_name'] ?>
@@ -85,8 +91,8 @@
 			if($school != null && $i > 2){?>
 			<div class="school">
 				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
-					<?=$this -> html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
-					<?=$this -> html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
 				<div class="school_name">
 					<?=$school[0]['schools']['school_name'] ?>
@@ -123,8 +129,8 @@
 			if($school != null && $i < 5){?>
 			<div class="school">
 				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
-					<?=$this -> html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
-					<?=$this -> html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
 				<div class="school_name">
 					<?=$school[0]['schools']['school_name'] ?>
@@ -155,8 +161,8 @@
 			if($school != null && $i > 4){?>
 			<div class="school">
 				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
-					<?=$this -> html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
-					<?=$this -> html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
+					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
 				<div class="school_name">
 					<?=$school[0]['schools']['school_name'] ?>

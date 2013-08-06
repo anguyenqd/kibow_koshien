@@ -209,11 +209,12 @@ body{
               color:$hover_color;
               &.odd_number{
                 position:absolute;
-                bottom:20px;
+                bottom:2px;
               }
               &.vote_number{
                 position:absolute;
                 bottom:3px;
+                display:none;
               }
             }
           }
