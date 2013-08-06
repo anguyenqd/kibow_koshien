@@ -231,6 +231,10 @@ body{
             bottom:-10px;
             left:45%;
           }
+          p{
+            color:white;
+            font-size:12px;
+          }
         }
         &#koushien_match{
           .deselect_button{
@@ -600,6 +604,32 @@ body{
         text-align: center;
         line-height: 20px;
       }
+    }
+  }
+  #user_choice_dashboard{
+    width:169px;
+    background-color:#fff;
+    border-top:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    padding:5px;
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+    @include rounded_corners(5px);
+    h2{
+      text-align:center;
+      font-weight:bold;
+      line-height:40px;
+    }
+    p{
+      margin-top:5px;
+    }
+    img{
+      margin-right:2px;
+    }
+    .title{
+      font-weight:bold;
     }
   }
 }
