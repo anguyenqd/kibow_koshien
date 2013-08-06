@@ -43,7 +43,7 @@ class School extends AppModel {
 								AND schools.school_id = SI) AS 'count_school' FROM schools");
 	}
 
-	public function getSchoolsListWithBetAmountByID($id) {
+	public function getSchoolsListWithBetAmountByID($id = 0) {
 		return $this -> query("SELECT schools.school_id, school_name, logo_url,
 								map_img_url,video_url,background_url,address, description, odds_top8, odds_top4, odds_top1, (SELECT COUNT(DISTINCT bet_details.bet_id)
 								FROM schools, bet_details, bets
@@ -51,13 +51,19 @@ class School extends AppModel {
 								
 								AND schools.school_id = " . $id . ") AS 'count_school' FROM schools WHERE schools.school_id = " . $id);
 	}
-	
-	public function getCurrentRankUser($user_id = 0)
-	{
-		if($user_id != 0)
-		{
-			return $this->query("");
-		}	
+
+	public function getCurrentRankUser($user_id = 0) {
+		if ($user_id != 0) {
+			return $this -> query("");
+		}
+		return null;
+	}
+
+	public function getRankByLimit($limit = 5) {
+		if ($limit != 0) {
+			return $this -> query("SELECT user_id, sns_account,balance as bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance > bl) AS 'rank' FROM `users` LIMIT " . $limit);
+		}
+
 		return null;
 	}
 
