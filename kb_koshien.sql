@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 05, 2013 at 12:45 PM
+-- Generation Time: Aug 06, 2013 at 05:01 AM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -16,6 +16,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+--
+-- Database: `kb_koshien`
+--
+CREATE DATABASE IF NOT EXISTS `kb_koshien` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `kb_koshien`;
 
 -- --------------------------------------------------------
 
@@ -145,22 +150,30 @@ CREATE TABLE IF NOT EXISTS `schools` (
   `address` varchar(255) NOT NULL,
   `video_url` varchar(255) NOT NULL,
   `description` text,
-  `odds` double NOT NULL,
+  `odds_top8` double NOT NULL,
+  `odds_top4` double NOT NULL DEFAULT '0',
+  `odds_top1` double NOT NULL DEFAULT '0',
   `school_status` int(11) NOT NULL COMMENT 'status id FK with school_status table',
   PRIMARY KEY (`school_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `schools`
 --
 
-INSERT INTO `schools` (`school_id`, `school_name`, `logo_url`, `map_img_url`, `background_url`, `address`, `video_url`, `description`, `odds`, `school_status`) VALUES
-(1, 'Meiden', 'uploads/1.png', 'uploads/ramen_map_2.gif', 'uploads/back_2.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0),
-(2, 'Akisho', 'uploads/2.png', 'uploads/ramen_map_2.gif', 'uploads/back_1.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0),
-(3, '3', 'uploads/3.png', 'uploads/ramen_map_2.gif', 'uploads/back_5.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0),
-(4, 'Seibi', 'uploads/4.png', 'uploads/ramen_map_2.gif', 'uploads/back_4.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0),
-(5, 'FUKUSHO', 'uploads/5.png', 'uploads/ramen_map_2.gif', 'uploads/back_5.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0),
-(6, '6', 'uploads/6.png', 'uploads/ramen_map_2.gif', 'uploads/back_3.png', 'Sapporo, Hokkaido', 'i9YXVTW_QwQ', 'Sapporo, Hokkaido', 0.5, 0);
+INSERT INTO `schools` (`school_id`, `school_name`, `logo_url`, `map_img_url`, `background_url`, `address`, `video_url`, `description`, `odds_top8`, `odds_top4`, `odds_top1`, `school_status`) VALUES
+(1, 'Obihiro Ohtani', 'uploads/Obihiro Ohtani.png', 'uploads/North Hokkaido(2).png', 'uploads/backblue.png', 'North Hokkaido', 'i9YXVTW_QwQ', 'First time', 33, 0, 0, 0),
+(2, 'Hokusho', 'uploads/Hokusho.png', 'uploads/South Hokkaido.png', 'uploads/backgray.png', 'South Hokkaido', 'u76WTQ3TzMg', 'Championship x 2; \r\nInvitational tournament x 5', 7, 0, 0, 0),
+(3, 'Hirosaki Gakuin Seiai', 'uploads/Hirosaki Gakuin Seiai.png', 'uploads/Aomori.png', 'uploads/backindigo.png', 'Aomori', 'nnETZG4dGHs', 'First time', 10, 0, 0, 0),
+(4, 'Hanamaki Higashi', 'uploads/Hanamakihigashi.png', 'uploads/Iwate(2).png', 'uploads/backpink.png', 'Iwate', 'GazookDe7AE', 'Championship x 6; \r\nInvitational tournament x 2 (second place x1)', 7, 0, 0, 0),
+(5, 'Akitasho', 'uploads/Akitasyou.png', 'uploads/Akita.png', 'uploads/backyellow.png', 'Akita', 'i9YXVTW_QwQ', 'Championship x 16;\r\nInvitational tournament x 6', 12, 0, 0, 0),
+(6, 'Nichidai Yamagata', 'uploads/Nichidai yamaga.png', 'uploads/Yamagata(2).png', 'uploads/backyellow.png', 'Yamagata', 'i9YXVTW_QwQ', 'Championship x 15; \r\nInvitational tournament x 3', 15, 0, 0, 0),
+(7, 'Sendai Ikuei', 'uploads/Sendai IKuei.png', 'uploads/Miyagi(2).png', 'uploads/backblue.png', 'Miyagi', '', 'Championship x 23 (second place x1); \r\nInvitational tournament x 10 (second place x1)', 2.4, 0, 0, 0),
+(8, 'Seiko Gakuin', 'uploads/Seikogakuin.png', 'uploads/Fukushima(2).png', 'uploads/backgray.png', 'Fukushima', '', 'Championship x 9; \r\nInvitational tournament x 4', 4.5, 0, 0, 0),
+(9, 'Joso Gakuin', 'uploads/Josogakuin.png', 'uploads/Ibaraki(2).png', 'uploads/backindigo.png', 'Ibaraki', '', 'Championship x 14 (champion x 1,second place x1); \r\nInvitational tournament x 7(champion x 1,second place x1)', 3.5, 0, 0, 0),
+(10, 'Sakushin Gakuin', 'uploads/Sakushingakuin.png', 'uploads/Tochigi(2).png', 'uploads/backpink.png', 'Tochigi', '', 'Championship x 9  (champion x 1); \r\nInvitational tournament x 4  (champion x1)', 10, 0, 0, 0),
+(11, 'Maebashi Ikuei', 'uploads/Maebashiikuei.png', 'uploads/Gunma.png', 'uploads/backpink.png', 'Gunma', '', 'Invitational tournament x1', 3.5, 0, 0, 0),
+(12, 'Urawa Gakuin', 'uploads/Urawagakuin.png', 'uploads/Saitama(2).png', 'uploads/backyellow.png', 'Saitama', '', 'Championship x 11; \r\nInvitational tournament x 9 (champion x1)', 1.5, 0, 0, 0);
 
 -- --------------------------------------------------------
 

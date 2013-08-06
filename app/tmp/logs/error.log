@@ -6316,3 +6316,30 @@ Request URL: /kibow_koshien//img/uploads/Miyagi(2).png
 Stack Trace:
 #0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-08-06 04:58:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /kibow_koshien//img/uploads/Tochigi(2).png
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-06 04:58:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /kibow_koshien//img/uploads/Akita.png
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-08-06 05:00:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /kibow_koshien//img/uploads/Akita.png
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/kibow_koshien/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
