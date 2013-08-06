@@ -1,4 +1,3 @@
-<?= $this->element('guide');?>
 <section id="koushien_first_round">
 	<h2>Choose the best 8 schools</h2>
 	<?php foreach ($schools as $school) {?>

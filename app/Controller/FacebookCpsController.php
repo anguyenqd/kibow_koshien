@@ -57,6 +57,7 @@ class FacebookCpsController extends AppController {
 				} else {
 					$this -> Session -> write('User', $userIdList);
 				}
+				$this -> Session -> write('User-fb-id', $user_profile['id']);
 
 			} catch(FacebookApiException $e) {
 				error_log($e);

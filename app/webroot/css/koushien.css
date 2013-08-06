@@ -198,7 +198,6 @@ body {
               color: #f07700; }
               body #main_wrapper .wrapper section .school .odd_vote span.odd_number {
                 position: absolute;
-                bottom: 2px;
                 font-size: 16px; }
               body #main_wrapper .wrapper section .school .odd_vote span.vote_number {
                 position: absolute;
@@ -519,3 +518,8 @@ body {
       margin-right: 2px; }
     body #user_choice_dashboard .title {
       font-weight: bold; }
+  body footer .footer-content {
+    width: 100%;
+    padding: 0 auto;
+    margin: 0 auto;
+    text-align: center; }

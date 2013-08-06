@@ -1,7 +1,7 @@
 <div id="side_navi">
 	<ul>
 		<li>
-			<?=$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'index')) ?>
+			<?=$this -> Html -> Link('History', array('controller' => 'Users', 'action' => 'index')) ?>
 		</li>
 		<li>
 			<?=$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'ranking')) ?>

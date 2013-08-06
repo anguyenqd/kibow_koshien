@@ -29,7 +29,7 @@ $title_for_layout = 'Summer Koushien Betting';
 	<meta property="og:title" content="Summer Koushien Betting" />
 	<meta property="og:description" content="This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account." />
 	<meta property="og:image" content="/img/Koshien_OGP_1.png" />
-	<meta property="og:type" content="website" /><meta property="og:url" content="<?=$_SERVER['REQUEST_URI']?>" />
+	<meta property="og:type" content="website" /><meta property="og:url" content="<?=$_SERVER['REQUEST_URI'] ?>" />
 	<meta property="og:site_name" content="Koshien" /><meta property="fb:app_id" content="537593262973234" />
 	<meta name="twitter:card" content="summary" /><meta name="twitter:site" content="Koshien" />
 	<meta name="twitter:title" content="Kibow" /><meta name="twitter:description" content="This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account." />
@@ -60,7 +60,7 @@ $title_for_layout = 'Summer Koushien Betting';
 	<body>
 		<div id="fb-root"></div>
 		<script>
-			(function(d, s, id) {
+						(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
@@ -71,7 +71,8 @@ $title_for_layout = 'Summer Koushien Betting';
 			$(document).ready(function(){
 			$('#facebook').click(function(e){
 			$.oauthpopup({
-			path: '<?=BASE_URL ?>facebook_cps/login',
+			path: '<?=BASE_URL ?>
+				facebook_cps / login',
 				width:600,
 				height:300,
 				callback: function(){
@@ -104,6 +105,11 @@ $title_for_layout = 'Summer Koushien Betting';
 					<?php echo $this -> fetch('content'); ?>
 				</div>
 			</div>
+			<footer>
+				<div class="footer-content">
+					<?= $this -> element('footer'); ?>
+				</div>
+			</footer>
 			<?php //echo $this->element('sql_dump'); ?>
 	</body>
 </html>
