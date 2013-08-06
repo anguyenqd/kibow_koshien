@@ -17,66 +17,68 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('title', 'Kibow Koshien : Admin site');
+$title_for_layout = 'Summer Koushien Betting';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
-		//echo $this->Html->css('/admin/css/style');
-		//echo $this->Html->css('/admin/css/_reset');
-		echo $this->Html->css('koushien');
-		echo $this->Html->script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
-		echo $this->Html->script('script');
-		echo $this->Html->script('oauthpopup');
-		//echo $this->fetch('meta');
-		//echo $this->fetch('css');
-		//echo $this->fetch('script');
+	<head>
+		<?php echo $this -> Html -> charset();
+		echo $this -> Html -> meta('keywords', 'Koushien Japanese High School Baseball Championship Betting');
+		echo $this -> Html -> meta('description', 'This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account.');
 	?>
-</head>
-<body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
-    $(document).ready(function(){
-    $('#facebook').click(function(e){
-        $.oauthpopup({
-            path: '<?=BASE_URL?>facebook_cps/login',
-			width:600,
-			height:300,
-            callback: function(){
-                //window.location.reload();
-                $('#bet-form').submit();
-            }
-        });
-		e.preventDefault();
-    });
-});
-    </script>
-    <div id="main_wrapper">
-      <?= $this->element('user_navi');?>
-      <header>
-        <?= $this->element('header');?>
-      </header>
-      <div class="wrapper">
-        <div class="inner_wrapper">
-          <?= $this->element('main_banner');?>
-          <?php echo $this->fetch('content'); ?>
-          
-      </div>
-    </div>
-	<?php //echo $this->element('sql_dump'); ?>
-</body>
+		<title><?php
+		echo $title_for_layout;
+	?></title><?php
+	echo $this -> Html -> meta('icon');
+	//echo $this->Html->css('/admin/css/style');
+	//echo $this->Html->css('/admin/css/_reset');
+	echo $this -> Html -> css('koushien');
+	echo $this -> Html -> script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
+	echo $this -> Html -> script('script');
+	echo $this -> Html -> script('oauthpopup');
+	//echo $this->fetch('meta');
+	//echo $this->fetch('css');
+	//echo $this->fetch('script');
+			?>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+									(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+			$(document).ready(function(){
+			$('#facebook').click(function(e){
+			$.oauthpopup({
+			path: '<?=BASE_URL ?>
+				facebook_cps / login',
+				width:600,
+				height:300,
+				callback: function(){
+				//window.location.reload();
+				$('#bet-form').submit();
+				}
+				});
+				e.preventDefault();
+				});
+				});
+		</script>
+		<div id="main_wrapper">
+			<?= $this -> element('user_navi'); ?>
+			<header>
+				<?= $this -> element('header'); ?>
+			</header>
+			<div class="wrapper">
+				<div class="inner_wrapper">
+					<?= $this -> element('main_banner'); ?>
+					<?php echo $this -> fetch('content'); ?>
+				</div>
+			</div>
+			<?php //echo $this->element('sql_dump'); ?>
+	</body>
 </html>
