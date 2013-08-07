@@ -89,6 +89,7 @@ $(document).ready(function(){
             item_third_selected++;
             if(item_third_selected>0){
               $(third_section).css("display","block");
+              $(".top-4").css("display","block");
             }
             break;
           }
@@ -114,6 +115,7 @@ $(document).ready(function(){
             item_champ++;
             if(item_champ>0){
               $(champion_section).css("display","block");
+              $(".top-1").css("display","block");
             }
             break;
           }
@@ -155,9 +157,11 @@ $(document).ready(function(){
           }
           if(item_third_selected<=0){
             $(third_section).css("display","none");
+            $(".top-4").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");
+              $(".top-1").css("display","none");
           }
           $("#user_choice_dashboard .total_choices_8").html(item_second_selected);
           $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
@@ -188,9 +192,11 @@ $(document).ready(function(){
           }
           if(item_third_selected<=0){
             $(third_section).css("display","none");
+            $(".top-4").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");
+              $(".top-1").css("display","none");
           }
           $("#user_choice_dashboard .top-4 p[data-school-id=\""+data_school_id+"\"]").remove();
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
@@ -213,10 +219,11 @@ $(document).ready(function(){
           $(third_round_deselect).attr("data-selected","false").toggleClass("hide");
           $(champion_round_deselect).parent().parent().remove();
           if(champion_round_deselect.length<=0){
-            $(champion_section).css("display","none");
+            $(champion_section).css("display","none");$(".top-1").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");
+              $(".top-1").css("display","none");
           }
           $("#user_choice_dashboard .total_choices_1").html(item_champ);
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
@@ -259,9 +266,11 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
           }
           if(item_third_selected<=0){
             $(third_section).css("display","none");
+            $(".top-4").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");
+              $(".top-1").css("display","none");
           }
           $("#user_choice_dashboard .total_choices_8").html(item_second_selected);
           $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
@@ -292,10 +301,11 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
             item_champ--;
           }
           if(item_third_selected<=0){
-            $(third_section).css("display","none");
+            $(champion_section).css("display","none");$(".top-4").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");
+              $(".top-1").css("display","none");
           }
           $("#user_choice_dashboard .top-4 p[data-school-id=\""+data_school_id+"\"]").remove();
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
@@ -318,10 +328,11 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
           $(third_round_deselect).attr("data-selected","false").toggleClass("hide");
           $(champion_round_deselect).parent().parent().remove();
           if(champion_round_deselect.length<=0){
-            $(champion_section).css("display","none");
+            $(champion_section).css("display","none");$(".top-1").css("display","none");
           }
           if(item_champ<=0){
-              $(champion_section).css("display","none");
+              $(champion_section).css("display","none");$(".top-1").css("display","none");
+              
           }
           $("#user_choice_dashboard .total_choices_1").html(item_champ);
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();

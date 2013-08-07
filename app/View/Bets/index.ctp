@@ -1,3 +1,4 @@
+<?= $this -> element('guide_2'); ?>
 <section id="koushien_first_round">
 	<h2>1. Choose the best 8 teams of the tournament.</h2>
 	<?php foreach ($schools as $school) {?>
@@ -36,13 +37,13 @@
 </section>
 
 <section style="display:none" id="koushien_second_round" class="clearfix" >
-	<h2>2. Choose the best 4 teams of the tournament.</h2>
+	<h2 id="top-8-move">2. Choose the best 4 teams of the tournament.</h2>
 	<div class="left_four"></div>
 	<?= $this -> element('sns_bet_index'); ?>
 	<div class="right_four"></div>
 </section>
 <section style="display:none" id="koushien_third_round" class="clearfix" >
-	<h2>3. Choose the champion team of the tournament.</h2>
+	<h2 id="top-4-move">3. Choose the champion team of the tournament.</h2>
 	<div class="left_four"></div>
 	<?= $this -> element('sns_bet_index'); ?>
 	<div class="right_four"></div>
@@ -74,13 +75,13 @@
 <div id="user_choice_dashboard" style="display:none">
   <h2>Your choice</h2>
   <div class="top-8">
-    <p><span class="title">Top 8:</span> <span class="total_choices_8">0</span>/8</p>
+    <p><span class="title"><a href="#top-8-move">Top 8:</a></span> <span class="total_choices_8">0</span>/8</p>
   </div>
-  <div class="top-4">
-    <p><span class="title">Top 4:</span> <span class="total_choices_4">0</span>/4</p>
+  <div style="display:none" class="top-4">
+    <p><span class="title"><a href="#top-4-move">Top 4:</a></span> <span class="total_choices_4">0</span>/4</p>
   </div>
-  <div class="top-1">
-    <p><span class="title">Champion:</span> <span class="total_choices_1">0</span>/1</p>
+  <div style="display:none" class="top-1">
+    <p><span class="title"><a href="#champion">Champion:</a></span> <span class="total_choices_1">0</span>/1</p>
   </div>
   <div style="display:none" class="confirm_chosen_school">
   Confirm
