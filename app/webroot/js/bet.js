@@ -12,6 +12,8 @@ $(document).ready(function() {
 				var currentBalance = parseInt($('span.balance_number').text(), 10) - currentBet;
 				$('span.balance_number').text(currentBalance);
 				var returnNum = currentBet * odds;
+				var returnNumEach = bet_amount * odds;
+				$(this).parent().parent().find('div.return_number_wrap span.return_number_each').text(returnNumEach);
 
 				var currentReturnNum = parseInt($('span.return_number').text(), 10) + returnNum;
 				$('span.return_number').text(currentReturnNum);

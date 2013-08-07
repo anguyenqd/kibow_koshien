@@ -49,7 +49,11 @@ class User extends AppModel {
 
 	public function getRankListByUser($user_id = 0) {
 		if ($user_id != 0) {
-			return $this -> query("SELECT (count(*) + 1) AS 'rank'  from `users` where balance > (SELECT balance FROM `users` where user_id = " . $user_id . ")");
+			return $this -> query("SELECT user_id, balance AS bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance > bl) FROM `users` where balance > (SELECT balance FROM `users` where user_id = 3) ORDER BY balance DESC LIMIT 2
+UNION ALL
+SELECT user_id, balance AS bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance > bl) FROM `users` where balance < (SELECT balance FROM `users` where user_id = 3) ORDER BY balance DESC LIMIT 2
+UNION ALL
+SELECT user_id, balance AS bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance > bl) FROM `users` where balance < (SELECT balance FROM `users` where user_id = 3) ORDER BY balance DESC LIMIT 2");
 		}
 		return null;
 	}

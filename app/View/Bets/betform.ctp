@@ -22,12 +22,14 @@
 				<span class="odd_number"><?=$finalSchool[0]['schools']['odds_top1'] ?></span>
 				<span class="vote_number"><?=$finalSchool[0][0]['count_school'] ?></span>
 			</div>
+			
 			<div class="stake">
 				Stakes
 				<input type="text" value="0" size="3" id="bet_amount" name='data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>]'/>
 				z
 				<input type="hidden" class="previous_bet" value="0"/>
 			</div>
+			<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 			<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 		</div>
 	</section>
@@ -74,6 +76,7 @@
 					z
 					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
@@ -107,6 +110,7 @@
 					z
 					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
@@ -147,6 +151,7 @@
 					z
 					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
@@ -181,6 +186,7 @@
 					z
 					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
@@ -190,7 +196,10 @@
 		</div>
 	</section>
 	<?php } ?>
+	<?php if(!$this->Session->check('User')){?>
+		<div class="confirm_text">If you want to save your bet data, please Click confirm to Sign up with your third-party service accounts.</div>
+		<?php } ?>
 	<div class="confirm_chosen_school" id="facebook">
-		Sign up with Facebook
+		Confirm your bet with facebook
 	</div>
 </form>
