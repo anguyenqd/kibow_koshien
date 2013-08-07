@@ -35,12 +35,13 @@
 	</section>
 	<?php } ?>
 	<section class="initial_deposit">
+		<h2>Initial Deposit <span>1000</span> zenny</h2>
 		<?php if($this->Session->check('User')){?>
 		<h2>Your current Balance <span class="balance_number"><?php
 					$userData = $this->Session->read('User');
 					echo $userData['User']['balance']?></span> zenny</h2>
 		<?}else{ ?>
-		<h2>Initial Deposit <span class="balance_number">1000</span> zenny</h2>
+		<h2>Your current blance <span class="balance_number">1000</span> zenny</h2>
 		<?} ?>
 		
 		<h2>Return <span class="return_number">0</span> zenny</h2>
@@ -48,7 +49,7 @@
 	<?php 
 	if($school4List != null) {?>
 	<section id="best_four_scholl" class="clearfix" >
-		<h2>Best 4 schools</h2>
+		<h2>Top 4 schools</h2>
 		<div class="left_four">
 			<?php 
 			$i = 1;
@@ -123,7 +124,7 @@
 	if($school8List != null) {
 ?>
 	<section id="best_eight_scholl" class="clearfix" >
-		<h2>Best 8 schools</h2>
+		<h2>Top 8 schools</h2>
 		<div class="left_four">
 			<?php 
 			$i = 1;

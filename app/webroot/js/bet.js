@@ -4,22 +4,30 @@ $(document).ready(function() {
 		if (bet_amount >= 0) {
 			var odds = $(this).parent().parent().find('div.odd_vote span.odd_number').text();
 
-			if (parseInt($('span.balance_number').text(), 10) - bet_amount >= 0) {
-				//set previous bet
-				var previous_bet = $(this).parent().parent().find('div.stake input.previous_bet');
-				var currentBet = bet_amount - $(previous_bet).val();
+			//set previous bet
+			var previous_bet = $(this).parent().parent().find('div.stake input.previous_bet');
+
+			var currentBet = bet_amount - $(previous_bet).val();
+
+			var currentBalance = parseInt($('span.balance_number').text(), 10) - currentBet;
+			console.log("current balance " + currentBalance + " previous bet " + previous_bet + " bet " + bet_amount + " current bet " + currentBet);
+			if (currentBalance >= 0) {
+
 				$(previous_bet).val(bet_amount);
-				var currentBalance = parseInt($('span.balance_number').text(), 10) - currentBet;
 				$('span.balance_number').text(currentBalance);
+
 				var returnNum = currentBet * odds;
+
 				var returnNumEach = bet_amount * odds;
+
 				$(this).parent().parent().find('div.return_number_wrap span.return_number_each').text(returnNumEach);
 
 				var currentReturnNum = parseInt($('span.return_number').text(), 10) + returnNum;
 				$('span.return_number').text(currentReturnNum);
 			} else {
-				alert('You don\'t have enough Zenny');
+				alert('You do not have eanough Zenny');
 			}
+
 		} else {
 			alert('You can not bet with negative number');
 		}
