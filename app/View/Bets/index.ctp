@@ -52,7 +52,7 @@
 	<div class="champion_selected"></div>
 </section>
 <div style="display:none" class="confirm_chosen_school">
-	Confirm The Chosen Schools
+	Go to betslip
 </div>
 </div>
 <form id="form_submit" method="post" action="<?=$this -> name . '/betform' ?>">

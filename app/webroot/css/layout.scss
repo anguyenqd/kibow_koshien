@@ -468,6 +468,9 @@ body{
           text-align: right;
           margin-right: 195px;
         }
+        span{
+          color:$hover_color;
+        }
         h1 {
           text-align: center;
           font-size: 37px;
@@ -664,6 +667,16 @@ body{
       padding:10px;
       background-color:white;
       z-index: 10001;
+      .video_desc {
+        background-color: white;
+        display: block;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        left: -210px;
+        height: 315px;
+      }
       .close_button{
         @include rounded_corners(10px);
         position: absolute;
@@ -727,7 +740,17 @@ body{
       font-weight:bold;
     }
   }
-  
+  .video_page{
+    ul{
+      li{
+        max-width: 172px;
+        overflow: hidden;
+        margin-top: 40px;
+        padding: 0 6px;
+        display: inline-block;
+      }
+    }
+  }
   footer{
     .footer-content {
         width:100%;
