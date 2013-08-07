@@ -16,7 +16,7 @@
 		<div class="info">
 			<span class="current_ranking">Currently Ranking #<?=$userRank[0][0]['rank']?></span>
 			<br/>
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+			Current balance : <?=$userBalance?> Zenny
 		</div>
 		<div class="sharing">
 			<div class="social_sharing">

@@ -22,6 +22,7 @@ class UsersController extends AppController {
 			$this -> redirect(array('action' => 'login'));
 		}
 		$user = $this -> Session -> read('User');
+		$this->set('userBalance', $user['User']['balance']);
 		$this->set('userRank',$this->School->getCurrentRankUser($user['User']['user_id']));
 		$this->set('rankList',$this->School->getRankByLimit(5));
 	}

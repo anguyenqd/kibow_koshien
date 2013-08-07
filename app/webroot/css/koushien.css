@@ -511,7 +511,8 @@ body {
     body #user_choice_dashboard h2 {
       text-align: center;
       font-weight: bold;
-      line-height: 40px; }
+      line-height: 40px;
+      font-size: 20px; }
     body #user_choice_dashboard p {
       margin-top: 8px; }
     body #user_choice_dashboard img {

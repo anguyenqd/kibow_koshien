@@ -19,35 +19,29 @@
 			</div>
 			<div class="odd_vote">
 				<?=$this -> Html -> image('odd_vote.png') ?>
-				<span class="odd_number"><?=$finalSchool[0]['schools']['odds'] ?></span>
+				<span class="odd_number"><?=$finalSchool[0]['schools']['odds_top1'] ?></span>
 				<span class="vote_number"><?=$finalSchool[0][0]['count_school'] ?></span>
 			</div>
 			<div class="stake">
 				Stakes
-				<input type="text" value="0" size="3" name='data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>]'/>
+				<input type="text" value="0" size="3" id="bet_amount" name='data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>]'/>
 				z
+				<input type="hidden" class="previous_bet" value="0"/>
 			</div>
+			<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 		</div>
 	</section>
 	<?php } ?>
 	<section class="initial_deposit">
-		<h2>Initial Deposit <span class="balance_number">1000</span> zenny</h2>
 		<?php if($this->Session->check('User')){?>
-		<table>
-			<tr>
-				<td class="left">Balance</td>
-				<td class="right">
-					<?php
+		<h2>Your current Balance <span class="balance_number"><?php
 					$userData = $this->Session->read('User');
-					echo $userData['User']['balance']?> Zenny
-					</td>
-			</tr>
-			<tr style="display:none">
-				<td class="left">Return</td>
-				<td class="right">1000 zenny</td>
-			</tr>
-		</table>
-		<?php } ?>
+					echo $userData['User']['balance']?></span> zenny</h2>
+		<?}else{ ?>
+		<h2>Initial Deposit <span class="balance_number">1000</span> zenny</h2>
+		<?} ?>
+		
+		<h2>Return <span class="return_number">0</span> zenny</h2>
 	</section>
 	<?php 
 	if($school4List != null) {?>
@@ -71,14 +65,16 @@
 				</div>
 				<div class="odd_vote">
 					<?=$this -> Html -> image('odd_vote.png') ?>
-					<span class="odd_number"><?=$school[0]['schools']['odds'] ?></span>
+					<span class="odd_number"><?=$school[0]['schools']['odds_top4'] ?></span>
 					<span class="vote_number"><?=$school[0][0]['count_school'] ?></span>
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
 					z
+					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
 			}$i++;}
@@ -102,14 +98,16 @@
 				</div>
 				<div class="odd_vote">
 					<?=$this -> Html -> image('odd_vote.png') ?>
-					<span class="odd_number"><?=$school[0]['schools']['odds'] ?></span>
+					<span class="odd_number"><?=$school[0]['schools']['odds_top4'] ?></span>
 					<span class="vote_number"><?=$school[0][0]['count_school'] ?></span>
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
 					z
+					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
 			}$i++;}
@@ -140,14 +138,16 @@
 				</div>
 				<div class="odd_vote">
 					<?=$this -> Html -> image('odd_vote.png') ?>
-					<span class="odd_number"><?=$school[0]['schools']['odds'] ?></span>
+					<span class="odd_number"><?=$school[0]['schools']['odds_top4'] ?></span>
 					<span class="vote_number"><?=$school[0][0]['count_school'] ?></span>
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" name='data[8school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
 					z
+					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
 			}$i++;}
@@ -172,14 +172,16 @@
 				</div>
 				<div class="odd_vote">
 					<?=$this -> Html -> image('odd_vote.png') ?>
-					<span class="odd_number"><?=$school[0]['schools']['odds'] ?></span>
+					<span class="odd_number"><?=$school[0]['schools']['odds_top4'] ?></span>
 					<span class="vote_number"><?=$school[0][0]['count_school'] ?></span>
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" name='data[8school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
 					z
+					<input type="hidden" class="previous_bet" value="0"/>
 				</div>
+				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
 			</div>
 			<?php
 			}$i++;}
@@ -189,6 +191,6 @@
 	</section>
 	<?php } ?>
 	<div class="confirm_chosen_school" id="facebook">
-		Sign un with Facebook
+		Sign up with Facebook
 	</div>
 </form>

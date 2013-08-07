@@ -1,5 +1,5 @@
 <section id="koushien_first_round">
-	<h2>Choose the best 8 schools</h2>
+	<h2>1. Choose the best 8 teams of the tournament.</h2>
 	<?php foreach ($schools as $school) {?>
 	<div class="school">
 		<div class="school_uniform" data-desc="<?= $school['schools']['description'] ?>" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school['schools']['map_img_url'] ?>" >
@@ -36,12 +36,12 @@
 </section>
 
 <section style="display:none" id="koushien_second_round" class="clearfix" >
-	<h2>Choose the best 4 schools</h2>
+	<h2>2. Choose the best 4 teams of the tournament.</h2>
 	<div class="left_four"></div>
 	<div class="right_four"></div>
 </section>
 <section style="display:none" id="koushien_third_round" class="clearfix" >
-	<h2>Choose the champion schools</h2>
+	<h2>3. Choose the champion team of the tournament.</h2>
 	<div class="left_four"></div>
 	<div class="right_four"></div>
 </section>

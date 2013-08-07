@@ -31,5 +31,5 @@
 <p dir="ltr" style="line-height:1.0909090909090908;margin-top:0pt;margin-bottom:0pt;">
 	<span id="docs-internal-guid-40ad4414-5339-4f96-0c38-94844ec4d34d"><span style="font-size: 16px; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">8. In case, no team won from the player&rsquo;s choices, it is considered as Lost for the player.</span></span></p>
 <p dir="ltr" style="line-height:1.0909090909090908;margin-top:0pt;margin-bottom:12pt;">
-	<span id="docs-internal-guid-40ad4414-5339-4f96-0c38-94844ec4d34d"><span style="font-size: 16px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap;">9. For inquiries, please </span><span style="font-size: 16px; font-family: Arial; color: rgb(0, 0, 255); vertical-align: baseline; white-space: pre-wrap;">Contact Us</span></span></p>
+	<span id="docs-internal-guid-40ad4414-5339-4f96-0c38-94844ec4d34d"><span style="font-size: 16px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap;">9. For inquiries, please </span><a href="http://kibow.asia/en/contact"><span style="font-size: 16px; font-family: Arial; color: rgb(0, 0, 255); vertical-align: baseline; white-space: pre-wrap;">Contact Us</span></p>
 <br />

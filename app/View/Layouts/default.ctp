@@ -44,6 +44,7 @@ $title_for_layout = 'Summer Koushien Betting';
 	echo $this -> Html -> script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
 	echo $this -> Html -> script('script');
 	echo $this -> Html -> script('oauthpopup');
+	echo $this -> Html -> script('bet');
 	//echo $this->fetch('meta');
 	//echo $this->fetch('css');
 	//echo $this->fetch('script');
