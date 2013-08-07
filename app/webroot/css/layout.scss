@@ -443,8 +443,41 @@ body{
       }
       #koushien_guide{
         .note{
-          text-align:center;
-          margin-top:230px;
+          text-align: right;
+          margin-right: 195px;
+        }
+        h1 {
+          text-align: center;
+          font-size: 37px;
+          position: absolute;
+          top: 45px;
+          left: 300px;
+        }
+        .step_img {
+          position: absolute;
+          top: 100px;
+          left: 190px;
+        }
+        .step_1 {
+          position: absolute;
+          top: 115px;
+          color: white;
+          font-size: 18px;
+          left: 225px;
+        }
+        .step_2 {
+          position: absolute;
+          top: 115px;
+          color: white;
+          font-size: 18px;
+          left: 426px;
+        }
+        .step_3 {
+          position: absolute;
+          top: 115px;
+          color: white;
+          font-size: 18px;
+          left: 589px;
         }
         .choose_team{
           float:left;
