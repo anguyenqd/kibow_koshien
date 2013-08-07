@@ -38,11 +38,13 @@
 <section style="display:none" id="koushien_second_round" class="clearfix" >
 	<h2>2. Choose the best 4 teams of the tournament.</h2>
 	<div class="left_four"></div>
+	<?= $this -> element('sns_bet_index'); ?>
 	<div class="right_four"></div>
 </section>
 <section style="display:none" id="koushien_third_round" class="clearfix" >
 	<h2>3. Choose the champion team of the tournament.</h2>
 	<div class="left_four"></div>
+	<?= $this -> element('sns_bet_index'); ?>
 	<div class="right_four"></div>
 </section>
 <section id="champion" >

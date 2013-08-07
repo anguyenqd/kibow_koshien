@@ -144,6 +144,17 @@ body{
           width: 372px;
           float: left;
         }
+        .middle_sns {
+          width: 196px;
+          float: left;
+          ul{
+            margin-top:100px;
+            li{
+              display:inline-block;
+              margin-left:10px;
+            }
+          }
+        }
         .right_four {
           width: 372px;
           float: right;
