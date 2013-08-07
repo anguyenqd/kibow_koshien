@@ -126,6 +126,22 @@ body {
             position: absolute;
             top: 65px;
             left: 85px; }
+        body #main_wrapper .wrapper .inner_wrapper .breadcrumbs {
+          margin: 0 0 23px;
+          color: #555555;
+          line-height: 1;
+          padding-top: 17px; }
+          body #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li {
+            display: inline-block; }
+            body #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li:before {
+              content: ' > ';
+              padding: 0 5px; }
+            body #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home {
+              padding-left: 15px;
+              background: url(../img/breadcrumbs_home.png) no-repeat left center; }
+              body #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home:before {
+                content: '';
+                padding: 0; }
       body #main_wrapper .wrapper #main_banner {
         margin-top: 5px; }
       body #main_wrapper .wrapper section {

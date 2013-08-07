@@ -1,3 +1,6 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'User' => array('controller' => 'Users', 'action' => 'index'), 'History' => ''
+)))) ?>
 <div id="side_navi">
 	<ul>
 		<li>

@@ -113,7 +113,7 @@ $title_for_layout = 'Summer Koushien Betting';
 				      echo $this -> element('main_banner');
 				    }
 				  ?>
-					
+					<?= $this->fetch('breadcrumbs')?>
 					<?php echo $this -> fetch('content'); ?>
 				</div>
 			</div>

@@ -1,3 +1,6 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'Bet form' => '',
+)))) ?>
 <form name="bet-form" id="bet-form" method="post" id="form_submit">
 	<input name="step" type="hidden" value="2" />
 	<?php if($finalSchool != null) {?>

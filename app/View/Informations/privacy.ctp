@@ -1,3 +1,6 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'Privacy policy' => ''
+)))) ?>
 <h2>
 	&nbsp;</h2>
 <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">

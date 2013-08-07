@@ -119,6 +119,28 @@ body{
             }
           }
         }
+        
+        .breadcrumbs{
+            margin: 0 0 23px;
+            color: #555555;
+            line-height: 1;
+            padding-top: 17px;
+            ul li{
+              display: inline-block;
+              &:before{
+                content: ' > ';
+                padding: 0 5px;
+              }
+              &.home{
+                padding-left: 15px;
+                background: url(../img/breadcrumbs_home.png) no-repeat left center;
+                &:before{
+                  content: '';
+                  padding: 0;
+                }
+              }
+            }
+        }
       }
       #main_banner{
         margin-top:5px;
