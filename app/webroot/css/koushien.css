@@ -1,4 +1,3 @@
-@charset "utf-8";
 @import url(_reset.css);
 /*
  * @Author: Phan Viet Duc
@@ -384,6 +383,8 @@ body {
       body #main_wrapper .wrapper #koushien_guide .note {
         text-align: right;
         margin-right: 195px; }
+      body #main_wrapper .wrapper #koushien_guide span {
+        color: #f07700; }
       body #main_wrapper .wrapper #koushien_guide h1 {
         text-align: center;
         font-size: 37px;
@@ -519,6 +520,15 @@ body {
       padding: 10px;
       background-color: white;
       z-index: 10001; }
+      body .video_background .video_container .video_desc {
+        background-color: white;
+        display: block;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        left: -210px;
+        height: 315px; }
       body .video_background .video_container .close_button {
         border-radius: 10px;
         -webkit-border-radius: 10px;
@@ -575,6 +585,12 @@ body {
       margin-right: 2px; }
     body #user_choice_dashboard .title {
       font-weight: bold; }
+  body .video_page ul li {
+    max-width: 172px;
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 0 6px;
+    display: inline-block; }
   body footer .footer-content {
     width: 100%;
     padding: 0 auto;
