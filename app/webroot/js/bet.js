@@ -24,7 +24,13 @@ $(document).ready(function() {
 			alert('You can not bet with negative number');
 		}
 	});
-	
+
+	$('input#bet_amount').keyup(function() {
+		var odds = $(this).parent().parent().find('div.odd_vote span.odd_number').text();
+		var returnNum = odds * $(this).val();
+		$(this).parent().parent().find('div.return_number_wrap span.return_number_each').text(returnNum);
+	});
+
 	$('a#top_ten_rank').click(function() {
 		$('.top_rank_list').fadeIn('fast');
 		$('.top_rank_list').css('margin-top', '-121px');

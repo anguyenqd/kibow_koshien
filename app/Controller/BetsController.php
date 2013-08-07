@@ -142,7 +142,9 @@ class BetsController extends AppController {
 				$this -> User -> updateUserBalance($userData['User']['user_id'], $userData['User']['balance']);
 				$this -> Session -> write('User', $userData);
 
-				$this -> redirect(array('action' => 'success'));
+				//$this -> redirect(array('action' => 'success'));
+				$this -> Session -> setFlash('Your bets were confirmed');
+				$this -> redirect(array('controller' => 'users', 'action' => 'index'));
 			}
 			$this -> Session -> setFlash('You don\'t have enough Zenny to bet');
 			$this -> redirect(array('action' => 'error'));

@@ -38,12 +38,12 @@ class BetDetail extends AppModel {
 
 	public function getBetDetailByUser($user_id = '') {
 		if ($user_id != '') {
-			return $this -> query("SELECT bet_amount, school_name, odds_top8, odds_top4, odds_top1, bet_date, bet_status
+			return $this -> query("SELECT bet_amount, school_name, odds_top8, odds_top4, odds_top1, bet_date, bet_status, bet_type
 									FROM bet_details, bets, schools, users
 									WHERE bet_details.bet_id = bets.bet_id
 									AND bet_details.school_id = schools.school_id
 									AND bets.user_id = users.user_id 
-									AND users.user_id = '" . $user_id . "';");
+									AND users.user_id = '" . $user_id . "' ORDER BY bet_date DESC;");
 		}
 
 		return null;

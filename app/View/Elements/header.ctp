@@ -8,7 +8,7 @@
 </ul>
 <ul id="main_sns">
 	<li>
-		<div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-width="300" data-show-faces="false"></div>
+		<div class="fb-like" data-href="http://kibow.sakura.ne.jp/koushien/" data-send="false" data-width="300" data-show-faces="false"></div>
 
 	</li>
 	<li>
