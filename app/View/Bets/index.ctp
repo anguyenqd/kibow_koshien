@@ -80,4 +80,7 @@
   <div class="top-1">
     <p><span class="title">Champion:</span> <span class="total_choices_1">0</span>/1</p>
   </div>
+  <div style="display:none" class="confirm_chosen_school">
+  Confirm
+</div>
 </div>
