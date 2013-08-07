@@ -18,7 +18,7 @@
     </div>
 	</div>
 	<p class="note">
-		※ zenny is the currency of Kibow.<br/>
+		※ zenny is the currency of <a href="https://kibow.net">Kibow</a>.<br/>
 		1 zenny = 1 USD 
 	</p>
 </section>

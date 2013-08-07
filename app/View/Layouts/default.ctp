@@ -106,7 +106,14 @@ $title_for_layout = 'Summer Koushien Betting';
 			</header>
 			<div class="wrapper">
 				<div class="inner_wrapper">
-					<?= $this -> element('main_banner'); ?>
+				  <?php 
+				    if($this->name == "Users"){
+				      echo $this -> element('main_banner_2');
+				    } else {
+				      echo $this -> element('main_banner');
+				    }
+				  ?>
+					
 					<?php echo $this -> fetch('content'); ?>
 				</div>
 			</div>
