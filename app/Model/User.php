@@ -33,4 +33,25 @@ class User extends AppModel {
 		return $this -> deleteAll(array('User.sns_account' => $sns_account, 'User.sns_type' => $sns_type), false);
 	}
 
+	public function getCurrentRankUser($user_id = 0) {
+		if ($user_id != 0) {
+			return $this -> query("SELECT (count(*) + 1) AS 'rank'  from `users` where balance > (SELECT balance FROM `users` where user_id = " . $user_id . ")");
+		}
+		return null;
+	}
+
+	public function getRankByLimit($limit = 5) {
+		if ($limit != 0) {
+			return $this -> query("SELECT user_id, sns_account,balance as bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance > bl) AS 'rank' FROM `users` ORDER BY rank LIMIT " . $limit);
+		}
+		return null;
+	}
+
+	public function getRankListByUser($user_id = 0) {
+		if ($user_id != 0) {
+			return $this -> query("SELECT (count(*) + 1) AS 'rank'  from `users` where balance > (SELECT balance FROM `users` where user_id = " . $user_id . ")");
+		}
+		return null;
+	}
+
 }

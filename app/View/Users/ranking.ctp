@@ -11,40 +11,69 @@
 <section id="user_page">
 	<div class="user_info">
 		<div class="user_img">
-			<img src="https://graph.facebook.com/<?=$this->Session->read('User-fb-id')?>/picture" width="100"/>
+			<img src="https://graph.facebook.com/<?=$this -> Session -> read('User-fb-id') ?>/picture" width="100"/>
 		</div>
 		<div class="info">
-			<span class="current_ranking">Currently Ranking #<?=$userRank[0][0]['rank']?></span>
+			<span class="current_ranking">Currently Ranking #<?=$userRank[0][0]['rank'] ?></span>
 			<br/>
-			Current balance : <?=$userBalance?> Zenny
+			Current balance : <?=$userBalance ?> Zenny
 		</div>
 		<div class="sharing">
 			<div class="social_sharing">
-				<?=$this->Html->image('twitter-logo-1.jpg', array('width' => 80))?>
+				<?=$this -> Html -> image('twitter-logo-1.jpg', array('width' => 80)) ?>
 			</div>
 			<div class="info">
 				Share your score with your friends
 			</div>
 		</div>
 	</div>
-	<table id="ranking_table">
-		<thead>
-			<tr>
-				<td>Rank</td>
-				<td>Name</td>
-				<td>Zenny</td>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			foreach ($rankList as $rank) {
-			?>
-			<tr <?=($rank[0]['rank'] % 2 == 0) ? 'class="even"' : '' ?>>
-				<td><?=$rank[0]['rank']?></td>
-				<td><?=$rank['users']['sns_account']?></td>
-				<td><?=$rank['users']['bl']?></td>
-			</tr>
-			<?php }?>
-		</tbody>
-	</table>
+	<div class="clearfix"></div>
+	<div>
+	<a href="javascript:void(0)" id="top_ten_rank">Top 10 ranking</a>
+	<a href="javascript:void(0)" id="your_rank">Your ranking</a>
+	</div>
+	<div class="top_rank_list"  style="display:none">
+		<table id="ranking_table">
+			<thead>
+				<tr>
+					<td>Rank</td>
+					<td>Name</td>
+					<td>Zenny</td>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				foreach ($rankList as $rank) {
+				?>
+				<tr <?=($rank[0]['rank'] % 2 == 0) ? 'class="even"' : '' ?>>
+					<td><?=$rank[0]['rank'] ?></td>
+					<td><?=$rank['users']['sns_account'] ?></td>
+					<td><?=$rank['users']['bl'] ?></td>
+				</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+	</div>
+	<div class="your_rank_list">
+		<table id="your_ranking_table">
+			<thead>
+				<tr>
+					<td>Rank</td>
+					<td>Name</td>
+					<td>Zenny</td>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				foreach ($rankList as $rank) {
+				?>
+				<tr <?=($rank[0]['rank'] % 2 == 0) ? 'class="even"' : '' ?>>
+					<td><?=$rank[0]['rank'] ?></td>
+					<td><?=$rank['users']['sns_account'] ?></td>
+					<td><?=$rank['users']['bl'] ?></td>
+				</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+	</div>
 </section>

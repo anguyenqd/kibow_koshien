@@ -51,8 +51,8 @@ class FacebookCpsController extends AppController {
 					$userData['User']['sns_account'] = $user_profile['email'];
 					$userData['User']['sns_type'] = 'facebook';
 					$userData['User']['balance'] = 1000;
-					$this -> User -> insertUser($userData);
-					
+					$userID = $this -> User -> insertUser($userData);
+					$userData['User']['user_id'] = $userID;
 					$this -> Session -> write('User', $userData);
 				} else {
 					$this -> Session -> write('User', $userIdList);

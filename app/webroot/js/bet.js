@@ -22,4 +22,14 @@ $(document).ready(function() {
 			alert('You can not bet with negative number');
 		}
 	});
+	
+	$('a#top_ten_rank').click(function() {
+		$('.top_rank_list').fadeIn('fast');
+		$('.top_rank_list').css('margin-top', '-121px');
+		$('.your_rank_list').fadeOut('fast');
+	});
+	$('a#your_rank').click(function() {
+		$('.top_rank_list').fadeOut('fast');
+		$('.your_rank_list').fadeIn('fast');
+	});
 });

@@ -1,6 +1,6 @@
 <?php
 class UsersController extends AppController {
-	public $uses = array('BetDetail', 'School');
+	public $uses = array('BetDetail', 'School', 'User');
 	public function login() {
 		$ses_user = $this -> Session -> read('User');
 		if ($this -> Session -> check('User') || !empty($ses_user)) {
@@ -23,8 +23,8 @@ class UsersController extends AppController {
 		}
 		$user = $this -> Session -> read('User');
 		$this->set('userBalance', $user['User']['balance']);
-		$this->set('userRank',$this->School->getCurrentRankUser($user['User']['user_id']));
-		$this->set('rankList',$this->School->getRankByLimit(5));
+		$this->set('userRank',$this->User->getCurrentRankUser($user['User']['user_id']));
+		$this->set('rankList',$this->User->getRankByLimit(5));
 	}
 
 }
