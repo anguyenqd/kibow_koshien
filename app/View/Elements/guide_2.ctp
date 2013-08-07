@@ -2,7 +2,7 @@
 	<div class="stadium">
 		<?=$this->Html->image('stadium.png', array('width' => 940))?>
 	</div>
-	<h1>Let's enjoy Koushien</h1>
+	<h1>Let's enjoy Koshien</h1>
 	<div class="steps">
 	  <div class="step_img">
 	   <?=$this->Html->image('step.png')?>
