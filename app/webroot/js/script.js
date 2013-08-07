@@ -28,7 +28,6 @@ $(document).ready(function(){
       $(".hover").append("<img class=\"map_image\" width=\"172\" height=\"163\" src=\""+map_url+"\" /><p>"+$(this).attr("data-desc")+"</p>");
       $(".hover").css("display","block");
       var hover_height = $(".hover").height();
-      console.log(hover_height);
       $(".hover").css("top",element_position.top-hover_height).css("left",element_position.left);
     },
     function(){//out
@@ -63,7 +62,7 @@ $(document).ready(function(){
         }
         $(this).attr("data-selected","true").toggleClass("hide");
         $("#user_choice_dashboard .total_choices_8").html(item_second_selected);
-        $(".top-8").append("<p data-school-id=\""+first_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' />"+$(this).parent().parent().find(".school_name").html()+"</p>");
+        $(".top-8").append("<p data-school-id=\""+first_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' /><span class=\"deselect_button\">"+$(this).parent().parent().find(".school_name").html()+"</span></p>");
         if(item_second_selected>0){
           $(".confirm_chosen_school").css("display","block");
           $("#user_choice_dashboard").css("display","block");
@@ -94,7 +93,7 @@ $(document).ready(function(){
             break;
           }
         }
-        $(".top-4").append("<p data-school-id=\""+second_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' />"+$(this).parent().parent().find(".school_name").html()+"</p>");
+        $(".top-4").append("<p data-school-id=\""+second_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' /><span class=\"deselect_button\">"+$(this).parent().parent().find(".school_name").html()+"</span></p>");
         $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
         $(this).attr("data-selected","true").toggleClass("hide");
       }
@@ -119,7 +118,7 @@ $(document).ready(function(){
             break;
           }
         }
-        $(".top-1").append("<p data-school-id=\""+third_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' />"+$(this).parent().parent().find(".school_name").html()+"</p>");
+        $(".top-1").append("<p data-school-id=\""+third_round_selected+"\"><img width=\"15\" style=\"float:left\" src='"+$(this).parent().parent().find("img.uniform_image").attr("src")+"' /><span class=\"deselect_button\">"+$(this).parent().parent().find(".school_name").html()+"</span></p>");
         $("#user_choice_dashboard .total_choices_1").html(item_champ);
         $(this).attr("data-selected","true").toggleClass("hide");
       }
@@ -226,6 +225,111 @@ $(document).ready(function(){
       }
     }
   });
+//deselect from dashboard---------------------------------------------------
+$("#user_choice_dashboard").on("click",".deselect_button",function(){
+  var top = $(this).parent().parent().attr("class");
+  var data_school_id = $(this).parent().attr("data-school-id");
+  switch(top){
+    case "top-8":
+    $(this).parent().remove();
+    var first_round_input = $("#form_submit .first_round");
+      for(var i = 0; i < first_round_input.length; i++ ){
+        if($(first_round_input[i]).attr("value") == data_school_id){
+          $(first_round_input[i]).attr("value",0);
+          item_second_selected--;
+          $("#koushien_second_round").find(".select_button[data-school-id='"+data_school_id+"']").parent().parent().remove();
+          var first_round_deselect = $("#koushien_first_round").find(".select_button[data-school-id='"+data_school_id+"']");
+          var third_round_deselect = $("#koushien_third_round").find("[data-school-id='"+data_school_id+"']");
+          var champion_round_deselect = $("#champion").find("[data-school-id='"+data_school_id+"']");
+          var second_round_form = $("#form_submit").find("[value='"+data_school_id+"']");
+          $(second_round_form).attr("value",0);
+          $(first_round_deselect).attr("data-selected","false").toggleClass("hide");
+          if(item_second_selected<=0){
+            $(".confirm_chosen_school").css("display","none");
+            $("#user_choice_dashboard").css("display","none");
+          }
+          if(third_round_deselect.length>0){
+            item_third_selected--;
+          }
+          if(champion_round_deselect.length>0){
+            item_champ--;
+          }
+          if(item_second_selected<=0){
+            $(second_section).css("display","none");
+          }
+          if(item_third_selected<=0){
+            $(third_section).css("display","none");
+          }
+          if(item_champ<=0){
+              $(champion_section).css("display","none");
+          }
+          $("#user_choice_dashboard .total_choices_8").html(item_second_selected);
+          $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
+          $("#user_choice_dashboard .total_choices_1").html(item_champ);
+          $("#user_choice_dashboard p[data-school-id=\""+data_school_id+"\"]").remove();
+          $(third_round_deselect).parent().parent().remove();
+          $(champion_round_deselect).parent().parent().remove();
+          break;
+        }
+      }
+    break;
+    case "top-4":
+    $(this).parent().remove();
+    var first_round_input = $("#form_submit .second_round");
+      for(var i = 0; i < first_round_input.length; i++ ){
+        if($(first_round_input[i]).attr("value") == data_school_id){
+          $(first_round_input[i]).attr("value",0);
+          item_third_selected--;
+          $("#koushien_third_round").find(".select_button[data-school-id='"+data_school_id+"']").parent().parent().remove(); 
+          var second_round_deselect = $("#koushien_second_round").find(".select_button[data-school-id='"+data_school_id+"']");
+          var third_round_deselect = $("#koushien_third_round").find("[data-school-id='"+data_school_id+"']");
+          var champion_round_deselect = $("#champion").find("[data-school-id='"+data_school_id+"']");
+          var second_round_form = $("#form_submit").find("input.champion[value='"+data_school_id+"']");
+          $(second_round_form).attr("value",0);
+          $(second_round_deselect).attr("data-selected","false").toggleClass("hide");
+          $(champion_round_deselect).parent().parent().remove();
+          if(champion_round_deselect.length>0){
+            item_champ--;
+          }
+          if(item_third_selected<=0){
+            $(third_section).css("display","none");
+          }
+          if(item_champ<=0){
+              $(champion_section).css("display","none");
+          }
+          $("#user_choice_dashboard .top-4 p[data-school-id=\""+data_school_id+"\"]").remove();
+          $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
+          $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
+          $("#user_choice_dashboard .total_choices_1").html(item_champ);
+          break;
+        }
+      }
+    break;
+    case "top-1":
+    var first_round_input = $("#form_submit .champion");
+      for(var i = 0; i < first_round_input.length; i++ ){
+        if($(first_round_input[i]).attr("value") == data_school_id){
+          $(first_round_input[i]).attr("value",0);
+          item_champ--;
+          $("#champion").find(".select_button[data-school-id='"+data_school_id+"']").parent().parent().remove(); 
+          var second_round_deselect = $("#koushien_second_round").find("[data-school-id='"+data_school_id+"']");
+          var third_round_deselect = $("#koushien_third_round").find(".select_button[data-school-id='"+data_school_id+"']");
+          var champion_round_deselect = $("#champion").find("[data-school-id='"+data_school_id+"']");
+          $(third_round_deselect).attr("data-selected","false").toggleClass("hide");
+          $(champion_round_deselect).parent().parent().remove();
+          if(champion_round_deselect.length<=0){
+            $(champion_section).css("display","none");
+          }
+          if(item_champ<=0){
+              $(champion_section).css("display","none");
+          }
+          $("#user_choice_dashboard .total_choices_1").html(item_champ);
+          $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
+          break;
+        }
+      }
+  }
+});
 //form submit---------------------------------------------------------------
   $(".confirm_chosen_school").click(function(){
     $("#form_submit").submit();
