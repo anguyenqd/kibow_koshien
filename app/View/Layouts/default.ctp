@@ -70,18 +70,22 @@ $title_for_layout = 'Summer Koushien Betting';
 
 			$(document).ready(function(){
 			$('#facebook').click(function(e){
-			$.oauthpopup({
-			path: '<?=BASE_URL ?>
-				facebook_cps / login',
-				width:600,
-				height:300,
-				callback: function(){
-				//window.location.reload();
-				$('#bet-form').submit();
-				}
-				});
+				$.oauthpopup({
+					path: '<?=BASE_URL ?>facebook_cps/login',
+							width:600,
+							height:300,
+							callback: function(){
+							//window.location.reload();
+							if($('#bet-form').length > 0)
+								$('#bet-form').submit();
+							else
+							  window.location.href = '<?=BASE_URL ?>Users';
+						}
+					});
 				e.preventDefault();
 				});
+				
+				
 				});
 
 				var _gaq = _gaq || [];

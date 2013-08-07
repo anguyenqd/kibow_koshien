@@ -2,32 +2,32 @@
 	<h2>Choose the best 8 schools</h2>
 	<?php foreach ($schools as $school) {?>
 	<div class="school">
-		<div class="school_uniform" data-desc="<?= $school['schools']['description'] ?>" data-map="<?=$_SERVER['REQUEST_URI'].DS.'img'.DS.$school['schools']['map_img_url']?>" >
-			<?=$this->html->image($school['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image'))?>
-			<?=$this->html->image($school['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform'))?>
+		<div class="school_uniform" data-desc="<?= $school['schools']['description'] ?>" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school['schools']['map_img_url'] ?>" >
+			<?=$this -> Html -> image($school['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
+			<?=$this -> Html -> image($school['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 			<a class="select_button" 
 			onclick="return false;" 
 			data-selected="false" 
 			data-top-4="<?= $school['schools']['odds_top4'] ?>" 
 			data-top-1="<?= $school['schools']['odds_top1'] ?>"
-			data-school-id="<?=$school['schools']['SI']?>" >
+			data-school-id="<?=$school['schools']['SI'] ?>" >
 			Select</a>
-			<a data-video-id="<?=$school['schools']['video_url']?>" 
+			<a data-video-id="<?=$school['schools']['video_url'] ?>" 
 			  class="video_button">Watch Video</a>
-			<a class="deselect_button" data-school-id="<?=$school['schools']['SI']?>">Deselect</a>
+			<a class="deselect_button" data-school-id="<?=$school['schools']['SI'] ?>">Deselect</a>
 		</div>
 		<div class="school_name">
-			<?=$school['schools']['school_name']?>
+			<?=$school['schools']['school_name'] ?>
 		</div>
 		<div class="school_address">
-			<?=$school['schools']['address']?>
+			<?=$school['schools']['address'] ?>
 		</div>
 		<div class="odd_vote">
-			<span data-school-id="<?=$school['schools']['SI']?>" class="odd_number"><?=$school['schools']['odds_top8']?></span>
-			<span class="vote_number"><?=$school['0']['count_school']?></span>
+			<span data-school-id="<?=$school['schools']['SI'] ?>" class="odd_number"><?=$school['schools']['odds_top8'] ?></span>
+			<span class="vote_number"><?=$school['0']['count_school'] ?></span>
 		</div>
 	</div>
-	<?php }?>
+	<?php } ?>
 	<div style="display: none;" class="hover">
 		<div class="arrow">
 			<img src="img/hover_arrow.png"/>
@@ -52,7 +52,7 @@
 	Confirm The Chosen Schools
 </div>
 </div>
-<form id="form_submit" method="post" action="<?=$this->name.'/betform'?>">
+<form id="form_submit" method="post" action="<?=$this -> name . '/betform' ?>">
 	<input name="first-section[]" class="first_round" type="hidden" value="0" />
 	<input name="first-section[]" class="first_round" type="hidden" value="0" />
 	<input name="first-section[]" class="first_round" type="hidden" value="0" />

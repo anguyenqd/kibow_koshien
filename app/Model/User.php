@@ -16,7 +16,7 @@ class User extends AppModel {
 	}
 
 	public function updateUserBalance($user_id, $newBalance) {
-		return $this -> updateAll(array('User.balance' . $column => $newBalance), array('User.user_id = ' => $user_id));
+		return $this -> updateAll(array('User.balance' => $newBalance), array('User.user_id = ' => $user_id));
 	}
 
 	public function insertUser($userData) {

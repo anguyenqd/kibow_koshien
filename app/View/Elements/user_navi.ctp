@@ -7,7 +7,7 @@
 	</li>
 	<?php }else{ ?>
 	<li class="login">
-		<a href="#">My Page</a>
+		<?=$this->html->link('My Page', array('controller' => 'Users', 'action' => 'index'));?>
 	</li>
 	<li>
 		<a href="<?php echo $this -> Session -> read('logout')?>">Logout</a>
