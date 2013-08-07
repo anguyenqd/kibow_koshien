@@ -143,6 +143,14 @@ body {
         body #main_wrapper .wrapper section .left_four {
           width: 372px;
           float: left; }
+        body #main_wrapper .wrapper section .middle_sns {
+          width: 196px;
+          float: left; }
+          body #main_wrapper .wrapper section .middle_sns ul {
+            margin-top: 100px; }
+            body #main_wrapper .wrapper section .middle_sns ul li {
+              display: inline-block;
+              margin-left: 10px; }
         body #main_wrapper .wrapper section .right_four {
           width: 372px;
           float: right; }
