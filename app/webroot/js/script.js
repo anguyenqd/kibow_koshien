@@ -66,6 +66,7 @@ $(document).ready(function(){
         if(item_second_selected>0){
           $(".confirm_chosen_school").css("display","block");
           $("#user_choice_dashboard").css("display","block");
+          $(".top-4").css("display","block");
         }
       }
     }
@@ -93,6 +94,7 @@ $(document).ready(function(){
             if(item_third_selected>0){
               $(third_section).css("display","block");
               $(".top-4").css("display","block");
+              $(".top-1").css("display","block");
             }
             break;
           }

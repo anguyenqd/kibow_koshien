@@ -14,7 +14,7 @@ foreach ($users as $user) {?>
 		<td><a href="#"><?=$user['User']['sns_account']?></a></td>
 		<td><?=$user['User']['sns_type']?></td>
 		<td><?=$user['User']['balance']?></td>
-		<td><a href="delete?sns_account=<?=$user['User']['sns_account']?>">Delete</a></td>
+		<td><?=$this->Html->link('Delete', array('controller' => 'Users', 'action' => 'delete', $user['User']['sns_account'], $user['User']['sns_type']))?></td>
 	</tr>
 <?}?>
 </table>

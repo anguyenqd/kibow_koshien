@@ -29,7 +29,7 @@
 		echo $this->Html->meta('icon');
 
 		//echo $this->Html->css('/admin/css/cake.generic');
-		echo $this->Html->css('/admin/css/style');
+		echo $this->Html->css('/admink0shien2013/css/style');
 		/*
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

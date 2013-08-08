@@ -27,8 +27,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 Router::connect('/', array('controller' => 'bets', 'action' => 'index'));
-Router::connect('/admin', array('plugin' => 'admin', 'controller' => 'pages', 'action' => 'display'));
-
+Router::connect('/admink0shien2013', array('plugin' => 'admink0shien2013', 'controller' => 'pages', 'action' => 'display'));
 Router::connect('/auth_login/*', array('controller' => 'users', 'action' => 'auth_login'));
 Router::connect('/auth_callback/*', array('controller' => 'users', 'action' => 'auth_callback'));
 

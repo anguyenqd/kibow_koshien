@@ -110,7 +110,7 @@ CakeLog::config('error', array(
 
 /*Load plugin*/
 CakePlugin::loadAll(array(
-    'admin' => array('bootstrap' => true, 'routes' => true),
+    'admink0shien2013' => array('bootstrap' => true, 'routes' => true),
 ));
 
 CakePlugin::load('ExtAuth');

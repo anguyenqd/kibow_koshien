@@ -3,7 +3,7 @@ class UsersController extends AppController {
 	public $uses = array('User');
 	public function index() {
 		if (!$this -> Session -> check('admin')) {
-			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 		}
 		//load all users
 		$result = $this -> User -> getAllUser();
@@ -23,15 +23,18 @@ class UsersController extends AppController {
 	 }
 	 }*/
 
-	public function delete() {
-		$sns_acount = isset($_GET['sns_account']) ? $_GET['sns_account'] : '';
-		$this -> User -> deleteUser($sns_acount);
+	public function delete($sns_acount, $sns_type) {
+		if ($sns_acount != null) {
+			$this -> User -> deleteUser($sns_acount, $sns_type);
+		}
+		//$sns_acount = isset($_GET['sns_account']) ? $_GET['sns_account'] : '';
+
 		$this -> redirect('index');
 	}
 
 	public function logout() {
 		$this -> Session -> delete('admin');
-		$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+		$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 	}
 
 }

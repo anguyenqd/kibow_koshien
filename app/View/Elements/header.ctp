@@ -16,7 +16,7 @@
 		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=537593262973234";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		<div class="fb-like" data-href="http://kibow.info" data-width="450" data-show-faces="false" data-send="false"></div>
+		<div class="fb-like" data-href="http://kibow.info" data-width="330" data-show-faces="false" data-send="false"></div>
 	</li>
 	<li>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-related="BaseballKibow" data-via="BaseballKibow" data-url="<?=BASE_URL?>">Tweet</a>
