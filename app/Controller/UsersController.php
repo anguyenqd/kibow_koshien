@@ -59,7 +59,25 @@ class UsersController extends AppController {
 
 	private function __successfulExtAuth($incomingProfile, $accessToken) {
 		
-		var_dump($incomingProfile['username']);
+		$incomingProfile['username'];
+		$logout = BASE_URL . DS . 'Users' . DS . 'logout';
+		$this -> Session -> write('logout', $logout);
+		
+		//Insert User to database
+		//Check user exist
+		$userIdList = $this -> User -> isExist($incomingProfile['username'], 'twitter');
+		$userId = $userIdList['User']['user_id'];
+		if ($userId == 0 || $userId == null) {
+			$userData['User']['sns_account'] = $incomingProfile['username'];
+			$userData['User']['sns_type'] = 'twitter';
+			$userData['User']['balance'] = 1000;
+			$userID = $this -> User -> insertUser($userData);
+			$userData['User']['user_id'] = $userID;
+			$this -> Session -> write('User', $userData);
+		} else {
+			$this -> Session -> write('User', $userIdList);
+		}
+		$this -> Session -> write('User-twitter-img', $incomingProfile['picture']);
 		/*
 		// search for profile
 		$this -> SocialProfile -> recursive = -1;
@@ -109,6 +127,13 @@ class UsersController extends AppController {
 		}
 		 * 
 		 */
+	}
+
+	public function logout()
+	{
+		$this -> Session -> delete('User');
+		$this -> Session -> delete('logout');
+		$this -> redirect(array('controller' => 'Users', 'action' => 'login'));
 	}
 
 	private function __doAuthLogin($user) {

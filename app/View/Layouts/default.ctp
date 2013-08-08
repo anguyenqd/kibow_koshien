@@ -76,7 +76,21 @@ $title_for_layout = 'Summer Koushien Betting';
 					});
 				e.preventDefault();
 				});
-				
+			$('#twitter').click(function(e){
+				$.oauthpopup({
+					path: '<?=BASE_URL ?>Users/auth_login/twitter',
+							width:600,
+							height:300,
+							callback: function(){
+							//window.location.reload();
+							if($('#bet-form').length > 0)
+								$('#bet-form').submit();
+							else
+							  window.location.href = '<?=BASE_URL ?>Users';
+						}
+					});
+				e.preventDefault();
+				});
 				
 				});
 
