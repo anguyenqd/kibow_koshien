@@ -69,6 +69,9 @@ $(document).ready(function(){
         }
       }
     }
+    if(item_second_selected == 8){
+      $("html, body").animate({ scrollTop: $('#top-8-move').offset().top }, 1000);
+    }
   });
   //select 4 schools
   $(second_section).on('click',".school .school_uniform .select_button",function(e){
@@ -98,6 +101,9 @@ $(document).ready(function(){
         $("#user_choice_dashboard .total_choices_4").html(item_third_selected);
         $(this).attr("data-selected","true").toggleClass("hide");
       }
+    }
+    if(item_third_selected == 4){
+      $("html, body").animate({ scrollTop: $('#top-4-move').offset().top }, 1000);
     }
   });
   //select champ
