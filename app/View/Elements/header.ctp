@@ -32,4 +32,7 @@
 			}(document, 'script', 'twitter-wjs');
 		</script>
 	</li>
+	<li>
+		<a href="https://twitter.com/baseballkibow" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow</a>
+	</li>
 </ul>

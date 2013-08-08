@@ -26,14 +26,32 @@ $title_for_layout = 'Summer Koushien Betting';
 		echo $this -> Html -> meta('keywords', 'Koushien Japanese High School Baseball Championship Betting');
 		echo $this -> Html -> meta('description', 'This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account.');
 	?>
+	<script type="text/javascript">
+		var fb_param = {};
+		fb_param.pixel_id = '6008060814667';
+		fb_param.value = '0.00';
+		fb_param.currency = 'USD';
+		(function(){
+		  var fpw = document.createElement('script');
+		  fpw.async = true;
+		  fpw.src = '//connect.facebook.net/en_US/fp.js';
+		  var ref = document.getElementsByTagName('script')[0];
+		  ref.parentNode.insertBefore(fpw, ref);
+		})();
+		</script>
+		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6008060814667&amp;value=0&amp;currency=USD" /></noscript>
 	<meta property="og:title" content="Summer Koshien Betting" />
 	<meta property="og:description" content="This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account." />
 	<meta property="og:image" content="<?=BASE_URL ?>img/Koshien_OGP_1.png" />
 	<meta property="og:type" content="website" /><meta property="og:url" content="<?=BASE_URL ?>" />
 	<meta property="og:site_name" content="Koshien" /><meta property="fb:app_id" content="537593262973234" />
-	<meta name="twitter:card" content="summary" /><meta name="twitter:site" content="baseballkibow" />
-	<meta name="twitter:title" content="Kibow" /><meta name="twitter:description" content="This Summer is hotter with the Koushien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account." />
-	<meta name="twitter:creator" content="baseballkibow" /><meta name="twitter:image:src" content="<?=BASE_URL ?>img/Koshien_OGP_1.png" />
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@BaseballKibow">
+	<meta name="twitter:title" content="Summer Koshien Betting">
+	<meta name="twitter:description" content="This Summer is hotter with the Koshien Japanese High School Baseball Championship. Who will be the champion this year? Choose your best team and join the betting now! Sign up with your third party account.">
+	<meta name="twitter:creator" content="@BaseballKibow">
+	<meta name="twitter:image:src" content="http://kibow.info/img/Koshien_OGP_1.png">
+	<meta name="twitter:domain" content="kibow.info">
 		<title><?php
 		echo $title_for_layout;
 	?></title><?php

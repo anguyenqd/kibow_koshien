@@ -4,11 +4,17 @@ class SchoolsController extends AppController {
 
 	public function index() {
 		//load all users
+		if (!$this -> Session -> check('admin')) {
+			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+		}
 		$result = $this -> School -> getAllSchools();
 		$this -> set('schools', $result);
 	}
 
 	public function add() {
+		if (!$this -> Session -> check('admin')) {
+			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+		}
 		if (!empty($this -> request -> data)) {
 			$data = $this -> request -> data['School'];
 			$mapUrl = '';
@@ -53,6 +59,9 @@ class SchoolsController extends AppController {
 	}
 
 	public function edit($id = null) {
+		if (!$this -> Session -> check('admin')) {
+			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+		}
 		$id = isset($_GET['school_id']) ? $_GET['school_id'] : '';
 		if ($id != '') {
 			if (empty($this -> request -> data)) {
