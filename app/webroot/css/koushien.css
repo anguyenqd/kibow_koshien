@@ -180,6 +180,12 @@ body {
           padding: 0 6px;
           height: 239px;
           margin-top: 60px; }
+          body #main_wrapper .wrapper section .school .school_sns {
+            width: 172px; }
+            body #main_wrapper .wrapper section .school .school_sns li {
+              display: inline-block;
+              margin-left: 8px;
+              margin-top: 10px; }
           body #main_wrapper .wrapper section .school .stake {
             font-size: 12px; }
           body #main_wrapper .wrapper section .school .school_name, body #main_wrapper .wrapper section .school a, body #main_wrapper .wrapper section .school .school_address {
