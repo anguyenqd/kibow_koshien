@@ -30,7 +30,10 @@
 			<span class="vote_number"><?=$school['0']['count_school'] ?></span>
 		</div>
 	</div>
-	<?php if($i == 2){?>
+	<?php if($i == 2){
+    echo $this -> element('sns_bet_index_2');
+  } ?>
+	<?php if($i == 32){?>
 		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this->Html->image('banner_areyouasportslover.png')?></a></div></div>
 	<?php } ?>
 	<?php if($i == 8){?>
