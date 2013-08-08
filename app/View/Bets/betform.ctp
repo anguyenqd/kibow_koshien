@@ -203,6 +203,7 @@
 	<?php 
 	$btnConfirmText = 'Confirm your bet';
 	if(!$this->Session->check('User')){
+	  echo '<div class="confirm_text"></div>';
 		$btnConfirmText = 'Sign up with facebook';
 		?>
 		<div class="confirm_text">If you want to save your bet data, please Sign up with your third-party service accounts.</div>
