@@ -348,3 +348,6 @@ Cache::config('_cake_model_', array(
 ));
 
 define('BASE_URL','http://'.$_SERVER['HTTP_HOST'].'/kibow_koshien/');
+
+Configure::write('ExtAuth.Provider.Twitter.key', 'aftRS1VlbZVvrkwYb6NQ');
+Configure::write('ExtAuth.Provider.Twitter.secret', 'rVQqxD1careiX0N9tpSlGk7K2wz1ykE7EYUFZqAdXM');

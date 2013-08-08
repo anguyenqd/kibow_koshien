@@ -113,3 +113,6 @@ CakePlugin::loadAll(array(
     'admin' => array('bootstrap' => true, 'routes' => true),
 ));
 
+CakePlugin::load('ExtAuth');
+
+
