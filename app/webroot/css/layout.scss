@@ -192,6 +192,14 @@ body{
           padding: 0 6px;
           height: 239px;
           margin-top: 60px;
+          .school_sns{
+              width:172px;
+              li{
+                display:inline-block;
+                margin-left:8px;
+                margin-top:10px;
+              }
+            }
           .stake{
               font-size:12px;
             }
