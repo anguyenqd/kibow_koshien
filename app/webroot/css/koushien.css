@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import url(_reset.css);
 /*
  * @Author: Phan Viet Duc
@@ -175,11 +176,10 @@ body {
           width: 372px;
           float: right; }
         body #main_wrapper .wrapper section .school {
-          max-width: 172px;
-          overflow: hidden;
-          margin-top: 40px;
+          float: left;
           padding: 0 6px;
-          display: inline-block; }
+          height: 239px;
+          margin-top: 60px; }
           body #main_wrapper .wrapper section .school .stake {
             font-size: 12px; }
           body #main_wrapper .wrapper section .school .school_name, body #main_wrapper .wrapper section .school a, body #main_wrapper .wrapper section .school .school_address {

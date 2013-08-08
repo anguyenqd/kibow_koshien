@@ -187,11 +187,10 @@ body{
           float: right;
         }
         .school{
-          max-width:172px;
-          overflow:hidden;
-          margin-top:40px;
-          padding:0 6px;
-          display:inline-block;
+          float: left;
+          padding: 0 6px;
+          height: 239px;
+          margin-top: 60px;
           .stake{
               font-size:12px;
             }

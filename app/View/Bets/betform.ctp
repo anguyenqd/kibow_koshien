@@ -59,7 +59,7 @@
 			foreach ($school4List as $school) {//list 4 school
 			if($school != null && $i < 3){?>
 			<div class="school">
-				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
+				<div class="school_uniform" data-map="<?=BASE_URL . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
 					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
 					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
@@ -93,7 +93,7 @@
 			foreach ($school4List as $school) {//list 4 school
 			if($school != null && $i > 2){?>
 			<div class="school">
-				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
+				<div class="school_uniform" data-map="<?=BASE_URL . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
 					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
 					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
@@ -134,7 +134,7 @@
 			foreach ($school8List as $school) {//list 4 school
 			if($school != null && $i < 5){?>
 			<div class="school">
-				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
+				<div class="school_uniform" data-map="<?=BASE_URL . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
 					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
 					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
@@ -169,7 +169,7 @@
 			foreach ($school8List as $school) {//list 4 school
 			if($school != null && $i > 4){?>
 			<div class="school">
-				<div class="school_uniform" data-map="<?=$_SERVER['REQUEST_URI'] . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
+				<div class="school_uniform" data-map="<?=BASE_URL . DS . 'img' . DS . $school[0]['schools']['map_img_url'] ?>" >
 					<?=$this -> Html -> image($school[0]['schools']['logo_url'], array('width' => 118, 'class' => 'uniform_image')) ?>
 					<?=$this -> Html -> image($school[0]['schools']['background_url'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				</div>
