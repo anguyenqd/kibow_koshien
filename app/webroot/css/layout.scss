@@ -92,6 +92,7 @@ body{
         .confirm_text{
           text-align:center;
           font-size:14px;
+          margin-top: 80px;
           padding:10px 0px 10px 0px;
         }
         #champion_place_bet{
@@ -710,7 +711,7 @@ body{
         cursor:pointer;
         display:block;
         padding:5px 10px;
-        width:50px;
+        width:80px;
         color:white;
         font-weight:bold;
         text-align:center;
@@ -724,6 +725,9 @@ body{
     }
     p{
       margin-top:8px;
+      a{
+        color:$hover_color;
+      }
     }
     span.deselect_button{
       cursor:pointer;

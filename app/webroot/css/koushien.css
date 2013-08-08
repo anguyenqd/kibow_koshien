@@ -1,4 +1,3 @@
-@charset "utf-8";
 @import url(_reset.css);
 /*
  * @Author: Phan Viet Duc
@@ -106,6 +105,7 @@ body {
         body #main_wrapper .wrapper .inner_wrapper .confirm_text {
           text-align: center;
           font-size: 14px;
+          margin-top: 80px;
           padding: 10px 0px 10px 0px; }
         body #main_wrapper .wrapper .inner_wrapper #champion_place_bet .crown {
           width: 37px;
@@ -580,7 +580,7 @@ body {
       cursor: pointer;
       display: block;
       padding: 5px 10px;
-      width: 50px;
+      width: 80px;
       color: white;
       font-weight: bold;
       text-align: center;
@@ -592,6 +592,8 @@ body {
       font-size: 20px; }
     body #user_choice_dashboard p {
       margin-top: 8px; }
+      body #user_choice_dashboard p a {
+        color: #f07700; }
     body #user_choice_dashboard span.deselect_button {
       cursor: pointer; }
       body #user_choice_dashboard span.deselect_button:hover {
