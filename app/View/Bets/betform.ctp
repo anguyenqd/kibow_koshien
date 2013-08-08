@@ -4,7 +4,7 @@
 <form name="bet-form" id="bet-form" method="post" id="form_submit">
 	<input name="step" type="hidden" value="2" />
 	<?php if($finalSchool != null) {?>
-	<section id="champion_place_bet">
+	<section id="champion_place_bet" class="clearfix">
 		<h2>Your bet</h2>
 		<div class="crown">
 			<?=$this -> Html -> image('vs.png') ?>
@@ -37,7 +37,7 @@
 		</div>
 	</section>
 	<?php } ?>
-	<section class="initial_deposit">
+	<section class="initial_deposit clearfix">
 		<h2>Initial Deposit <span>1000</span> zenny</h2>
 		<?php if($this->Session->check('User')){?>
 		<h2>Your current Balance <span class="balance_number"><?php
