@@ -19,7 +19,7 @@
 		<div class="fb-like" data-href="http://kibow.info" data-width="450" data-show-faces="false" data-send="false"></div>
 	</li>
 	<li>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?=BASE_URL?>">Tweet</a>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-related="BaseballKibow" data-via="BaseballKibow" data-url="<?=BASE_URL?>">Tweet</a>
 		<script>
 			! function(d, s, id) {
 				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
