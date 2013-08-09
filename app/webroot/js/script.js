@@ -356,7 +356,7 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
     $("#form_submit").submit();
   });
 //video pop up--------------------------------------------------------------
-  $(".video_button").click(function(){
+  $(".video_popup").click(function(){
     $("body").append('<div class="video_background close_video"><div class="video_container"><span class="close_button close_video">x</span><iframe width="560" height="315" src="//www.youtube.com/embed/'+$(this).attr("data-video-id")+'" frameborder="0" allowfullscreen></iframe></div></div>');
     if($(this).attr("data-video-desc")){
       $(".video_container").append("<div class=\"video_desc\">"+$(this).attr("data-video-desc")+"</div>");
