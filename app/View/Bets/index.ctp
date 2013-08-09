@@ -16,7 +16,7 @@
 			data-school-id="<?=$school['schools']['SI'] ?>" >
 			Select</a>
 			<a data-video-id="<?=$school['schools']['video_url'] ?>" 
-			  class="video_button">Watch Video</a>
+			  class="video_button video_popup">Watch Video</a>
 			<a class="deselect_button" data-school-id="<?=$school['schools']['SI'] ?>">Deselect</a>
 		</div>
 		<div class="school_name">
