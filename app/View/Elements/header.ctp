@@ -3,7 +3,10 @@
 </div>
 <ul id="main_nav">
 	<li>
-		<a href="<?=BASE_URL ?>">Home</a>
+		<a class="home" href="<?=BASE_URL ?>">Home</a>
+	</li>
+	<li>
+		<a href="<?=BASE_URL.'match-betting'?>">Matches</a>
 	</li>
 </ul>
 <ul id="main_sns">

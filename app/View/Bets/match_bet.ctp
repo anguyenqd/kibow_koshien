@@ -1,4 +1,4 @@
-<h2 style="text-align: center">Today matchs</h2>
+<h2 style="text-align: center;padding-top:20px;">The next matches</h2>
 <?php foreach ($matchs as $match) {?>
 <form id="form_submit" name="match_bet" method="post" id="bet-form" action="<?=BASE_URL.'match-bet-form'?>">
 <section id="koushien_match" class="clearfix">

@@ -36,8 +36,8 @@ class MatchsController extends AppController {
 			unset($data['Match']['minute']);
 
 			$data['Match']['match_date'] = $date;
-			$this->Match->addMatch($data);
-			$this->redirect(array('action' => 'index'));
+			$this -> Match -> addMatch($data);
+			$this -> redirect(array('action' => 'index'));
 		}
 
 	}
@@ -48,7 +48,11 @@ class MatchsController extends AppController {
 		}
 	}
 
-	public function delete() {
+	public function delete($id = 0) {
+		if ($id != 0) {
+			$this -> Match -> deleteMatch($id);
+			$this -> redirect(array('action' => 'index'));
+		}
 
 	}
 
