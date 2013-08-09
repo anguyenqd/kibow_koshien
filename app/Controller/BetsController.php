@@ -1,7 +1,7 @@
 <?php
 class BetsController extends AppController {
 
-	public $uses = array('User', 'BetDetail', 'Bet', 'School');
+	public $uses = array('User', 'BetDetail', 'Bet', 'School', 'Match');
 
 	public function index() {
 		//Load all school with votes
@@ -111,15 +111,16 @@ class BetsController extends AppController {
 		$this -> set('error', $this -> Session -> read('error'));
 	}
 
-	private function bet($schoolBetData = null) {
+	private function bet($schoolBetData = null, $match_id = 0) {
 		//Get info from form
 		//Check user session
+		
 		if ($this -> Session -> check('User')) {
 			$userData = $this -> Session -> read('User');
 			$betData = array();
 			$betData['Bet']['bet_date'] = date('Y-m-d H:i:s');
 			$betData['Bet']['user_id'] = $userData['User']['user_id'];
-
+			$betData['Bet']['match_id'] = $match_id;
 			$betID = $this -> Bet -> insertBet($betData);
 
 			$totalBet = 0;
@@ -150,6 +151,7 @@ class BetsController extends AppController {
 			$this -> redirect(array('action' => 'error'));
 
 		} else {
+			$this -> Session -> setFlash('Login error');
 			$this -> redirect(array('action' => 'error'));
 		}
 	}
@@ -158,6 +160,37 @@ class BetsController extends AppController {
 		$sns_account = 'a1provip004';
 		//$history = $this -> BetDetail -> getBetDetailByUser($sns_account);
 		$this -> set('history', $this -> BetDetail -> getBetDetailByUser($sns_account));
+	}
+
+	public function matchBet() {
+		//Get all match will excuted today
+		$today = date('Y-m-d');
+		$this -> set('matchs', $this -> Match -> getMatchsByDay($today));
+
+	}
+
+	public function matchBetForm() {
+		if (empty($this -> request -> data)) {
+			$this -> redirect(array('action' => 'matchBet'));
+		} else {
+			$data = $this -> request -> data;
+			if (!isset($data['step']))//step 1
+				$this -> set('matchs', $this -> Match -> getMatchById($data['match_id']));
+			else if ($data['step'] == '2') {
+				$betData = array();
+				$betData[0]['id'] = $data['team_1_id'];
+				$betData[0]['amount'] = $data['team_1_amount'];
+				$betData[0]['type'] = 4;
+				
+				$betData[1]['id'] = $data['team_2_id'];
+				$betData[1]['amount'] = $data['team_2_amount'];
+				$betData[1]['type'] = 4;
+				
+				
+				$this->bet($betData, $data['match_id']);
+			}
+
+		}
 	}
 
 }

@@ -309,7 +309,9 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
             item_champ--;
           }
           if(item_third_selected<=0){
-            $(champion_section).css("display","none");$(".top-4").css("display","none");
+            $(champion_section).css("display","none");
+            $(third_section).css("display","none");
+            $(".top-4").css("display","none");
           }
           if(item_champ<=0){
               $(champion_section).css("display","none");

@@ -87,7 +87,9 @@ $title_for_layout = 'Summer Koushien Betting';
 							callback: function(){
 							//window.location.reload();
 							if($('#bet-form').length > 0)
+							{
 								$('#bet-form').submit();
+							}
 							else
 							  window.location.href = '<?=BASE_URL ?>Users';
 						}

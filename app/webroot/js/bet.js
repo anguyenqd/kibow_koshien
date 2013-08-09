@@ -10,11 +10,14 @@ $(document).ready(function() {
 			var currentBet = bet_amount - $(previous_bet).val();
 
 			var currentBalance = parseInt($('span.balance_number').text(), 10) - currentBet;
-			console.log("current balance " + currentBalance + " previous bet " + previous_bet + " bet " + bet_amount + " current bet " + currentBet);
 			if (currentBalance >= 0) {
 
 				$(previous_bet).val(bet_amount);
 				$('span.balance_number').text(currentBalance);
+
+				$('.balance_number_each').each(function() {
+					$(this).text(currentBalance);
+				});
 
 				var returnNum = currentBet * odds;
 

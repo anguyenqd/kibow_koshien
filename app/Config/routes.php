@@ -30,7 +30,8 @@ Router::connect('/', array('controller' => 'bets', 'action' => 'index'));
 Router::connect('/admink0shien2013', array('plugin' => 'admink0shien2013', 'controller' => 'pages', 'action' => 'display'));
 Router::connect('/auth_login/*', array('controller' => 'users', 'action' => 'auth_login'));
 Router::connect('/auth_callback/*', array('controller' => 'users', 'action' => 'auth_callback'));
-
+Router::connect('/match-betting', array('controller' => 'Bets', 'action' => 'matchBet'));
+Router::connect('/match-bet-form', array('controller' => 'Bets', 'action' => 'matchBetForm'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

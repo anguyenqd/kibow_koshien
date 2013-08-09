@@ -9,6 +9,11 @@ class School extends AppModel {
 	public function getSchoolById($id) {
 		return $this -> find('first', array('conditions' => array('School.school_id' => $id)));
 	}
+	
+	public function getAllSchoolWithIDAndName()
+	{
+		return $this -> find('all', array('fields' => array('School.school_id','School.school_name')));
+	}
 
 	public function addSchool($data) {
 		$this -> create($data);

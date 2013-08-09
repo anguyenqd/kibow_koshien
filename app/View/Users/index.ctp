@@ -41,6 +41,10 @@
 				{
 					$betType = 'Top 4';
 					$odds = $bet['schools']['odds_top4'];
+				}else if($bet['bet_details']['bet_type'] == 4)
+				{
+					$betType = $bet[0]['section'];
+					$odds = $bet['schools']['odds_top4'];
 				}
 					
 			?>

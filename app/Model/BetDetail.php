@@ -38,12 +38,19 @@ class BetDetail extends AppModel {
 
 	public function getBetDetailByUser($user_id = '') {
 		if ($user_id != '') {
-			return $this -> query("SELECT bet_amount, school_name, odds_top8, odds_top4, odds_top1, bet_date, bet_status, bet_type
+			return $this -> query("SELECT bet_amount, school_name, odds_top8, odds_top4, 
+									odds_top1, bet_date, bet_status, bet_type, 
+									(SELECT CONCAT(team_1.school_name,' vs ', team_2.school_name) 
+									FROM `matchs`, schools as team_1, schools as team_2, `bets`
+									WHERE matchs.team_1_id = team_1.school_id 
+									AND matchs.team_2_id = team_2.school_id
+									AND matchs.match_id = bets.match_id
+									AND bets.bet_id = 70) as 'section'
 									FROM bet_details, bets, schools, users
 									WHERE bet_details.bet_id = bets.bet_id
 									AND bet_details.school_id = schools.school_id
 									AND bets.user_id = users.user_id 
-									AND users.user_id = '" . $user_id . "' ORDER BY bet_date DESC;");
+									AND users.user_id = '" . $user_id . "' ORDER BY bet_details.bet_id DESC;");
 		}
 
 		return null;

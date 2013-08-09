@@ -91,6 +91,19 @@ body{
           font-weight:bold;
           text-align:center;
         }
+        input.btn_confirm_chosen_school{
+          background-color:$hover_color;
+          margin:0 auto;
+          cursor:pointer;
+          display:block;
+          padding:10px 20px;
+          width:250px;
+          color:white;
+          font-weight:bold;
+          text-align:center;
+          border:none;
+          font-size:14px;
+        }
         .confirm_text{
           text-align:center;
           font-size:14px;
@@ -566,7 +579,7 @@ body{
         }
         .vs_img{
           position:absolute;
-          top: 30px;
+          top: 72px;
           left:445px;
         }
       }
