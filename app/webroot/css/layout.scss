@@ -720,6 +720,42 @@ body{
       }
     }
   }
+  #movie_page{
+    position:relative;
+    h1{
+      text-align: center;
+      font-size: 37px;
+      font-weight: bold;
+    }
+    .movie_container{
+      width:685px;
+      margin:0 auto;
+      position: relative;
+      top: -133px;
+      .movie{
+        width:130px;
+        margin: 0 2px;
+        display:inline-block;
+        .movie_img{
+          cursor:pointer;
+        }
+        .movie_title{
+          width: 126px;
+          padding: 2px 2px;
+          height: 30px;
+          background-color: #ccc;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    #movie_form{
+      text-align: center;
+      margin-top: 20px;
+      select{
+        width:200px;
+      }
+    }
+  }
   #user_choice_dashboard{
     width:169px;
     background-color:#fff;
@@ -728,6 +764,7 @@ body{
     border-right:1px solid #ccc;
     padding:5px;
     position: fixed;
+    z-index:5;
     bottom: 0;
     right: 0px;
     @include rounded_corners(5px);
