@@ -164,9 +164,8 @@ class BetsController extends AppController {
 
 	public function matchBet() {
 		//Get all match will excuted today
-		$today = date('Y-m-d');
+		$today = date('Y-m-d H:i:00');
 		$this -> set('matchs', $this -> Match -> getMatchsByDay($today));
-
 	}
 
 	public function matchBetForm() {

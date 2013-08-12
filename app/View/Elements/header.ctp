@@ -8,6 +8,9 @@
 	<li>
 		<a href="<?=BASE_URL.'match-betting'?>">Matches</a>
 	</li>
+	<li>
+		<a href="<?=BASE_URL.'schools'?>">Schools</a>
+	</li>
 </ul>
 <ul id="main_sns">
 	<li>

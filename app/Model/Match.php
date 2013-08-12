@@ -45,7 +45,8 @@ class Match extends AppModel {
 	}
 
 	public function getMatchsByDay($today = '') {
-		if ($today != '')
+		if ($today != '') {
+			$this -> query("SET time_zone='+00:00';");
 			return $this -> query("SELECT 
 							`match_id`,`match_date`,
 							team_1.school_id,
@@ -63,7 +64,8 @@ class Match extends AppModel {
 							team_2.background_url as team_2_background, 
 							team_2.video_url as team_2_video, 
 							team_2.address as team_2_address,
-							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `status` = 1 AND date(`match_date`) = '" . $today . "';");
+							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `status` = 1 AND date(`match_date`) >= date('" . $today . "') ORDER BY `match_date`;");
+		}
 
 		return null;
 	}

@@ -3,6 +3,7 @@
  */
 $(document).ready(function(){
   var hover_schools = $('#koushien_first_round .school .school_uniform');
+  var hover_schools_match = $('#koushien_match .school .school_uniform');
   var first_round_schools = $('#koushien_first_round .school .school_uniform .select_button');
   var second_round_schools = $("#koushien_second_round .school .school_uniform .select_button");
   var third_round_schools = $("#koushien_third_round .school .school_uniform .select_button");
@@ -35,6 +36,27 @@ $(document).ready(function(){
       $(".hover .map_image").remove();
       $(".hover p").remove();
       $(".hover").css("display","none");
+    });
+  $(hover_schools_match).hover(
+    function(){//over
+      $(this).animate({opacity:.7},70);
+      var map_url = $(this).attr("data-map");
+      var element_position = $(this).parent().position();
+      var element_height = $(this).parent().height();
+      var hover_class = $(this).parent().parent().parent().find('.hover');
+      if($(this).attr("data-desc") != '')
+      {
+	      $(hover_class).append("<p>"+$(this).attr("data-desc")+"</p>");
+	      $(hover_class).css("display","block");
+	      var hover_height = $(".hover").height();
+	      $(hover_class).css("top",element_position.top-hover_height).css("left",element_position.left);
+      }
+    },
+    function(){//out
+      $(this).animate({opacity:1},70);
+      var hover_class = $(this).parent().parent().parent().find('.hover');
+      $(hover_class).find('p').remove();
+      $(hover_class).css("display","none");
     });
   //select 8 schools
   $(first_round_schools).click(function(){

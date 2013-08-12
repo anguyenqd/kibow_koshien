@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div id="second_match_school" class="school">
-			<div class="school_uniform" data-desc="<?= $match['m']['description_1'] ?>" data-map="<?=BASE_URL . DS . 'img' . DS . $match['team_2']['team_2_map'] ?>" >
+			<div class="school_uniform" data-desc="<?= $match['m']['description_2'] ?>" data-map="<?=BASE_URL . DS . 'img' . DS . $match['team_2']['team_2_map'] ?>" >
 				<?=$this -> Html -> image($match['team_2']['team_2_logo'], array('width' => 118, 'class' => 'uniform_image')) ?>
 				<?=$this -> Html -> image($match['team_2']['team_2_background'], array('width' => 172, 'class' => 'background_uniform')) ?>
 				
@@ -47,8 +47,15 @@
 			</div>
 		</div>
 	</div>
+	<div class='clearfix'></div>
+	<div style="display: none;" class="hover">
+		<div class="arrow">
+			<img src="img/hover_arrow.png"/>
+		</div>
+	</div>
 	<input type="submit" class="btn_confirm_chosen_school" value="Go to betslip" />
 </section>
 <input name="match_id" type="hidden" value="<?=$match['m']['match_id'] ?>">
 </form>
 <?php } ?>
+
