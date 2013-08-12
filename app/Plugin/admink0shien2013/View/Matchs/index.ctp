@@ -30,7 +30,7 @@ foreach ($matchs as $match) {
 		<td><?=$match[0]['team_2_name'] ?></td>
 		<td><?=$match['matchs']['team_2_odd'] ?></td>
 		<td><?=$match['matchs']['description_2'] ?></td>
-		<td><?=($match[0]['winning_name'] != null) ? $match[0]['winning_name'] : 'Waiting' ?></td>
+		<td><?=$this -> Html -> link(($match[0]['winning_name'] != null) ? $match[0]['winning_name'] : 'Waiting', array('controller' => 'Matchs', 'action' => 'change_winner', $match['matchs']['match_id'])) ?></td>
 		<td><?=$status?></td>
 		<td><?=$this -> Html -> link('Edit', array('controller' => 'Matchs', 'action' => 'edit', $match['matchs']['match_id'])) ?></td>
 		<td><?=$this -> Html -> link('Delete', array('controller' => 'Matchs', 'action' => 'delete', $match['matchs']['match_id'])) ?></td>

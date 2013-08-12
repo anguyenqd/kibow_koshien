@@ -7,25 +7,28 @@
 		<td>Background</td>
 		<td>Address</td>
 		<td>Description</td>
+		<td>Status</td>
 		<td>Odds top 8</td>
 		<td>Odds top 4</td>
 		<td>Odds top 1</td>
 		<td>Delete</td>
 	</tr>
 <?php 
-foreach ($schools as $school) { ?>
+foreach ($schools as $school) { 
+	?>
 	<tr>
-		<td><?=$school['School']['school_id'] ?></td>
-		<td><?=$this -> Html -> link($school['School']['school_name'], array('controller' => 'Schools', 'action' => 'edit', '?' => array('school_id' => $school['School']['school_id']))); ?></td>
-		<td><?=$this->html->image($school['School']['logo_url'], array('width' => 100))?></td>
-		<td><?=$this->html->image($school['School']['map_img_url'], array('width' => 100))?></td>
-		<td><?=$this->html->image($school['School']['background_url'], array('width' => 100))?></td>
-		<td><?=$school['School']['address'] ?></td>
-		<td><?=$school['School']['description'] ?></td>
-		<td><?=$school['School']['odds_top8'] ?></td>
-		<td><?=$school['School']['odds_top4'] ?></td>
-		<td><?=$school['School']['odds_top1'] ?></td>
-		<td><?=$this -> Html -> link('Delete', array('controller' => 'Schools', 'action' => 'delete', '?' => array('school_id' => $school['School']['school_id']))); ?></td>
+		<td><?=$school['schools']['school_id'] ?></td>
+		<td><?=$this -> Html -> link($school['schools']['school_name'], array('controller' => 'Schools', 'action' => 'edit', '?' => array('school_id' => $school['schools']['school_id']))); ?></td>
+		<td><?=$this->html->image($school['schools']['logo_url'], array('width' => 100))?></td>
+		<td><?=$this->html->image($school['schools']['map_img_url'], array('width' => 100))?></td>
+		<td><?=$this->html->image($school['schools']['background_url'], array('width' => 100))?></td>
+		<td><?=$school['schools']['address'] ?></td>
+		<td><?=$this -> Html -> link($school['school_status']['status_name'], array('controller' => 'Schools', 'action' => 'change_status', $school['schools']['school_id'])); ?></td>
+		<td><?=$school['schools']['description'] ?></td>
+		<td><?=$school['schools']['odds_top8'] ?></td>
+		<td><?=$school['schools']['odds_top4'] ?></td>
+		<td><?=$school['schools']['odds_top1'] ?></td>
+		<td><?=$this -> Html -> link('Delete', array('controller' => 'Schools', 'action' => 'delete', '?' => array('school_id' => $school['schools']['school_id']))); ?></td>
 
 	</tr>
 <?} ?>

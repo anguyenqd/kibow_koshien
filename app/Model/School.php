@@ -9,10 +9,9 @@ class School extends AppModel {
 	public function getSchoolById($id) {
 		return $this -> find('first', array('conditions' => array('School.school_id' => $id)));
 	}
-	
-	public function getAllSchoolWithIDAndName()
-	{
-		return $this -> find('all', array('fields' => array('School.school_id','School.school_name')));
+
+	public function getAllSchoolWithIDAndName() {
+		return $this -> find('all', array('fields' => array('School.school_id', 'School.school_name')));
 	}
 
 	public function addSchool($data) {
@@ -57,5 +56,24 @@ class School extends AppModel {
 								AND schools.school_id = " . $id . ") AS 'count_school' FROM schools WHERE schools.school_id = " . $id);
 	}
 
+	public function getAllSchoolsWithStatus() {
+		return $this -> query("SELECT  `schools`.`school_id` ,  `schools`.`school_name` ,  `schools`.`logo_url` ,  `schools`.`map_img_url` ,  `schools`.`background_url` ,  `schools`.`address` ,  `schools`.`video_url` ,  `schools`.`description` , `schools`.`odds_top8` ,  `schools`.`odds_top4` ,  `schools`.`odds_top1` ,  `schools`.`school_status` ,  `school_status`.`status_name` 
+FROM  `schools` ,  `school_status` 
+WHERE  `schools`.`school_status` =  `school_status`.`status_id` ORDER BY `schools`.`school_id`;");
+	}
+
+	public function getStatusList() {
+		return $this -> query("SELECT * FROM `school_status`");
+	}
+
+	public function getSchoolStatusByID($id = 0) {
+		if ($id != 0) {
+			return $this -> find('first', array('conditions' => array('School.school_id' => $id), 'fields' => array('School.school_status')));
+		}
+
+		return null;
+	}
+	
+	
 
 }

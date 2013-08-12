@@ -160,6 +160,19 @@ body{
               }
             }
         }
+        .description_text{
+          text-align: center;
+          padding: 20px;
+          font-size: 20px;
+          margin: 0 auto;
+          width: 100%;
+          p{
+            text-align: left;
+            width: 885px;
+            margin: 0 auto;
+            padding-bottom:10px;
+          }
+        }
       }
       #main_banner{
         margin-top:5px;

@@ -13,8 +13,5 @@ echo "<br/>";
 echo $this -> Form -> label('match_date');
 echo $this -> Form -> dateTime('match_date','DMY','24',array('empty' => false, 'minYear' => date('Y'),
                                              'maxYear' => date('Y') + 10,));echo "<br/>";
-$options = array('1' => 'Enable', '0' => 'Disable');
-$attributes = array('legend' => false);
-echo $this->Form->radio('status', $options, $attributes);
-echo $this -> Form -> end('Add');
+echo $this -> Form -> end('Update');
 ?>

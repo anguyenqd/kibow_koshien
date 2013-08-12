@@ -21,7 +21,6 @@ class Match extends AppModel {
 			$inputData = array();
 			foreach ($data as $column => $value) {
 				$inputData = array_merge($inputData, array('Match.' . $column => "'" . $value . "'"));
-
 			}
 			$result = $this -> updateAll($inputData, array('Match.match_id = ' => $id));
 			return $result;
@@ -64,7 +63,7 @@ class Match extends AppModel {
 							team_2.background_url as team_2_background, 
 							team_2.video_url as team_2_video, 
 							team_2.address as team_2_address,
-							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `status` = 1 AND date(`match_date`) >= date('" . $today . "') ORDER BY `match_date`;");
+							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `status` = 1 AND `match_date` > '" . $today . "' ORDER BY `match_date`;");
 		}
 
 		return null;
@@ -90,6 +89,18 @@ class Match extends AppModel {
 							team_2.video_url as team_2_video, 
 							team_2.address as team_2_address,
 							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `match_id` = " . $id . ";");
+
+		return null;
+	}
+
+	public function getSchoolNameIdByMatchID($id = 0) {
+		if ($id != 0)
+			return $this -> query("SELECT 
+							m.winning_team_id,
+			                m.team_1_id,
+			                m.team_2_id,
+							team_1.school_name as team_1_name,
+							team_2.school_name as team_2_name FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `match_id` = " . $id . ";");
 
 		return null;
 	}

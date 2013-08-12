@@ -1,3 +1,9 @@
+<div class="description_text">
+<p>Scout your TOP teams from the 49 participating schools by watching their videos and reviewing their game information. 
+</p>
+<p>Want to play for real? Be one of the top 10 players and get a chance to win REAL MONEY in kibow.net by the end of the tournament. Players will be ranked based on the zenny earned throughout the Koshien promo. What are you waiting for? Turn your Innings into Real Winnings! So hot Koshien! Play Now!
+</p>
+</div>
 <section id="koushien_first_round">
 	<?php 
 	$i = 1;

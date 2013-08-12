@@ -134,6 +134,8 @@ $title_for_layout = 'Summer Koushien Betting';
 				  <?php 
 				    if($this->name == "Users"){
 				      echo $this -> element('main_banner_2');
+				    } else if($this->name == "Schools"){
+				      echo $this -> element('main_banner_schools');
 				    } else {
 				      echo $this -> element('main_banner');
 				    }

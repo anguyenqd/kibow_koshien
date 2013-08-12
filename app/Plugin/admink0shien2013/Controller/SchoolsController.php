@@ -5,15 +5,15 @@ class SchoolsController extends AppController {
 	public function index() {
 		//load all users
 		if (!$this -> Session -> check('admin')) {
-			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 		}
-		$result = $this -> School -> getAllSchools();
+		$result = $this -> School -> getAllSchoolsWithStatus();
 		$this -> set('schools', $result);
 	}
 
 	public function add() {
 		if (!$this -> Session -> check('admin')) {
-			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 		}
 		if (!empty($this -> request -> data)) {
 			$data = $this -> request -> data['School'];
@@ -60,7 +60,7 @@ class SchoolsController extends AppController {
 
 	public function edit($id = null) {
 		if (!$this -> Session -> check('admin')) {
-			$this -> redirect(array('controller'=> 'pages', 'action' => 'display'));
+			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 		}
 		$id = isset($_GET['school_id']) ? $_GET['school_id'] : '';
 		if ($id != '') {
@@ -114,6 +114,32 @@ class SchoolsController extends AppController {
 		$id = isset($_GET['school_id']) ? $_GET['school_id'] : '';
 		$this -> School -> deleteSchool($id);
 		$this -> redirect(array('action' => 'index'));
+	}
+
+	public function change_status($id = 0) {
+		if ($id != 0) {
+			//load status list
+			if (empty($this -> request -> data)) {
+				$statusList = $this -> School -> getStatusList();
+				$status = array();
+				foreach ($statusList as $s) {
+					$status[$s['school_status']['status_id']] = $s['school_status']['status_name'];
+				}
+				$this -> set('status', $status);
+				
+				$this -> request -> data = $this->School->getSchoolStatusByID($id);
+			} else {
+				$data = $this->request->data;
+				$this->School->updateSchool($id, $data['School']);
+				$this -> Session -> setFlash('Your change was success');
+				$this -> redirect(array('action' => 'index'));
+			}
+
+		} else {
+			$this -> Session -> setFlash('Your request is unsupported');
+			$this -> redirect(array('action' => 'index'));
+		}
+
 	}
 
 }

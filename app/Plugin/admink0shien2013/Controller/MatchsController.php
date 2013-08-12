@@ -49,7 +49,9 @@ class MatchsController extends AppController {
 					$i++;
 				}
 				$this -> set('schools', $optionSchoolList);
-				$this -> request -> data = $this -> Match -> getMatchByIdToEdit($id);
+				$data = $this -> Match -> getMatchByIdToEdit($id);
+				$this ->set('status', $data['Match']['status']);
+				$this -> request -> data = $data;
 			} else {
 				$this -> Session -> setFlash('Your change was fail');
 				$this -> redirect(array('action' => 'index'));
@@ -96,6 +98,25 @@ class MatchsController extends AppController {
 		} else
 			$this -> Session -> setFlash('Your change was fail');
 		$this -> redirect(array('action' => 'index'));
+	}
+
+	public function change_winner($id = 0) {
+		if ($id != 0) {
+			if (empty($this -> request -> data)) {
+				//Load 2 school name and id
+				$data = $this -> Match -> getSchoolNameIdByMatchID($id);
+				$this -> set('match_data', $data[0]);
+			} else {
+				$data = $this -> request -> data;
+				$this -> Match -> editMatch($id, $data['Match']);
+				$this -> Session -> setFlash('Your change was success');
+				$this -> redirect(array('action' => 'index'));
+			}
+		} else {
+			$this -> Session -> setFlash('Unsupported request');
+			$this -> redirect(array('action' => 'index'));
+		}
+
 	}
 
 }
