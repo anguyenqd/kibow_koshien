@@ -60,6 +60,7 @@ $title_for_layout = 'Summer Koushien Betting';
 	//echo $this->Html->css('/admin/css/_reset');
 	echo $this -> Html -> css('koushien');
 	echo $this -> Html -> script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
+  echo $this -> Html -> script('jquery.carouFredSel-6.2.1-packed');
 	echo $this -> Html -> script('script');
 	echo $this -> Html -> script('oauthpopup');
 	echo $this -> Html -> script('bet');
@@ -76,7 +77,7 @@ $title_for_layout = 'Summer Koushien Betting';
 			  	document.createElement('footer');
 			 <![endif]-->
 	</head>
-	<body>
+	<body class="<?= $this->action; ?>">
 		<script>
 			$(document).ready(function(){
 			$('#facebook').click(function(e){
@@ -125,19 +126,17 @@ $title_for_layout = 'Summer Koushien Betting';
 				})();
 		</script>
 		<div id="main_wrapper">
-			<?= $this -> element('user_navi'); ?>
+		  <div id="user_menu">
+			  <?= $this -> element('user_navi'); ?>
+			</div>
 			<header>
 				<?= $this -> element('header'); ?>
 			</header>
+			<div id="main_visual">
+			  <?= $this -> element('main_banner'); ?>
+			</div>
 			<div class="wrapper">
 				<div class="inner_wrapper">
-				  <?php 
-				    if($this->name == "Users"){
-				      echo $this -> element('main_banner_2');
-				    } else {
-				      echo $this -> element('main_banner');
-				    }
-				  ?>
 					<?= $this->fetch('breadcrumbs')?>
 					<?php echo $this -> fetch('content'); ?>
 				</div>
