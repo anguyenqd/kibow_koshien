@@ -9,10 +9,17 @@
 		<td>Team 2 odds</td>
 		<td>Description for team 2</td>
 		<td>Winning team</td>
+		<td>Status</td>
+		<td>Edit</td>
 		<td>Delete</td>
 	</tr>
 <?php 
-foreach ($matchs as $match) { 
+foreach ($matchs as $match) {
+	$status = $this->Html->link('Enable', array('action' => 'enable', $match['matchs']['match_id']));
+	if($match['matchs']['status'] == 1)
+	{
+		$status = $this->Html->link('Disable', array('action' => 'disable', $match['matchs']['match_id']));
+	}
 	?>
 	<tr>
 		<td><?=$match['matchs']['match_id'] ?></td>
@@ -24,7 +31,10 @@ foreach ($matchs as $match) {
 		<td><?=$match['matchs']['team_2_odd'] ?></td>
 		<td><?=$match['matchs']['description_2'] ?></td>
 		<td><?=($match[0]['winning_name'] != null) ? $match[0]['winning_name'] : 'Waiting' ?></td>
+		<td><?=$status?></td>
+		<td><?=$this -> Html -> link('Edit', array('controller' => 'Matchs', 'action' => 'edit', $match['matchs']['match_id'])) ?></td>
 		<td><?=$this -> Html -> link('Delete', array('controller' => 'Matchs', 'action' => 'delete', $match['matchs']['match_id'])) ?></td>
+		
 	</tr>
 <?} ?>
 </table>

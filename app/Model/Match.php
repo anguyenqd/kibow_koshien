@@ -8,16 +8,24 @@ class Match extends AppModel {
 		return $this -> getLastInsertID();
 	}
 
+	public function getMatchByIdToEdit($id = 0) {
+		if ($id != 0) {
+			return $this -> find('first', array('conditions' => array('Match.match_id' => $id)));
+		}
+
+		return null;
+	}
+
 	public function editMatch($id, $data) {
 		if ($id != 0 && $data != null) {
 			$inputData = array();
 			foreach ($data as $column => $value) {
-				$inputData = array_merge($inputData, array('Match.' . $column => $value));
+				$inputData = array_merge($inputData, array('Match.' . $column => "'" . $value . "'"));
+
 			}
 			$result = $this -> updateAll($inputData, array('Match.match_id = ' => $id));
 			return $result;
 		}
-
 		return null;
 	}
 
@@ -33,7 +41,7 @@ class Match extends AppModel {
 	}
 
 	public function getAllMatchWithSchoolName() {
-		return $this -> query("SELECT `match_id`,`match_date`,(SELECT  school_name FROM `schools` WHERE school_id = `team_1_id`) AS `team_1_name`,`team_1_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `team_2_id`) AS `team_2_name`,`team_2_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `winning_team_id`) AS `winning_name`,`description_1`,`description_2` FROM `matchs`");
+		return $this -> query("SELECT `match_id`,`match_date`,(SELECT  school_name FROM `schools` WHERE school_id = `team_1_id`) AS `team_1_name`,`team_1_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `team_2_id`) AS `team_2_name`,`team_2_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `winning_team_id`) AS `winning_name`,`description_1`,`description_2`,`status` FROM `matchs`");
 	}
 
 	public function getMatchsByDay($today = '') {
@@ -55,7 +63,7 @@ class Match extends AppModel {
 							team_2.background_url as team_2_background, 
 							team_2.video_url as team_2_video, 
 							team_2.address as team_2_address,
-							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND date(`match_date`) = '" . $today . "';");
+							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `status` = 1 AND date(`match_date`) = '" . $today . "';");
 
 		return null;
 	}
@@ -80,6 +88,14 @@ class Match extends AppModel {
 							team_2.video_url as team_2_video, 
 							team_2.address as team_2_address,
 							`team_2_odd`,`description_1`,`description_2` FROM `matchs` as m, schools as team_1, schools as team_2 WHERE team_1.school_id = m.team_1_id AND team_2.school_id = m.team_2_id AND `match_id` = " . $id . ";");
+
+		return null;
+	}
+
+	public function changeStatus($status = 0, $id = 0) {
+		if ($status >= 0 && $id != 0) {
+			return $this -> updateAll(array('Match.status' => $status), array('Match.match_id = ' => $id));
+		}
 
 		return null;
 	}
