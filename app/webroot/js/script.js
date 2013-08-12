@@ -373,6 +373,26 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
       }
   }
 });
+//maincarousel--------------------------------------------------------------
+
+  $("#main_slide").carouFredSel({
+    width:"100%",
+    items : {
+      visible : 3,
+      width : 1296,
+      height : 579,
+    },
+    direction : "left",
+    scroll : {
+      items : 1,
+      easing : "quadratic",
+      duration : 1000,
+    },
+    prev : ".prev",
+    next : ".next"
+  }); 
+
+
 //form submit---------------------------------------------------------------
   $(".confirm_chosen_school").click(function(){
     $("#form_submit").submit();
