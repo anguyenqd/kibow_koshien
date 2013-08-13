@@ -1,7 +1,7 @@
 <h2 style="text-align: center;padding-top:20px;">The next matches</h2>
 <div class="description_text">
 <p>The game isn’t over yet. Check out the next matches and decide whose side are you on.</p>
-<p>Be one of the top 10 players and get a chance to win REAL MONEY in kibow.net by the end of the tournament. Players will be ranked based on the zenny earned throughout the Koshien promo. Don’t miss this chance. Bet now!
+<p>Be one of the top 10 players and get a chance to win REAL MONEY in <a href="https://kibow.net/">Kibow.net</a> by the end of the tournament. Players will be ranked based on the zenny earned throughout the Koshien promo. Don’t miss this chance. Bet now!
 </p>
 </div>
 <?php foreach ($matchs as $match) {?>

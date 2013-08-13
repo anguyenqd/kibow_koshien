@@ -3,7 +3,7 @@
 </div>
 <ul id="main_nav">
 	<li>
-		<a class="home" href="<?=BASE_URL ?>">Home</a>
+		<a href="<?=BASE_URL ?>">Home</a>
 	</li>
 	<li>
 		<a href="<?=BASE_URL.'match-betting'?>">Matches</a>

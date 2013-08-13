@@ -132,9 +132,11 @@ $title_for_layout = 'Summer Koushien Betting';
 			<header>
 				<?= $this -> element('header'); ?>
 			</header>
+			<?php if($this->name == 'Bets' && $this->action == 'index'){?>
 			<div id="main_visual">
 			  <?= $this -> element('main_banner'); ?>
 			</div>
+			<?php }?>
 			<div class="wrapper">
 				<div class="inner_wrapper">
 				  <?php 
@@ -142,8 +144,10 @@ $title_for_layout = 'Summer Koushien Betting';
 				      echo $this -> element('main_banner_2');
 				    } else if($this->name == "Schools"){
 				      echo $this -> element('main_banner_schools');
-				    } else {
-				      echo $this -> element('main_banner');
+				    } else if($this->name == 'Informations'){
+				      echo $this -> element('main_banner_2');
+				    } else if($this->name == 'Bets' && $this->action != 'index'){
+				      echo $this -> element('main_banner_2');
 				    }
 				  ?>
 					<?= $this->fetch('breadcrumbs')?>

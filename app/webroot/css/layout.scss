@@ -58,13 +58,11 @@ body{
             text-transform:uppercase;
             font-size:16px;
             padding:10px;
-           
+            background: url(../img/baseball.png) no-repeat 1px;
             display: block;
             padding: 10px 10px 10px 17px;
             font-weight:bold;
-            &.home{
-               background: url(../img/baseball.png) no-repeat 1px;
-            }
+            
           }
         }
       }
@@ -74,6 +72,7 @@ body{
       height:579px;
       position:relative;
       margin-top:30px;
+      overflow:hidden;
       .slide{
         float:left;
       }
@@ -204,10 +203,16 @@ body{
             margin: 0 auto;
             padding-bottom:10px;
           }
+          a{
+            color:$hover_color;
+          }
         }
       }
       #main_banner{
         margin-top:5px;
+        img{
+          border:1px solid #ccc;
+        }
       }
       section{
         margin-top:50px;
