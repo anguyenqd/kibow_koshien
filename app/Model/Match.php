@@ -40,7 +40,7 @@ class Match extends AppModel {
 	}
 
 	public function getAllMatchWithSchoolName() {
-		return $this -> query("SELECT `match_id`,`match_date`,(SELECT  school_name FROM `schools` WHERE school_id = `team_1_id`) AS `team_1_name`,`team_1_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `team_2_id`) AS `team_2_name`,`team_2_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `winning_team_id`) AS `winning_name`,`description_1`,`description_2`,`status` FROM `matchs`");
+		return $this -> query("SELECT `match_id`,`match_date`,(SELECT  school_name FROM `schools` WHERE school_id = `team_1_id`) AS `team_1_name`,`team_1_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `team_2_id`) AS `team_2_name`,`team_2_odd`,(SELECT  school_name FROM `schools` WHERE school_id = `winning_team_id`) AS `winning_name`,`description_1`,`description_2`,`status`, `team_1_result`, `team_2_result`, `match_rounds`.`round_name` FROM `matchs`, `match_rounds` WHERE `matchs`.`match_round` = `match_rounds`.`match_round_id`");
 	}
 
 	public function getMatchsByDay($today = '') {
@@ -97,6 +97,8 @@ class Match extends AppModel {
 		if ($id != 0)
 			return $this -> query("SELECT 
 							m.winning_team_id,
+							m.team_1_result,
+							m.team_2_result,
 			                m.team_1_id,
 			                m.team_2_id,
 							team_1.school_name as team_1_name,
@@ -111,6 +113,17 @@ class Match extends AppModel {
 		}
 
 		return null;
+	}
+
+	public function getUsersByMatchId($id = 0) {
+		if ($id != 0)
+			return $this -> query('SELECT `user_id` FROM `bets` WHERE `match_id` = ' . $id);
+		return null;
+	}
+	
+	public function getMatchRoundList()
+	{
+		return $this->query('SELECT * FROM `match_rounds`');
 	}
 
 }

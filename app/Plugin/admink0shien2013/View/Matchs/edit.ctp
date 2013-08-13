@@ -13,5 +13,8 @@ echo "<br/>";
 echo $this -> Form -> label('match_date');
 echo $this -> Form -> dateTime('match_date','DMY','24',array('empty' => false, 'minYear' => date('Y'),
                                              'maxYear' => date('Y') + 10,));echo "<br/>";
+echo "<br/>";
+echo $this -> Form -> label('match_round');
+echo $this -> Form -> select('match_round', $rounds);
 echo $this -> Form -> end('Update');
 ?>

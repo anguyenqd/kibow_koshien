@@ -17,5 +17,8 @@ echo "<br/>";
 $options = array('1' => 'Enable', '0' => 'Disable');
 $attributes = array('legend' => false);
 echo $this->Form->radio('status', $options, $attributes);
+echo "<br/>";
+echo $this -> Form -> label('match_round');
+echo $this -> Form -> select('match_round', $rounds);
 echo $this -> Form -> end('Add');
 ?>

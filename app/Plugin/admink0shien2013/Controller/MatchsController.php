@@ -19,12 +19,18 @@ class MatchsController extends AppController {
 			//Load school list with id
 			$schools = $this -> School -> getAllSchoolWithIDAndName();
 			$optionSchoolList = array();
-			$i = 0;
 			foreach ($schools as $school) {
 				$optionSchoolList[$school['School']['school_id']] = $school['School']['school_name'];
-				$i++;
 			}
 			$this -> set('schools', $optionSchoolList);
+
+			//Load match round list
+			$matchRoundList = $this -> Match -> getMatchRoundList();
+			$optionRoundList = array();
+			foreach ($matchRoundList as $round) {
+				$optionRoundList[$round['match_rounds']['match_round_id']] = $round['match_rounds']['round_name'];
+			}
+			$this -> set('rounds', $optionRoundList);
 		} else {
 			//Store
 			$data = $this -> request -> data;
@@ -49,8 +55,15 @@ class MatchsController extends AppController {
 					$i++;
 				}
 				$this -> set('schools', $optionSchoolList);
+				//Load match round list
+				$matchRoundList = $this -> Match -> getMatchRoundList();
+				$optionRoundList = array();
+				foreach ($matchRoundList as $round) {
+					$optionRoundList[$round['match_rounds']['match_round_id']] = $round['match_rounds']['round_name'];
+				}
+				$this -> set('rounds', $optionRoundList);
 				$data = $this -> Match -> getMatchByIdToEdit($id);
-				$this ->set('status', $data['Match']['status']);
+				$this -> set('status', $data['Match']['status']);
 				$this -> request -> data = $data;
 			} else {
 				$this -> Session -> setFlash('Your change was fail');
@@ -108,7 +121,20 @@ class MatchsController extends AppController {
 				$this -> set('match_data', $data[0]);
 			} else {
 				$data = $this -> request -> data;
+
+				if ($data['Match']['team_1_result'] > $data['Match']['team_2_result']) {
+					$data['Match']['winning_team_id'] = $data['Match']['team_1_id'];
+				} else if ($data['Match']['team_1_result'] < $data['Match']['team_2_result']) {
+					$data['Match']['winning_team_id'] = $data['Match']['team_2_id'];
+				} else {
+					$data['Match']['winning_team_id'] = null;
+				}
+
+				//reflect match result
 				$this -> Match -> editMatch($id, $data['Match']);
+
+				//reflect user balance
+
 				$this -> Session -> setFlash('Your change was success');
 				$this -> redirect(array('action' => 'index'));
 			}

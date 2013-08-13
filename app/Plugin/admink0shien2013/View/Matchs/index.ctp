@@ -2,12 +2,14 @@
 	<tr>
 		<td>ID</td>
 		<td>Match Date</td>
+		<td>Round</td>
 		<td>Team 1</td>
 		<td>Team 1 odds</td>
 		<td>Description for team 1</td>
 		<td>Team 2</td>
 		<td>Team 2 odds</td>
 		<td>Description for team 2</td>
+		<td>Result</td>
 		<td>Winning team</td>
 		<td>Status</td>
 		<td>Edit</td>
@@ -24,12 +26,14 @@ foreach ($matchs as $match) {
 	<tr>
 		<td><?=$match['matchs']['match_id'] ?></td>
 		<td><?=$match['matchs']['match_date'] ?></td>
+		<td><?=$match['match_rounds']['round_name'] ?></td>
 		<td><?=$match[0]['team_1_name'] ?></td>
 		<td><?=$match['matchs']['team_1_odd'] ?></td>
 		<td><?=$match['matchs']['description_1'] ?></td>
 		<td><?=$match[0]['team_2_name'] ?></td>
 		<td><?=$match['matchs']['team_2_odd'] ?></td>
 		<td><?=$match['matchs']['description_2'] ?></td>
+		<td><?=$match['matchs']['team_1_result']." - ".$match['matchs']['team_2_result'] ?></td>
 		<td><?=$this -> Html -> link(($match[0]['winning_name'] != null) ? $match[0]['winning_name'] : 'Waiting', array('controller' => 'Matchs', 'action' => 'change_winner', $match['matchs']['match_id'])) ?></td>
 		<td><?=$status?></td>
 		<td><?=$this -> Html -> link('Edit', array('controller' => 'Matchs', 'action' => 'edit', $match['matchs']['match_id'])) ?></td>
