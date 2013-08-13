@@ -10,6 +10,10 @@ class Movie extends AppModel {
 		return $this -> find('first', array('conditions' => array('Movie.id' => $id)));
 	}
 	
+	public function getMovieByCategoryId($category_id) {
+	  return $this -> find('all', array('conditions' => array('Movie.movie_category_id' => $category_id)));
+	}
+	
 	public function addItem($data) {
 		$this -> create($data);
 		$this -> save($data);
