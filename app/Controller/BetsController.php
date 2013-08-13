@@ -8,6 +8,10 @@ class BetsController extends AppController {
 		$this -> Set('schools', $this -> School -> getSchoolsListWithBetAmount());
 
 	}
+  
+  public function result(){
+    
+  }
 
 	public function betForm() {
 		//Receive data from choose school page
