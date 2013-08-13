@@ -1,6 +1,6 @@
 <?php
 class MatchsController extends AppController {
-	public $uses = array('Match', 'School');
+	public $uses = array('Match', 'School', 'User');
 
 	public function index() {
 		if (!$this -> Session -> check('admin')) {
@@ -121,11 +121,13 @@ class MatchsController extends AppController {
 				$this -> set('match_data', $data[0]);
 			} else {
 				$data = $this -> request -> data;
-
+				$loseTeamID = 0;
 				if ($data['Match']['team_1_result'] > $data['Match']['team_2_result']) {
 					$data['Match']['winning_team_id'] = $data['Match']['team_1_id'];
+					$loseTeamID = $data['Match']['team_2_id'];
 				} else if ($data['Match']['team_1_result'] < $data['Match']['team_2_result']) {
 					$data['Match']['winning_team_id'] = $data['Match']['team_2_id'];
+					$loseTeamID = $data['Match']['team_1_id'];
 				} else {
 					$data['Match']['winning_team_id'] = null;
 				}
@@ -133,9 +135,32 @@ class MatchsController extends AppController {
 				//reflect match result
 				$this -> Match -> editMatch($id, $data['Match']);
 
-				//reflect user balance
+				if ($data['Match']['winning_team_id'] != null) {
+					//reflect user balance
+					//get user list in this match
+					$betDetailID = $this -> Match -> getBetDetailByMatchId($id, $data['Match']['winning_team_id']);
+					//lose bet list
+					$lostBetDetailID = $this -> Match -> getBetDetailByMatchId($id, $loseTeamID);
+					//Update balance
+					
+					foreach ($betDetailID as $bet) {
+						$this -> User -> updateUserBalanceByResult($bet['bet_details']['bet_detail_id'], 1);
+					}
+					
+					foreach ($lostBetDetailID as $bet) {
+						$this -> User -> updateUserBalanceByResult($bet['bet_details']['bet_detail_id'], 2);
+					}
+					$this -> Session -> setFlash('Your change was success');
+					/*
+					if ($i > 0) {
+						
+					} else {
+						$this -> Session -> setFlash('User balance was not updated yet');
+					}*/
+				} else {
+					$this -> Session -> setFlash('Your change was success');
+				}
 
-				$this -> Session -> setFlash('Your change was success');
 				$this -> redirect(array('action' => 'index'));
 			}
 		} else {

@@ -32,19 +32,15 @@
 				$i = 1;
 				foreach ($history as $bet) {
 				$betType = 'Top 8';
-				$odds = $bet['schools']['odds_top8'];
 				if($bet['bet_details']['bet_type'] == 1)
 				{
 					$betType = 'outright';
-					$odds = $bet['schools']['odds_top1'];
 				}else if($bet['bet_details']['bet_type'] == 2)
 				{
 					$betType = 'Top 4';
-					$odds = $bet['schools']['odds_top4'];
 				}else if($bet['bet_details']['bet_type'] == 4)
 				{
 					$betType = $bet[0]['section'];
-					$odds = $bet['schools']['odds_top4'];
 				}
 					
 			?>
@@ -54,7 +50,7 @@
 				<td>Koushien</td>
 				<td><?=$betType ?></td>
 				<td><?=$bet['schools']['school_name'] ?></td>
-				<td><?=$odds?></td>
+				<td><?=$bet['bet_details']['odds'] ?></td>
 				<td><?=$bet['bet_details']['bet_amount'] ?></td>
 				<td>
 					<?

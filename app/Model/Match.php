@@ -115,15 +115,16 @@ class Match extends AppModel {
 		return null;
 	}
 
-	public function getUsersByMatchId($id = 0) {
-		if ($id != 0)
-			return $this -> query('SELECT `user_id` FROM `bets` WHERE `match_id` = ' . $id);
+	public function getBetDetailByMatchId($id = 0, $team_id = 0) {
+		if ($id != 0 && $team_id != 0) {
+			return $this -> query('SELECT `bet_details`.`bet_detail_id` FROM `bet_details`,`bets` WHERE `bets`.`bet_id` = `bet_details`.`bet_id` AND  `match_id` = ' . $id . ' AND `school_id` = ' . $team_id);
+		}
 		return null;
 	}
-	
-	public function getMatchRoundList()
-	{
-		return $this->query('SELECT * FROM `match_rounds`');
+
+	public function getMatchRoundList() {
+		return $this -> query('SELECT * FROM `match_rounds`');
 	}
+
 
 }

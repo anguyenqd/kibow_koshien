@@ -49,6 +49,7 @@
 					}
 					?></span> z
 				<input type="hidden" class="previous_bet" value="0"/>
+				<input type="hidden" name="team_1_odds" value="<?=$match['m']['team_1_odd'] ?>"/>
 			</div>
 			<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 			<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
@@ -83,6 +84,7 @@
 					}
 					?></span> z
 				<input type="hidden" class="previous_bet" value="0"/>
+				<input type="hidden" name="team_2_odds" value="<?=$match['m']['team_2_odd'] ?>"/>
 			</div>
 			<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 			<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>

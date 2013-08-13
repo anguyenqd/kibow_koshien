@@ -1,6 +1,6 @@
 <?php
 class SchoolsController extends AppController {
-	public $uses = array('School');
+	public $uses = array('School', 'User');
 
 	public function index() {
 		//load all users
@@ -126,11 +126,40 @@ class SchoolsController extends AppController {
 					$status[$s['school_status']['status_id']] = $s['school_status']['status_name'];
 				}
 				$this -> set('status', $status);
-				
-				$this -> request -> data = $this->School->getSchoolStatusByID($id);
+
+				$this -> request -> data = $this -> School -> getSchoolStatusByID($id);
 			} else {
-				$data = $this->request->data;
-				$this->School->updateSchool($id, $data['School']);
+				$data = $this -> request -> data;
+
+				if ($data['School']['school_status'] != 4) {
+					//Reflect user balance
+					if ($data['School']['school_status'] != 5) {
+						$bet_type = 0;
+						if ($data['School']['school_status'] == 1) {
+							$bet_type = 3;
+						} else if ($data['School']['school_status'] == 2) {
+							$bet_type = 2;
+						} else if ($data['School']['school_status'] == 3) {
+							$bet_type = 1;
+						}
+
+						//Get bet detail id list by bet type and school id
+						$betDetailIDList = $this -> School -> getBetDetailIDListByBetTypeAndSchoolID($id, $bet_type);
+						foreach ($betDetailIDList as $bet_id) {
+							$this -> User -> updateUserBalanceByResult($bet_id['bet_details']['bet_detail_id'], 1);
+						}
+
+					} else {
+						//update losed bet
+						$betDetailIDList = $this -> School -> getBetDetailIDListBySchoolID($id);
+						foreach ($betDetailIDList as $bet_id) {
+							$this -> User -> updateUserBalanceByResult($bet_id['bet_details']['bet_detail_id'], 2);
+						}
+					}
+
+				}
+
+				$this -> School -> updateSchool($id, $data['School']);
 				$this -> Session -> setFlash('Your change was success');
 				$this -> redirect(array('action' => 'index'));
 			}
@@ -139,7 +168,6 @@ class SchoolsController extends AppController {
 			$this -> Session -> setFlash('Your request is unsupported');
 			$this -> redirect(array('action' => 'index'));
 		}
-
 	}
 
 }

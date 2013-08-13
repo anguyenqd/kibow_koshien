@@ -1,3 +1,6 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'Matches' => '',
+)))) ?>
 <h2 style="text-align: center;padding-top:20px;">The next matches</h2>
 <div class="description_text">
 <p>The game isn’t over yet. Check out the next matches and decide whose side are you on.</p>

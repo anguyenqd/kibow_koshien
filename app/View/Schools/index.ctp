@@ -1,3 +1,6 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'Schools' => '',
+)))) ?>
 <div class="description_text">
 <p>Scout your TOP teams from the 49 participating schools by watching their videos and reviewing their game information. 
 </p>

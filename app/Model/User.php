@@ -57,5 +57,13 @@ SELECT user_id, balance AS bl, 1 + (SELECT COUNT(*) FROM `users` WHERE balance >
 		}
 		return null;
 	}
+	
+	public function updateUserBalanceByResult($betDetailID = 0, $bet_status = 3) {
+		if ($betDetailID != 0) {
+			return $this -> query('UPDATE `users`,`bets`,`bet_details` SET `users`.`balance` = (`users`.`balance` + `bet_details`.`odds` * `bet_details`.`bet_amount`),`bet_details`.`bet_status` = ' . $bet_status . ' WHERE `users`.`user_id` = `bets`.`user_id` AND `bets`.`bet_id` = `bet_details`.`bet_id` AND `bet_details`.`bet_detail_id` = ' . $betDetailID);
+		}
+
+		return null;
+	}
 
 }

@@ -38,7 +38,7 @@ class BetDetail extends AppModel {
 
 	public function getBetDetailByUser($user_id = '') {
 		if ($user_id != '') {
-			return $this -> query("SELECT bet_amount, school_name, odds_top8, odds_top4, 
+			return $this -> query("SELECT odds,bet_amount, school_name, odds_top8, odds_top4, 
 									odds_top1, bet_date, bet_status, bet_type, bets.bet_id as BI,
 									(SELECT CONCAT(team_1.school_name,' vs ', team_2.school_name) 
 									FROM `matchs`, schools as team_1, schools as team_2, `bets`

@@ -73,7 +73,21 @@ WHERE  `schools`.`school_status` =  `school_status`.`status_id` ORDER BY `school
 
 		return null;
 	}
-	
-	
+
+	public function getBetDetailIDListByBetTypeAndSchoolID($school_id = 0, $bet_type = 0) {
+		if ($school_id != 0 && $bet_type != 0) {
+			return $this -> query('SELECT `bet_details`.`bet_detail_id` FROM `bet_details` WHERE `school_id` = ' . $school_id . ' AND `bet_type` = ' . $bet_type);
+		}
+
+		return null;
+	}
+
+	public function getBetDetailIDListBySchoolID($school_id = 0) {
+		if ($school_id != 0) {
+			return $this -> query('SELECT `bet_details`.`bet_detail_id` FROM `bet_details` WHERE `school_id` = ' . $school_id . 'AND `bet_type` != 4');
+		}
+
+		return null;
+	}
 
 }

@@ -60,34 +60,33 @@ class BetsController extends AppController {
 					$schoolBetData = array();
 					$i = 0;
 					if ($school8List != null) {
-						foreach ($school8List as $schoolID => $schoolBet) {
-							if ($schoolBet > 0 && $schoolBet != '') {
+						foreach ($school8List as $school) {
+							if ($school['bet_amount'] > 0 && $school['bet_amount'] != '') {
 								$type = 3;
-								$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
+								$schoolBetData[$i] = array('id' => $school['school_id'], 'amount' => $school['bet_amount'], 'type' => $type, 'odds' => $school['odds']);
 								$i++;
 							}
 						}
 					}
 
 					if ($school4List != null) {
-						foreach ($school4List as $schoolID => $schoolBet) {
-							if ($schoolBet > 0 && $schoolBet != '') {
+						foreach ($school4List as $school) {
+							if ($school['bet_amount'] > 0 && $school['bet_amount'] != '') {
 								$type = 2;
-								$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
+								$schoolBetData[$i] = array('id' => $school['school_id'], 'amount' => $school['bet_amount'], 'type' => $type, 'odds' => $school['odds']);
 								$i++;
 							}
 						}
 					}
 					if ($finalSchool != null) {
-						foreach ($finalSchool as $schoolID => $schoolBet) {
-							if ($schoolBet > 0 && $schoolBet != '') {
+						foreach ($finalSchool as $school) {
+							if ($school['bet_amount'] > 0 && $school['bet_amount'] != '') {
 								$type = 1;
-								$schoolBetData[$i] = array('id' => $schoolID, 'amount' => $schoolBet, 'type' => $type);
+								$schoolBetData[$i] = array('id' => $school['school_id'], 'amount' => $school['bet_amount'], 'type' => $type, 'odds' => $school['odds']);
 								$i++;
 							}
 						}
 					}
-
 					$this -> bet($schoolBetData);
 				}
 			}
@@ -114,7 +113,7 @@ class BetsController extends AppController {
 	private function bet($schoolBetData = null, $match_id = 0) {
 		//Get info from form
 		//Check user session
-		
+
 		if ($this -> Session -> check('User')) {
 			$userData = $this -> Session -> read('User');
 			$betData = array();
@@ -135,6 +134,7 @@ class BetsController extends AppController {
 					$betDetailData['BetDetail']['school_id'] = $betDetail['id'];
 					$betDetailData['BetDetail']['bet_type'] = $betDetail['type'];
 					$betDetailData['BetDetail']['bet_amount'] = $betDetail['amount'];
+					$betDetailData['BetDetail']['odds'] = $betDetail['odds'];
 					$userData['User']['balance'] -= $betDetail['amount'];
 					$this -> BetDetail -> addBetDetail($betDetailData);
 				}
@@ -177,16 +177,30 @@ class BetsController extends AppController {
 				$this -> set('matchs', $this -> Match -> getMatchById($data['match_id']));
 			else if ($data['step'] == '2') {
 				$betData = array();
-				$betData[0]['id'] = $data['team_1_id'];
-				$betData[0]['amount'] = $data['team_1_amount'];
-				$betData[0]['type'] = 4;
+				$i = 0;
+				if ($data['team_1_amount'] > 0) {
+					$betData[$i]['id'] = $data['team_1_id'];
+					$betData[$i]['amount'] = $data['team_1_amount'];
+					$betData[$i]['type'] = 4;
+					$betData[$i]['odds'] = $data['team_1_odds'];
+					$i++;
+				}
+
+				if ($data['team_2_amount'] > 0) {
+					$betData[$i]['id'] = $data['team_2_id'];
+					$betData[$i]['amount'] = $data['team_2_amount'];
+					$betData[$i]['type'] = 4;
+					$betData[$i]['odds'] = $data['team_2_odds'];
+					$i++;
+				}
 				
-				$betData[1]['id'] = $data['team_2_id'];
-				$betData[1]['amount'] = $data['team_2_amount'];
-				$betData[1]['type'] = 4;
-				
-				
-				$this->bet($betData, $data['match_id']);
+				if($i == 0)
+				{
+					$this -> Session -> setFlash('Your bets were not success');
+					$this -> redirect(array('controller' => 'users', 'action' => 'index'));
+				}
+
+				$this -> bet($betData, $data['match_id']);
 			}
 
 		}

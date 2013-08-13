@@ -28,7 +28,7 @@
 			
 			<div class="stake">
 				Stakes
-				<input type="text" value="0" size="3" id="bet_amount" name='data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>]'/>/
+				<input type="text" value="0" size="3" id="bet_amount" name='data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>][bet_amount]'/>/
 				<span class="balance_number_each"><?php
 					if ($this -> Session -> check('User')) {
 						$userData = $this -> Session -> read('User');
@@ -38,6 +38,8 @@
 					}
 					?></span> z
 				<input type="hidden" class="previous_bet" value="0"/>
+				<input type="hidden" name="data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>][school_id]" value="<?=$finalSchool[0]['schools']['school_id'] ?>"/>
+				<input type="hidden" name="data[finalSchool][<?=$finalSchool[0]['schools']['school_id'] ?>][odds]" value="<?=$finalSchool[0]['schools']['odds_top1'] ?>"/>
 			</div>
 			<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 			<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
@@ -83,7 +85,7 @@
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>][bet_amount]'/>
 					/
 				<span class="balance_number_each"><?php
 						if ($this -> Session -> check('User')) {
@@ -94,6 +96,8 @@
 						}
 					?></span> z
 					<input type="hidden" class="previous_bet" value="0"/>
+					<input type="hidden" name="data[4school][<?=$school[0]['schools']['school_id'] ?>][school_id]" value="<?=$school[0]['schools']['school_id'] ?>"/>
+					<input type="hidden" name="data[4school][<?=$school[0]['schools']['school_id'] ?>][odds]" value="<?=$school[0]['schools']['odds_top4'] ?>"/>
 				</div>
 				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
@@ -125,7 +129,7 @@
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[4school][<?=$school[0]['schools']['school_id'] ?>][bet_amount]'/>
 					/
 				<span class="balance_number_each"><?php
 						if ($this -> Session -> check('User')) {
@@ -136,6 +140,8 @@
 						}
 					?></span> z
 					<input type="hidden" class="previous_bet" value="0"/>
+					<input type="hidden" name="data[4school][<?=$school[0]['schools']['school_id'] ?>][school_id]" value="<?=$school[0]['schools']['school_id'] ?>"/>
+					<input type="hidden" name="data[4school][<?=$school[0]['schools']['school_id'] ?>][odds]" value="<?=$school[0]['schools']['odds_top4'] ?>"/>
 				</div>
 				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
@@ -174,7 +180,7 @@
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" id="bet_amount" name='data[8school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[8school][<?=$school[0]['schools']['school_id'] ?>][bet_amount]'/>
 					/
 				<span class="balance_number_each"><?php
 						if ($this -> Session -> check('User')) {
@@ -185,6 +191,8 @@
 						}
 					?></span> z
 					<input type="hidden" class="previous_bet" value="0"/>
+					<input type="hidden" name="data[8school][<?=$school[0]['schools']['school_id'] ?>][school_id]" value="<?=$school[0]['schools']['school_id'] ?>"/>
+					<input type="hidden" name="data[8school][<?=$school[0]['schools']['school_id'] ?>][odds]" value="<?=$school[0]['schools']['odds_top8'] ?>"/>
 				</div>
 				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
@@ -217,7 +225,7 @@
 				</div>
 				<div class="stake">
 					Stakes
-					<input type="text" value="0" size="3" id="bet_amount" name='data[8school][<?=$school[0]['schools']['school_id'] ?>]'/>
+					<input type="text" value="0" size="3" id="bet_amount" name='data[8school][<?=$school[0]['schools']['school_id'] ?>][bet_amount]'/>
 					/
 				<span class="balance_number_each"><?php
 						if ($this -> Session -> check('User')) {
@@ -228,6 +236,8 @@
 						}
 					?></span> z
 					<input type="hidden" class="previous_bet" value="0"/>
+					<input type="hidden" name="data[8school][<?=$school[0]['schools']['school_id'] ?>][school_id]" value="<?=$school[0]['schools']['school_id'] ?>"/>
+					<input type="hidden" name="data[8school][<?=$school[0]['schools']['school_id'] ?>][odds]" value="<?=$school[0]['schools']['odds_top8'] ?>"/>
 				</div>
 				<div class="return_number_wrap">Return <span class="return_number_each">0</span> Zenny</div>
 				<div class="btn_place_bet"><a id="btn_blace_bet" href="javascript:void(0)"><?=$this -> Html -> image('btn_place_bet.png') ?></a></div>
