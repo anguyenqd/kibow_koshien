@@ -887,4 +887,75 @@ body{
     margin-top:5px;
   }
 }
+&.result{
+  .seperate_round{
+    margin-top:30px;
+  }
+  table{
+    width:100%;
+    td{
+      text-align:center;
+      &.score_result{
+        vertical-align:middle;
+        font-size:30px;
+      }
+    }
+    .round_name{
+      margin-bottom:30px;
+    }
+    .round_vertical {
+      width: 100px;
+      background-color: #2aa8b3;
+    }
+    &#second_round{
+      .round_vertical {
+        background-color: #0c2848;
+      }
+    }
+    &#third_round{
+      .round_vertical {
+        background-color: #c5c5bd;
+      }
+    }
+    &#top8_round{
+      .round_vertical {
+        background-color: #b41b46;
+      }
+    }
+    &#top4_round{
+      .round_vertical {
+        background-color: #eec63a;
+      }
+    }
+    .round_horizontal{
+      padding-left:30px;
+      vertical-align: top;
+      tr{
+        height: 66px;
+      }
+    }
+    .date{
+      background-color: #ccc;
+      @include rounded_corners(5px);
+      padding: 20px;
+      font-size: 26px;
+      color: white;
+    }
+    .school_result {
+      margin-top:10px;
+      position: relative;
+      .result_desc {
+        width: 155px;
+        height: 35px;
+        position: absolute;
+        top: 14px;
+        padding: 2px;
+        left: 130px;
+        .school_name{
+          font-size:24px;
+        }
+      }
+    }
+  }
+}
 }

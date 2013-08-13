@@ -391,7 +391,15 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
     prev : ".prev",
     next : ".next"
   }); 
-
+  
+if($("body.result")){
+  $("#first_round .round_name").css("margin-top",($("#first_round .round_horizontal").outerHeight()/2)-$("#first_round .round_name").outerHeight());
+  $("#second_round .round_name").css("margin-top",($("#second_round .round_horizontal").outerHeight()/2)-$("#second_round .round_name").outerHeight());
+  $("#third_round .round_name").css("margin-top",($("#third_round .round_horizontal").outerHeight()/2)-$("#third_round .round_name").outerHeight());
+  $("#top8_round .round_name").css("margin-top",($("#top8_round .round_horizontal").outerHeight()/2-$("#top8_round .round_name").outerHeight()));
+  $("#top4_round .round_name").css("margin-top",($("#top4_round .round_horizontal").outerHeight()/2)-$("top4_round .round_name").outerHeight());
+  $("#final_round .round_name").css("margin-top",($("#final_round .round_horizontal").outerHeight()/2)-$("#final_round .round_name").outerHeight());
+}
 
 //form submit---------------------------------------------------------------
   $(".confirm_chosen_school").click(function(){
