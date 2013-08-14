@@ -21,7 +21,7 @@ class MoviesController extends AppController {
 	      $movies = $this -> Movie -> getAll();
 	    }
 	    
-	    
+	    $this -> set('cur_category', $catid);
 	    $this -> set('movies', $movies);
 	    $this -> set('categories', $categories);
 	}
