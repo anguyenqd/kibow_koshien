@@ -8,6 +8,35 @@ class Match extends AppModel {
 		return $this -> getLastInsertID();
 	}
 
+	
+	public function getFinishMatchsByDate($date = '', $round = 1) {
+		if ($date != '') {
+			$this -> query("SET time_zone='+00:00';");
+			return $this -> query("SELECT 
+							`match_date`, 
+							team_1_result, 
+							team_2_result,
+							team_1.school_name as team_1_name,
+							team_1.address as team_1_address,
+							team_2.school_name as team_2_name,
+							team_2.address as team_2_address,
+							team_1.result_img_url,team_2.result_img_url
+							FROM `matchs` as m, schools as team_1, schools as team_2 
+							WHERE team_1.school_id = m.team_1_id 
+							AND team_2.school_id = m.team_2_id 
+							AND `status` = 0
+							AND winning_team_id != 0 
+							AND m.match_round = ".$round."
+							AND date(`match_date`) = date('" . $date . "') ORDER BY `match_date`;");
+		}
+
+		return null;
+	}
+
+	public function getDateListFinishMatch($round = 1) {
+		return $this -> query('SELECT DISTINCT CONCAT(YEAR(match_date),"-",MONTH(match_date),"-",DAY(match_date)) AS md FROM matchs WHERE winning_team_id != 0 AND match_round = '. $round);
+	}
+
 	public function getMatchByIdToEdit($id = 0) {
 		if ($id != 0) {
 			return $this -> find('first', array('conditions' => array('Match.match_id' => $id)));
@@ -125,6 +154,5 @@ class Match extends AppModel {
 	public function getMatchRoundList() {
 		return $this -> query('SELECT * FROM `match_rounds`');
 	}
-
 
 }

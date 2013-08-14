@@ -7,6 +7,8 @@ echo $this -> Form -> label('map_img_url');
 echo $this -> Form -> file('map_img_url');
 echo $this -> Form -> label('background_url');
 echo $this -> Form -> file('background_url');
+echo $this -> Form -> label('result_img_url');
+echo $this -> Form -> file('result_img_url');
 echo $this -> Form -> input('video_url');
 echo $this -> Form -> input('address');
 echo $this -> Form -> input('description');

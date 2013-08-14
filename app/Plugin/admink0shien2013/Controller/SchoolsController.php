@@ -43,6 +43,15 @@ class SchoolsController extends AppController {
 				$backgroundUrl = 'uploads' . DS . $fileName;
 			}
 
+			$resultImageUrl = '';
+
+			if (!empty($data['result_img_url']['tmp_name']) && is_uploaded_file($data['result_img_url']['tmp_name'])) {
+				// Strip path information
+				$fileName = basename($data['result_img_url']['name']);
+				move_uploaded_file($data['result_img_url']['tmp_name'], WWW_ROOT . DS . 'img' . DS . 'uploads' . DS . $fileName);
+				$resultImageUrl = 'uploads' . DS . $fileName;
+			}
+
 			if ($data['odds_top8'] == null)
 				$data['odds_top8'] = 0;
 			if ($data['odds_top4'] == null)
@@ -53,6 +62,8 @@ class SchoolsController extends AppController {
 			$data['map_img_url'] = $mapUrl;
 			$data['logo_url'] = $logoUrl;
 			$data['background_url'] = $backgroundUrl;
+			$data['result_img_url'] = $resultImageUrl;
+			$data['school_status'] = 4;
 			$this -> School -> addSchool($data);
 			$this -> redirect(array('action' => 'index'));
 		}
@@ -95,15 +106,29 @@ class SchoolsController extends AppController {
 					$backgroundUrl = 'uploads' . DS . $fileName;
 				}
 
+				$resultImageUrl = '';
+
+				if (!empty($data['result_img_url_file']['tmp_name']) && is_uploaded_file($data['result_img_url_file']['tmp_name'])) {
+					// Strip path information
+					$fileName = basename($data['result_img_url_file']['name']);
+					move_uploaded_file($data['result_img_url_file']['tmp_name'], WWW_ROOT . DS . 'img' . DS . 'uploads' . DS . $fileName);
+					$resultImageUrl = 'uploads' . DS . $fileName;
+				}
+
 				if ($mapUrl != '')
 					$data['map_img_url'] = $mapUrl;
 				if ($logoUrl != '')
 					$data['logo_url'] = $logoUrl;
 				if ($backgroundUrl != '')
 					$data['background_url'] = $backgroundUrl;
+				if ($resultImageUrl != '')
+					$data['result_img_url'] = $resultImageUrl;
+					
 				unset($data['map_img_url_file']);
 				unset($data['logo_url_file']);
 				unset($data['background_url_file']);
+				unset($data['result_img_url_file']);
+				
 				$this -> School -> updateSchool($id, $data);
 				$this -> redirect(array('action' => 'index'));
 			}

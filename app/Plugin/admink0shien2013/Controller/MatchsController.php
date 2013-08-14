@@ -2,6 +2,10 @@
 class MatchsController extends AppController {
 	public $uses = array('Match', 'School', 'User');
 
+	private function clean($string) {
+		return str_replace("'", "\'", $string);
+	}
+
 	public function index() {
 		if (!$this -> Session -> check('admin')) {
 			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
@@ -34,6 +38,8 @@ class MatchsController extends AppController {
 		} else {
 			//Store
 			$data = $this -> request -> data;
+			$data['Match']['description_1'] = $this->clean($data['Match']['description_1']);
+			$data['Match']['description_2'] = $this->clean($data['Match']['description_2']);
 			$this -> Match -> addMatch($data);
 			$this -> redirect(array('action' => 'index'));
 		}
@@ -72,6 +78,8 @@ class MatchsController extends AppController {
 
 		} else {
 			$data = $this -> request -> data;
+			$data['Match']['description_1'] = $this->clean($data['Match']['description_1']);
+			$data['Match']['description_2'] = $this->clean($data['Match']['description_2']);
 			$match_date = $data['Match']['match_date'];
 			$data['Match']['match_date'] = $match_date['year'] . "-" . $match_date['month'] . "-" . $match_date['day'] . " " . $match_date['hour'] . ":" . $match_date['min'] . ":00";
 			$this -> Match -> editMatch($id, $data['Match']);
@@ -142,21 +150,15 @@ class MatchsController extends AppController {
 					//lose bet list
 					$lostBetDetailID = $this -> Match -> getBetDetailByMatchId($id, $loseTeamID);
 					//Update balance
-					
+
 					foreach ($betDetailID as $bet) {
 						$this -> User -> updateUserBalanceByResult($bet['bet_details']['bet_detail_id'], 1);
 					}
-					
+
 					foreach ($lostBetDetailID as $bet) {
 						$this -> User -> updateUserBalanceByResult($bet['bet_details']['bet_detail_id'], 2);
 					}
 					$this -> Session -> setFlash('Your change was success');
-					/*
-					if ($i > 0) {
-						
-					} else {
-						$this -> Session -> setFlash('User balance was not updated yet');
-					}*/
 				} else {
 					$this -> Session -> setFlash('Your change was success');
 				}

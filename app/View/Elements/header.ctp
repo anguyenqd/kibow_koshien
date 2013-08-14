@@ -11,6 +11,9 @@
 	<li>
 		<a href="<?=BASE_URL.'schools'?>">Schools</a>
 	</li>
+	<li>
+		<a href="<?=BASE_URL.'Bets/result'?>">Results</a>
+	</li>
 </ul>
 <ul id="main_sns">
 	<li>

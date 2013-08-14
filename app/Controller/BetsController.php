@@ -5,13 +5,66 @@ class BetsController extends AppController {
 
 	public function index() {
 		//Load all school with votes
-		$this -> Set('schools', $this -> School -> getSchoolsListWithBetAmount());
+		$this -> Set('schools', $this -> School -> getWinningSchoolsListWithBetAmount());
 
 	}
-  
-  public function result(){
-    
-  }
+
+	private function print_pre($data) {
+		echo "<pre>";
+		print_r($data);
+		echo "</pre>";
+	}
+
+	public function result() {
+		//Load match list
+		//Get day list first row
+		$dateListFirstRound = $this -> Match -> getDateListFinishMatch(1);//First round
+		$dateListSecondRound = $this -> Match -> getDateListFinishMatch(2);//Second round
+		$dateListThirdRound = $this -> Match -> getDateListFinishMatch(3);//third round
+		$dateListTop8Round = $this -> Match -> getDateListFinishMatch(4);//top 8
+		$dateListTop4Round = $this -> Match -> getDateListFinishMatch(5);//top 4
+		$dateListFinalRound = $this -> Match -> getDateListFinishMatch(6);//Final
+		
+		//get match list by date
+		//First round
+		$matchListFirstRound = array();
+		foreach ($dateListFirstRound as $date) {
+			$matchListFirstRound[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],1);
+		}
+		//Second round
+		$matchListSecondRound = array();
+		foreach ($dateListSecondRound as $date) {
+			$matchListSecondRound[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],2);
+		}
+		//third round
+		$matchListThirdRound = array();
+		foreach ($dateListThirdRound as $date) {
+			$matchListThirdRound[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],3);
+		}
+		//Top 8 round
+		$matchListTop8Round = array();
+		foreach ($dateListTop8Round as $date) {
+			$matchListTop8Round[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],4);
+		}
+		//Top 4 round
+		$matchListTop4Round = array();
+		foreach ($dateListTop4Round as $date) {
+			$matchListTop4Round[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],5);
+		}
+		//Final round
+		$matchListFinalRound = array();
+		foreach ($dateListFinalRound as $date) {
+			$matchListFinalRound[$date[0]['md']] = $this -> Match -> getFinishMatchsByDate($date[0]['md'],6);
+		}
+		
+		$this->set('match_list_first_round', $matchListFirstRound);
+		$this->set('match_list_second_round', $matchListSecondRound);
+		$this->set('match_list_third_round', $matchListThirdRound);
+		$this->set('match_list_top8_round', $matchListTop8Round);
+		$this->set('match_list_top4_round', $matchListTop4Round);
+		$this->set('match_list_final_round', $matchListFinalRound);
+		//$this -> print_pre($matchListFirstRound);
+	}
 
 	public function betForm() {
 		//Receive data from choose school page
@@ -197,9 +250,8 @@ class BetsController extends AppController {
 					$betData[$i]['odds'] = $data['team_2_odds'];
 					$i++;
 				}
-				
-				if($i == 0)
-				{
+
+				if ($i == 0) {
 					$this -> Session -> setFlash('Your bets were not success');
 					$this -> redirect(array('controller' => 'users', 'action' => 'index'));
 				}
