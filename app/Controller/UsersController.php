@@ -20,22 +20,22 @@ class UsersController extends AppController {
 	public function index() {
 		//Load bet history
 		if (!$this -> Session -> check('User')) {
-			$this -> redirect(array('action' => 'login'));
+			//$this -> redirect(array('action' => 'login'));
 		}
 		$user = $this -> Session -> read('User');
 		$this -> set('history', $this -> BetDetail -> getBetDetailByUser($user['User']['user_id']));
 	}
 
 	public function ranking() {
-		$this -> redirect(array('action' => 'index'));
-		/*
+		//$this -> redirect(array('action' => 'index'));
+		
 		 if (!$this -> Session -> check('User')) {
-		 $this -> redirect(array('action' => 'login'));
+		 //$this -> redirect(array('action' => 'login'));
 		 }
 		 $user = $this -> Session -> read('User');
 		 $this->set('userBalance', $user['User']['balance']);
 		 $this->set('userRank',$this->User->getCurrentRankUser($user['User']['user_id']));
-		 $this->set('rankList',$this->User->getRankByLimit(5));*/
+		 $this->set('rankList',$this->User->getRankByLimit(5));
 	}
 
 	public function auth_login($provider) {

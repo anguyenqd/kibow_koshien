@@ -9,10 +9,10 @@
 		<?=$this->html->link('Sign up', array('controller' => 'Users', 'action' => 'signup'));?>
 	</li>
 	<?php }else{ ?>
-	<li class="login">
+	<li class="login first">
 		<?=$this->html->link('My Page', array('controller' => 'Users', 'action' => 'index'));?>
 	</li>
-	<li>
+	<li class="logout">
 		<a href="<?php echo $this -> Session -> read('logout')?>">Logout</a>
 	</li>
 	<?php } ?>
