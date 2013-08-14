@@ -2,16 +2,15 @@
 class UsersController extends AppController {
 	public $uses = array('BetDetail', 'School', 'User');
 	public $components = array('ExtAuth.ExtAuth');
-	
+
 	public function login() {
 		$ses_user = $this -> Session -> read('User');
 		if ($this -> Session -> check('User') || !empty($ses_user)) {
 			$this -> redirect(array('controller' => 'bets', 'action' => 'index'));
 		}
 	}
-	
-	public function signup()
-	{
+
+	public function signup() {
 		$ses_user = $this -> Session -> read('User');
 		if ($this -> Session -> check('User') || !empty($ses_user)) {
 			$this -> redirect(array('controller' => 'bets', 'action' => 'index'));
@@ -66,11 +65,11 @@ class UsersController extends AppController {
 	}
 
 	private function __successfulExtAuth($incomingProfile, $accessToken) {
-		
+
 		$incomingProfile['username'];
 		$logout = BASE_URL . DS . 'Users' . DS . 'logout';
 		$this -> Session -> write('logout', $logout);
-		
+
 		//Insert User to database
 		//Check user exist
 		$userIdList = $this -> User -> isExist($incomingProfile['username'], 'twitter');
@@ -86,11 +85,10 @@ class UsersController extends AppController {
 			$this -> Session -> write('User', $userIdList);
 		}
 		$this -> Session -> write('User-twitter-img', $incomingProfile['picture']);
-	
+
 	}
 
-	public function logout()
-	{
+	public function logout() {
 		$this -> Session -> delete('User');
 		$this -> Session -> delete('logout');
 		$this -> redirect(array('controller' => 'Users', 'action' => 'login'));
@@ -100,9 +98,14 @@ class UsersController extends AppController {
 		if ($this -> Auth -> login($user['User'])) {
 			$user['last_login'] = date('Y-m-d H:i:s');
 			$this -> User -> save(array('User' => $user));
-
 			$this -> Session -> setFlash(sprintf(__d('users', '%s you have successfully logged in'), $this -> Auth -> user('username')));
 			$this -> redirect($this -> Auth -> loginRedirect);
+		}
+	}
+
+	public function thank_you() {
+		if (!$this -> Session -> check('User')) {
+			$this -> redirect(array('action' => 'login'));
 		}
 	}
 

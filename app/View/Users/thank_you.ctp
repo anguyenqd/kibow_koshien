@@ -1,0 +1,1 @@
+<h2 style="text-align: center;padding:20px;">Thank you for Sign up in our Service</h2>
