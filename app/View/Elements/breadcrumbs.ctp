@@ -5,7 +5,7 @@
     ?>
     <div class="breadcrumbs">
         <ul>
-            <li class="home"><?php echo $this->Html->link(__('Home', true), '/')?></li>
+            <li class="home"><?php echo $this->Html->link(__('SO HOT KOSHIEN', true), '/')?></li>
         <?php foreach($list as $name => $link):?>
             <?php if($name == $current_name):?>
                 <li class="current"><?php echo h(__($name, true)) ?></li>
