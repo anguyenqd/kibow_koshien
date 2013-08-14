@@ -8,7 +8,7 @@
 		</div>
 		<div>
 			Admin password
-			<input type="text" name="password" value=""/>
+			<input type="password" name="password" value=""/>
 		</div>
 		<div>
 			<input type="submit" value="Login">

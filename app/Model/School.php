@@ -68,7 +68,7 @@ class School extends AppModel {
 	}
 
 	public function getAllSchoolsWithStatus() {
-		return $this -> query("SELECT  `schools`.`school_id` ,  `schools`.`school_name` ,  `schools`.`logo_url` ,  `schools`.`map_img_url` ,  `schools`.`background_url` ,  `schools`.`address` ,  `schools`.`video_url` ,  `schools`.`description` , `schools`.`odds_top8` ,  `schools`.`odds_top4` ,  `schools`.`odds_top1` ,  `schools`.`school_status` ,  `school_status`.`status_name` 
+		return $this -> query("SELECT  `schools`.`school_id` ,  `schools`.`school_name` ,  `schools`.`logo_url` ,  `schools`.`map_img_url` ,  `schools`.`background_url` ,  `schools`.`address` ,  `schools`.`video_url` ,  `schools`.`description` , `schools`.`odds_top8` ,  `schools`.`odds_top4` ,  `schools`.`odds_top1` ,  `schools`.`school_status` ,  `school_status`.`status_name` ,`result_img_url`
 FROM  `schools` ,  `school_status` 
 WHERE  `schools`.`school_status` =  `school_status`.`status_id` ORDER BY `schools`.`school_id`;");
 	}

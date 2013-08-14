@@ -80,6 +80,19 @@ $title_for_layout = 'Summer Koushien Betting';
 	<body class="<?= $this->action; ?>">
 		<script>
 			$(document).ready(function(){
+			$('#facebook_signup').click(function(e){
+				$.oauthpopup({
+					path: '<?=BASE_URL ?>facebook_cps/login',
+							width:600,
+							height:300,
+							callback: function(){
+							//window.location.reload();
+							window.location.href = '<?=BASE_URL ?>Users/thank_you';
+						}
+					});
+				e.preventDefault();
+				});
+
 			$('#facebook').click(function(e){
 				$.oauthpopup({
 					path: '<?=BASE_URL ?>facebook_cps/login',
@@ -112,7 +125,18 @@ $title_for_layout = 'Summer Koushien Betting';
 					});
 				e.preventDefault();
 				});
-				
+			$('#twitter_signup').click(function(e){
+				$.oauthpopup({
+					path: '<?=BASE_URL ?>Users/auth_login/twitter',
+							width:600,
+							height:300,
+							callback: function(){
+							//window.location.reload();
+							window.location.href = '<?=BASE_URL ?>Users/thank_you';
+						}
+					});
+				e.preventDefault();
+				});
 				});
 
 				var _gaq = _gaq || [];

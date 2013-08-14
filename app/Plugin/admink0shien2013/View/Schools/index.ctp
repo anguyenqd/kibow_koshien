@@ -5,6 +5,7 @@
 		<td>Uniform</td>
 		<td>Map</td>
 		<td>Background</td>
+		<td>Image Result</td>
 		<td>Address</td>
 		<td>Description</td>
 		<td>Status</td>
@@ -22,6 +23,7 @@ foreach ($schools as $school) {
 		<td><?=$this->html->image($school['schools']['logo_url'], array('width' => 100))?></td>
 		<td><?=$this->html->image($school['schools']['map_img_url'], array('width' => 100))?></td>
 		<td><?=$this->html->image($school['schools']['background_url'], array('width' => 100))?></td>
+		<td><?=$this->html->image($school['schools']['result_img_url'], array('width' => 100))?></td>
 		<td><?=$school['schools']['address'] ?></td>
 		<td><?=$this -> Html -> link($school['school_status']['status_name'], array('controller' => 'Schools', 'action' => 'change_status', $school['schools']['school_id'])); ?></td>
 		<td><?=$school['schools']['description'] ?></td>
