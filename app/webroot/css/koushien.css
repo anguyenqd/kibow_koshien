@@ -24,6 +24,11 @@ a {
 body {
   font-family: Arial, Helvetica, sans-serif; }
 
+html {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f4f4f4; }
+
 body {
   font-size: 12px; }
   body h2 {
@@ -241,7 +246,11 @@ body {
               margin-top: 10px; }
           body #main_wrapper .wrapper section .school .stake {
             font-size: 12px; }
-          body #main_wrapper .wrapper section .school .school_name, body #main_wrapper .wrapper section .school a, body #main_wrapper .wrapper section .school .school_address {
+          body #main_wrapper .wrapper section .school .school_name, body #main_wrapper .wrapper section .school a, body #main_wrapper .wrapper section .school .school_address, body.login #main_wrapper .wrapper section .school a,
+          body.ranking #main_wrapper .wrapper section .school a,
+          body.index #main_wrapper .wrapper section .school a, body.login #main_wrapper .wrapper section .school .school_address,
+          body.ranking #main_wrapper .wrapper section .school .school_address,
+          body.index #main_wrapper .wrapper section .school .school_address {
             text-align: center;
             font-weight: bold;
             display: block;
@@ -488,7 +497,11 @@ body {
         color: white;
         font-size: 18px;
         left: 589px; }
-      body #main_wrapper .wrapper #koushien_guide .choose_team, body #main_wrapper .wrapper #koushien_guide .place_bets, body #main_wrapper .wrapper #koushien_guide .real_zenny {
+      body #main_wrapper .wrapper #koushien_guide .choose_team, body #main_wrapper .wrapper #koushien_guide .place_bets, body #main_wrapper .wrapper #koushien_guide .real_zenny, body.login #main_wrapper .wrapper #koushien_guide .place_bets,
+      body.ranking #main_wrapper .wrapper #koushien_guide .place_bets,
+      body.index #main_wrapper .wrapper #koushien_guide .place_bets, body.login #main_wrapper .wrapper #koushien_guide .real_zenny,
+      body.ranking #main_wrapper .wrapper #koushien_guide .real_zenny,
+      body.index #main_wrapper .wrapper #koushien_guide .real_zenny {
         float: left;
         position: relative;
         margin-left: 30px;
@@ -497,7 +510,9 @@ body {
           position: absolute;
           top: 45%;
           left: 27%; }
-      body #main_wrapper .wrapper #koushien_guide .arrow_step_1, body #main_wrapper .wrapper #koushien_guide .arrow_step_2 {
+      body #main_wrapper .wrapper #koushien_guide .arrow_step_1, body #main_wrapper .wrapper #koushien_guide .arrow_step_2, body.login #main_wrapper .wrapper #koushien_guide .arrow_step_2,
+      body.ranking #main_wrapper .wrapper #koushien_guide .arrow_step_2,
+      body.index #main_wrapper .wrapper #koushien_guide .arrow_step_2 {
         float: left;
         margin-left: 40px;
         margin-top: 55px; }
@@ -547,11 +562,11 @@ body {
           body #main_wrapper .wrapper #user_page table tbody tr.even {
             background-color: #e6e6e6; }
             body #main_wrapper .wrapper #user_page table tbody tr.even:hover {
-              background-color: #ccc; }
+              /*                     background-color:#ccc; */ }
           body #main_wrapper .wrapper #user_page table tbody tr td {
             border: 1px solid #999999; }
           body #main_wrapper .wrapper #user_page table tr:hover {
-            background-color: #ccc; }
+            /*               background-color:#ccc; */ }
           body #main_wrapper .wrapper #user_page table td {
             padding: 10px; }
         body #main_wrapper .wrapper #user_page .user_info {
@@ -709,50 +724,1137 @@ body {
     width: 74px;
     margin: 0 auto;
     margin-top: 5px; }
-  body.result .seperate_round {
-    margin-top: 30px; }
-  body.result table {
-    width: 100%; }
-    body.result table td {
-      text-align: center; }
-      body.result table td.score_result {
-        vertical-align: middle;
-        font-size: 30px; }
-    body.result table .round_name {
-      margin-bottom: 30px; }
-    body.result table .round_vertical {
-      width: 100px;
-      background-color: #2aa8b3; }
-    body.result table#second_round .round_vertical {
-      background-color: #0c2848; }
-    body.result table#third_round .round_vertical {
-      background-color: #c5c5bd; }
-    body.result table#top8_round .round_vertical {
-      background-color: #b41b46; }
-    body.result table#top4_round .round_vertical {
-      background-color: #eec63a; }
-    body.result table .round_horizontal {
-      padding-left: 30px;
-      vertical-align: top; }
-      body.result table .round_horizontal tr {
-        height: 66px; }
-    body.result table .date {
-      background-color: #ccc;
-      border-radius: 5px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      padding: 20px;
-      font-size: 26px;
-      color: white; }
-    body.result table .school_result {
-      margin-top: 10px;
+
+/* user pages */
+body.login,
+body.ranking,
+body.index {
+  font-size: 12px; }
+  body.login h2,
+  body.ranking h2,
+  body.index h2 {
+    font-size: 40px; }
+  body.login #main_wrapper,
+  body.ranking #main_wrapper,
+  body.index #main_wrapper {
+    width: 100%;
+    position: relative; }
+    body.login #main_wrapper #user_menu,
+    body.ranking #main_wrapper #user_menu,
+    body.index #main_wrapper #user_menu {
+      width: 940px;
+      margin: 0 auto;
       position: relative; }
-      body.result table .school_result .result_desc {
-        width: 155px;
-        height: 35px;
+      body.login #main_wrapper #user_menu #user_nav,
+      body.ranking #main_wrapper #user_menu #user_nav,
+      body.index #main_wrapper #user_menu #user_nav {
         position: absolute;
-        top: 14px;
-        padding: 2px;
-        left: 130px; }
-        body.result table .school_result .result_desc .school_name, body.result table .school_result .result_desc #main_wrapper .wrapper section .school a, body.result #main_wrapper .wrapper section .school table .school_result .result_desc a, body.result table .school_result .result_desc #main_wrapper .wrapper section .school .school_address, body.result #main_wrapper .wrapper section .school table .school_result .result_desc .school_address {
-          font-size: 18px; }
+        top: -30px;
+        right: 0px; }
+        body.login #main_wrapper #user_menu #user_nav li,
+        body.ranking #main_wrapper #user_menu #user_nav li,
+        body.index #main_wrapper #user_menu #user_nav li {
+          float: left;
+          margin-left: 0px;
+          background-color: #fff; }
+          body.login #main_wrapper #user_menu #user_nav li a,
+          body.ranking #main_wrapper #user_menu #user_nav li a,
+          body.index #main_wrapper #user_menu #user_nav li a {
+            color: white;
+            padding: 5px 10px;
+            display: block; }
+            body.login #main_wrapper #user_menu #user_nav li a:hover,
+            body.ranking #main_wrapper #user_menu #user_nav li a:hover,
+            body.index #main_wrapper #user_menu #user_nav li a:hover {
+              background-color: #999999; }
+          body.login #main_wrapper #user_menu #user_nav li.login a,
+          body.ranking #main_wrapper #user_menu #user_nav li.login a,
+          body.index #main_wrapper #user_menu #user_nav li.login a {
+            display: block;
+            margin-left: 1px;
+            padding: 8px 15px 8px;
+            color: #fff;
+            background: #666666;
+            border-radius: 0 0 5px 5px;
+            -webkit-border-radius: 0 0 5px 5px;
+            -moz-border-radius: 0 0 5px 5px;
+            text-transform: uppercase; }
+            body.login #main_wrapper #user_menu #user_nav li.login a:hover,
+            body.ranking #main_wrapper #user_menu #user_nav li.login a:hover,
+            body.index #main_wrapper #user_menu #user_nav li.login a:hover {
+              background-color: #999999;
+              text-decoration: none; }
+          body.login #main_wrapper #user_menu #user_nav li.login.first a,
+          body.ranking #main_wrapper #user_menu #user_nav li.login.first a,
+          body.index #main_wrapper #user_menu #user_nav li.login.first a {
+            border-radius: 0 0 0 5px;
+            -webkit-border-radius: 0 0 0 5px;
+            -moz-border-radius: 0 0 0 5px; }
+          body.login #main_wrapper #user_menu #user_nav li.logout a,
+          body.ranking #main_wrapper #user_menu #user_nav li.logout a,
+          body.index #main_wrapper #user_menu #user_nav li.logout a {
+            display: block;
+            margin-left: 1px;
+            padding: 8px 15px 8px;
+            color: #fff;
+            background: #666666;
+            border-radius: 0 0 5px 0;
+            -webkit-border-radius: 0 0 5px 0;
+            -moz-border-radius: 0 0 5px 0;
+            text-transform: uppercase; }
+            body.login #main_wrapper #user_menu #user_nav li.logout a:hover,
+            body.ranking #main_wrapper #user_menu #user_nav li.logout a:hover,
+            body.index #main_wrapper #user_menu #user_nav li.logout a:hover {
+              background-color: #999999;
+              text-decoration: none; }
+    body.login #main_wrapper header,
+    body.ranking #main_wrapper header,
+    body.index #main_wrapper header {
+      background-color: white;
+      border: 1px solid #ccc;
+      height: 71px;
+      width: 940px;
+      margin: 30px auto 5px; }
+      body.login #main_wrapper header #logo,
+      body.ranking #main_wrapper header #logo,
+      body.index #main_wrapper header #logo {
+        float: left;
+        border-right: 1px solid #ccc;
+        padding: 8px 2px; }
+      body.login #main_wrapper header #main_sns,
+      body.ranking #main_wrapper header #main_sns,
+      body.index #main_wrapper header #main_sns {
+        float: left;
+        min-width: 700px;
+        min-height: 24px; }
+        body.login #main_wrapper header #main_sns li,
+        body.ranking #main_wrapper header #main_sns li,
+        body.index #main_wrapper header #main_sns li {
+          float: left; }
+          body.login #main_wrapper header #main_sns li.follow,
+          body.ranking #main_wrapper header #main_sns li.follow,
+          body.index #main_wrapper header #main_sns li.follow {
+            width: 148px;
+            padding: 6px 0 0 10px; }
+          body.login #main_wrapper header #main_sns li.tweet,
+          body.ranking #main_wrapper header #main_sns li.tweet,
+          body.index #main_wrapper header #main_sns li.tweet {
+            padding: 6px 0 0 5px;
+            width: 76px; }
+          body.login #main_wrapper header #main_sns li.facelike,
+          body.ranking #main_wrapper header #main_sns li.facelike,
+          body.index #main_wrapper header #main_sns li.facelike {
+            padding: 4px 0 0 5px;
+            width: 52px;
+            overflow: hidden; }
+      body.login #main_wrapper header #main_nav,
+      body.ranking #main_wrapper header #main_nav,
+      body.index #main_wrapper header #main_nav {
+        min-width: 873px;
+        float: left;
+        border-bottom: 1px solid #ccc; }
+        body.login #main_wrapper header #main_nav li,
+        body.ranking #main_wrapper header #main_nav li,
+        body.index #main_wrapper header #main_nav li {
+          float: left;
+          border-right: 1px solid #ccc; }
+          body.login #main_wrapper header #main_nav li a,
+          body.ranking #main_wrapper header #main_nav li a,
+          body.index #main_wrapper header #main_nav li a {
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 10px;
+            background: transparent url(../img/baseball.png) scroll 10px 13px no-repeat;
+            display: block;
+            padding: 10px 10px 10px 20px;
+            font-weight: bold; }
+    body.login #main_wrapper #main_visual,
+    body.ranking #main_wrapper #main_visual,
+    body.index #main_wrapper #main_visual {
+      width: 100%;
+      height: 579px;
+      position: relative;
+      margin-top: 30px;
+      overflow: hidden; }
+      body.login #main_wrapper #main_visual .slide,
+      body.ranking #main_wrapper #main_visual .slide,
+      body.index #main_wrapper #main_visual .slide {
+        float: left; }
+      body.login #main_wrapper #main_visual .main_control,
+      body.ranking #main_wrapper #main_visual .main_control,
+      body.index #main_wrapper #main_visual .main_control {
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+        width: 50%;
+        height: 579px; }
+        body.login #main_wrapper #main_visual .main_control img,
+        body.ranking #main_wrapper #main_visual .main_control img,
+        body.index #main_wrapper #main_visual .main_control img {
+          position: absolute;
+          top: 47%; }
+      body.login #main_wrapper #main_visual .next,
+      body.ranking #main_wrapper #main_visual .next,
+      body.index #main_wrapper #main_visual .next {
+        right: -640px; }
+      body.login #main_wrapper #main_visual .prev,
+      body.ranking #main_wrapper #main_visual .prev,
+      body.index #main_wrapper #main_visual .prev {
+        left: -640px; }
+        body.login #main_wrapper #main_visual .prev img,
+        body.ranking #main_wrapper #main_visual .prev img,
+        body.index #main_wrapper #main_visual .prev img {
+          right: 0; }
+    body.login #main_wrapper .wrapper,
+    body.ranking #main_wrapper .wrapper,
+    body.index #main_wrapper .wrapper {
+      margin: 0 auto;
+      margin-bottom: 40px;
+      width: 986px; }
+      body.login #main_wrapper .wrapper:before,
+      body.ranking #main_wrapper .wrapper:before,
+      body.index #main_wrapper .wrapper:before {
+        height: 10px;
+        display: block;
+        content: ' ';
+        height: 10px;
+        background: url("/img/bg_wrapper_top.png") no-repeat left top; }
+      body.login #main_wrapper .wrapper:after,
+      body.ranking #main_wrapper .wrapper:after,
+      body.index #main_wrapper .wrapper:after {
+        display: block;
+        content: ' ';
+        height: 15px;
+        background: url("/img/bg_wrapper_btm.png") no-repeat left bottom; }
+      body.login #main_wrapper .wrapper .inner_wrapper,
+      body.ranking #main_wrapper .wrapper .inner_wrapper,
+      body.index #main_wrapper .wrapper .inner_wrapper {
+        position: relative;
+        width: 947px;
+        padding: 0px 20px 20px 20px;
+        background: transparent url("https://kibow.net/img/bg_wrapper.png") scroll 0px 0px repeat-y; }
+        body.login #main_wrapper .wrapper .inner_wrapper .confirm_chosen_school,
+        body.ranking #main_wrapper .wrapper .inner_wrapper .confirm_chosen_school,
+        body.index #main_wrapper .wrapper .inner_wrapper .confirm_chosen_school {
+          background-color: #f07700;
+          margin: 0 auto;
+          cursor: pointer;
+          display: block;
+          padding: 10px 20px;
+          width: 250px;
+          color: white;
+          font-weight: bold;
+          text-align: center; }
+        body.login #main_wrapper .wrapper .inner_wrapper input.btn_confirm_chosen_school,
+        body.ranking #main_wrapper .wrapper .inner_wrapper input.btn_confirm_chosen_school,
+        body.index #main_wrapper .wrapper .inner_wrapper input.btn_confirm_chosen_school {
+          background-color: #f07700;
+          margin: 0 auto;
+          cursor: pointer;
+          display: block;
+          padding: 10px 20px;
+          width: 250px;
+          color: white;
+          font-weight: bold;
+          text-align: center;
+          border: none;
+          font-size: 14px; }
+        body.login #main_wrapper .wrapper .inner_wrapper .confirm_text,
+        body.ranking #main_wrapper .wrapper .inner_wrapper .confirm_text,
+        body.index #main_wrapper .wrapper .inner_wrapper .confirm_text {
+          text-align: center;
+          font-size: 14px;
+          margin-top: 80px;
+          padding: 10px 0px 10px 0px; }
+        body.login #main_wrapper .wrapper .inner_wrapper #champion_place_bet .crown,
+        body.ranking #main_wrapper .wrapper .inner_wrapper #champion_place_bet .crown,
+        body.index #main_wrapper .wrapper .inner_wrapper #champion_place_bet .crown {
+          width: 37px;
+          height: 37px;
+          overflow: hidden;
+          margin: 0 auto;
+          margin-top: 10px; }
+        body.login #main_wrapper .wrapper .inner_wrapper #champion_place_bet .school,
+        body.ranking #main_wrapper .wrapper .inner_wrapper #champion_place_bet .school,
+        body.index #main_wrapper .wrapper .inner_wrapper #champion_place_bet .school {
+          width: 119px;
+          margin: 20px auto;
+          display: block; }
+        body.login #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school,
+        body.ranking #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school,
+        body.index #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school {
+          width: 282px;
+          margin: 0 auto;
+          margin-top: 20px;
+          position: relative; }
+          body.login #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school .champion_image,
+          body.ranking #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school .champion_image,
+          body.index #main_wrapper .wrapper .inner_wrapper #champion_place_bet .champion_school .champion_image {
+            position: absolute;
+            top: 65px;
+            left: 85px; }
+        body.login #main_wrapper .wrapper .inner_wrapper .breadcrumbs,
+        body.ranking #main_wrapper .wrapper .inner_wrapper .breadcrumbs,
+        body.index #main_wrapper .wrapper .inner_wrapper .breadcrumbs {
+          color: #555555;
+          margin: 0 0 0 20px;
+          padding: 0px 0 5px 0; }
+          body.login #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li,
+          body.ranking #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li,
+          body.index #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li {
+            display: inline-block; }
+            body.login #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li:before,
+            body.ranking #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li:before,
+            body.index #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li:before {
+              content: ' > ';
+              padding: 0 5px; }
+            body.login #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home,
+            body.ranking #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home,
+            body.index #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home {
+              background: none;
+              padding: 0; }
+              body.login #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home:before,
+              body.ranking #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home:before,
+              body.index #main_wrapper .wrapper .inner_wrapper .breadcrumbs ul li.home:before {
+                content: ''; }
+        body.login #main_wrapper .wrapper .inner_wrapper .currentbalance,
+        body.ranking #main_wrapper .wrapper .inner_wrapper .currentbalance,
+        body.index #main_wrapper .wrapper .inner_wrapper .currentbalance {
+          position: absolute;
+          top: 0px;
+          right: 20px; }
+        body.login #main_wrapper .wrapper .inner_wrapper h1,
+        body.ranking #main_wrapper .wrapper .inner_wrapper h1,
+        body.index #main_wrapper .wrapper .inner_wrapper h1 {
+          height: 40px;
+          background: transparent url(../img/baseball.png) scroll 12px 16px no-repeat;
+          border: 1px solid #b2b2b2;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          -webkit-box-shadow: 0px 0px 1px rgba(50, 50, 50, 0.8);
+          -moz-box-shadow: 0px 0px 1px rgba(50, 50, 50, 0.8);
+          box-shadow: 0px 0px 1px rgba(50, 50, 50, 0.8);
+          font-size: 20px;
+          font-weight: bold;
+          padding: 10px 0 0 30px;
+          height: 30px; }
+        body.login #main_wrapper .wrapper .inner_wrapper .description_text,
+        body.ranking #main_wrapper .wrapper .inner_wrapper .description_text,
+        body.index #main_wrapper .wrapper .inner_wrapper .description_text {
+          text-align: center;
+          padding: 20px;
+          font-size: 20px;
+          margin: 0 auto;
+          width: 100%; }
+          body.login #main_wrapper .wrapper .inner_wrapper .description_text p,
+          body.ranking #main_wrapper .wrapper .inner_wrapper .description_text p,
+          body.index #main_wrapper .wrapper .inner_wrapper .description_text p {
+            text-align: left;
+            width: 885px;
+            margin: 0 auto;
+            padding-bottom: 10px; }
+          body.login #main_wrapper .wrapper .inner_wrapper .description_text a,
+          body.ranking #main_wrapper .wrapper .inner_wrapper .description_text a,
+          body.index #main_wrapper .wrapper .inner_wrapper .description_text a {
+            color: #f07700; }
+      body.login #main_wrapper .wrapper #main_banner,
+      body.ranking #main_wrapper .wrapper #main_banner,
+      body.index #main_wrapper .wrapper #main_banner {
+        margin-top: 5px; }
+        body.login #main_wrapper .wrapper #main_banner img,
+        body.ranking #main_wrapper .wrapper #main_banner img,
+        body.index #main_wrapper .wrapper #main_banner img {
+          border: 1px solid #ccc; }
+      body.login #main_wrapper .wrapper section,
+      body.ranking #main_wrapper .wrapper section,
+      body.index #main_wrapper .wrapper section {
+        margin-top: 30px;
+        position: relative; }
+        body.login #main_wrapper .wrapper section h2,
+        body.ranking #main_wrapper .wrapper section h2,
+        body.index #main_wrapper .wrapper section h2 {
+          text-align: center;
+          font-weight: bold;
+          font-size: 40px; }
+        body.login #main_wrapper .wrapper section table,
+        body.ranking #main_wrapper .wrapper section table,
+        body.index #main_wrapper .wrapper section table {
+          width: 100%; }
+          body.login #main_wrapper .wrapper section table td,
+          body.ranking #main_wrapper .wrapper section table td,
+          body.index #main_wrapper .wrapper section table td {
+            padding: 10px 20px; }
+          body.login #main_wrapper .wrapper section table .left,
+          body.ranking #main_wrapper .wrapper section table .left,
+          body.index #main_wrapper .wrapper section table .left {
+            text-align: right;
+            width: 50%; }
+          body.login #main_wrapper .wrapper section table .right,
+          body.ranking #main_wrapper .wrapper section table .right,
+          body.index #main_wrapper .wrapper section table .right {
+            text-align: left;
+            width: 50%; }
+        body.login #main_wrapper .wrapper section .left_four,
+        body.ranking #main_wrapper .wrapper section .left_four,
+        body.index #main_wrapper .wrapper section .left_four {
+          width: 372px;
+          float: left; }
+        body.login #main_wrapper .wrapper section .middle_sns,
+        body.ranking #main_wrapper .wrapper section .middle_sns,
+        body.index #main_wrapper .wrapper section .middle_sns {
+          width: 196px;
+          float: left; }
+          body.login #main_wrapper .wrapper section .middle_sns ul,
+          body.ranking #main_wrapper .wrapper section .middle_sns ul,
+          body.index #main_wrapper .wrapper section .middle_sns ul {
+            margin-top: 100px; }
+            body.login #main_wrapper .wrapper section .middle_sns ul li,
+            body.ranking #main_wrapper .wrapper section .middle_sns ul li,
+            body.index #main_wrapper .wrapper section .middle_sns ul li {
+              display: inline-block;
+              margin-left: 10px; }
+        body.login #main_wrapper .wrapper section .right_four,
+        body.ranking #main_wrapper .wrapper section .right_four,
+        body.index #main_wrapper .wrapper section .right_four {
+          width: 372px;
+          float: right; }
+        body.login #main_wrapper .wrapper section .school,
+        body.ranking #main_wrapper .wrapper section .school,
+        body.index #main_wrapper .wrapper section .school {
+          float: left;
+          padding: 0 6px;
+          height: 239px;
+          margin-top: 60px; }
+          body.login #main_wrapper .wrapper section .school .school_sns,
+          body.ranking #main_wrapper .wrapper section .school .school_sns,
+          body.index #main_wrapper .wrapper section .school .school_sns {
+            width: 172px; }
+            body.login #main_wrapper .wrapper section .school .school_sns li,
+            body.ranking #main_wrapper .wrapper section .school .school_sns li,
+            body.index #main_wrapper .wrapper section .school .school_sns li {
+              display: inline-block;
+              margin-left: 8px;
+              margin-top: 10px; }
+          body.login #main_wrapper .wrapper section .school .stake,
+          body.ranking #main_wrapper .wrapper section .school .stake,
+          body.index #main_wrapper .wrapper section .school .stake {
+            font-size: 12px; }
+          body.login #main_wrapper .wrapper section .school .school_name,
+          body.ranking #main_wrapper .wrapper section .school .school_name,
+          body.index #main_wrapper .wrapper section .school .school_name {
+            text-align: center;
+            font-weight: bold;
+            display: block;
+            font-size: 14px; }
+          body.login #main_wrapper .wrapper section .school .school_uniform,
+          body.ranking #main_wrapper .wrapper section .school .school_uniform,
+          body.index #main_wrapper .wrapper section .school .school_uniform {
+            width: 172px;
+            height: 172px;
+            position: relative;
+            overflow: hidden; }
+            body.login #main_wrapper .wrapper section .school .school_uniform .background_uniform,
+            body.ranking #main_wrapper .wrapper section .school .school_uniform .background_uniform,
+            body.index #main_wrapper .wrapper section .school .school_uniform .background_uniform {
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 0; }
+            body.login #main_wrapper .wrapper section .school .school_uniform .uniform_image,
+            body.ranking #main_wrapper .wrapper section .school .school_uniform .uniform_image,
+            body.index #main_wrapper .wrapper section .school .school_uniform .uniform_image {
+              position: absolute;
+              top: 12px;
+              left: 27px;
+              z-index: 1; }
+          body.login #main_wrapper .wrapper section .school .select_button,
+          body.ranking #main_wrapper .wrapper section .school .select_button,
+          body.index #main_wrapper .wrapper section .school .select_button {
+            display: none; }
+          body.login #main_wrapper .wrapper section .school .video_button,
+          body.ranking #main_wrapper .wrapper section .school .video_button,
+          body.index #main_wrapper .wrapper section .school .video_button {
+            display: none; }
+          body.login #main_wrapper .wrapper section .school .deselect_button,
+          body.ranking #main_wrapper .wrapper section .school .deselect_button,
+          body.index #main_wrapper .wrapper section .school .deselect_button {
+            display: none; }
+          body.login #main_wrapper .wrapper section .school .school_address,
+          body.ranking #main_wrapper .wrapper section .school .school_address,
+          body.index #main_wrapper .wrapper section .school .school_address {
+            font-weight: normal;
+            margin-top: 4px;
+            font-size: 14px; }
+          body.login #main_wrapper .wrapper section .school .odd_vote,
+          body.ranking #main_wrapper .wrapper section .school .odd_vote,
+          body.index #main_wrapper .wrapper section .school .odd_vote {
+            margin-left: 10px;
+            margin-top: 5px;
+            position: relative;
+            background: url(../img/odd_vote.png) no-repeat;
+            height: 16px;
+            overflow: hidden; }
+            body.login #main_wrapper .wrapper section .school .odd_vote span,
+            body.ranking #main_wrapper .wrapper section .school .odd_vote span,
+            body.index #main_wrapper .wrapper section .school .odd_vote span {
+              left: 50px;
+              font-size: 12px;
+              color: #f07700; }
+              body.login #main_wrapper .wrapper section .school .odd_vote span.odd_number,
+              body.ranking #main_wrapper .wrapper section .school .odd_vote span.odd_number,
+              body.index #main_wrapper .wrapper section .school .odd_vote span.odd_number {
+                position: absolute;
+                font-size: 16px; }
+              body.login #main_wrapper .wrapper section .school .odd_vote span.vote_number,
+              body.ranking #main_wrapper .wrapper section .school .odd_vote span.vote_number,
+              body.index #main_wrapper .wrapper section .school .odd_vote span.vote_number {
+                position: absolute;
+                bottom: 3px;
+                display: none; }
+        body.login #main_wrapper .wrapper section .hover,
+        body.ranking #main_wrapper .wrapper section .hover,
+        body.index #main_wrapper .wrapper section .hover {
+          background-color: black;
+          width: 172px;
+          padding: 4px;
+          position: absolute;
+          z-index: 5; }
+          body.login #main_wrapper .wrapper section .hover .arrow,
+          body.ranking #main_wrapper .wrapper section .hover .arrow,
+          body.index #main_wrapper .wrapper section .hover .arrow {
+            position: absolute;
+            bottom: -10px;
+            left: 45%; }
+          body.login #main_wrapper .wrapper section .hover p,
+          body.ranking #main_wrapper .wrapper section .hover p,
+          body.index #main_wrapper .wrapper section .hover p {
+            color: white;
+            font-size: 12px; }
+        body.login #main_wrapper .wrapper section#koushien_match .deselect_button,
+        body.ranking #main_wrapper .wrapper section#koushien_match .deselect_button,
+        body.index #main_wrapper .wrapper section#koushien_match .deselect_button {
+          display: none; }
+        body.login #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button,
+        body.ranking #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button,
+        body.index #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 50px;
+          left: 60px;
+          background: #f07700;
+          display: block;
+          z-index: 3;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_match .school_uniform:hover .select_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button,
+        body.ranking #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button,
+        body.index #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 85px;
+          left: 40px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_match .school_uniform:hover .video_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_first_round .deselect_button,
+        body.ranking #main_wrapper .wrapper section#koushien_first_round .deselect_button,
+        body.index #main_wrapper .wrapper section#koushien_first_round .deselect_button {
+          display: none; }
+        body.login #main_wrapper .wrapper section#koushien_first_round .hide,
+        body.ranking #main_wrapper .wrapper section#koushien_first_round .hide,
+        body.index #main_wrapper .wrapper section#koushien_first_round .hide {
+          display: none !important; }
+        body.login #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button,
+        body.ranking #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button,
+        body.index #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 50px;
+          left: 60px;
+          background: #f07700;
+          display: block;
+          z-index: 3;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .select_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button,
+        body.ranking #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button,
+        body.index #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 85px;
+          left: 40px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_first_round .school_uniform:hover .video_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_second_round .video_button,
+        body.ranking #main_wrapper .wrapper section#koushien_second_round .video_button,
+        body.index #main_wrapper .wrapper section#koushien_second_round .video_button {
+          display: none; }
+        body.login #main_wrapper .wrapper section#koushien_second_round .hide,
+        body.ranking #main_wrapper .wrapper section#koushien_second_round .hide,
+        body.index #main_wrapper .wrapper section#koushien_second_round .hide {
+          display: none !important; }
+        body.login #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button,
+        body.ranking #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button,
+        body.index #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 85px;
+          left: 50px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .deselect_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button,
+        body.ranking #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button,
+        body.index #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 50px;
+          left: 60px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_second_round .school_uniform:hover .select_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_third_round .video_button,
+        body.ranking #main_wrapper .wrapper section#koushien_third_round .video_button,
+        body.index #main_wrapper .wrapper section#koushien_third_round .video_button {
+          display: none; }
+        body.login #main_wrapper .wrapper section#koushien_third_round .hide,
+        body.ranking #main_wrapper .wrapper section#koushien_third_round .hide,
+        body.index #main_wrapper .wrapper section#koushien_third_round .hide {
+          display: none !important; }
+        body.login #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button,
+        body.ranking #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button,
+        body.index #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 85px;
+          left: 50px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button,
+        body.ranking #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button,
+        body.index #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 50px;
+          left: 60px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button:hover,
+          body.ranking #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button:hover,
+          body.index #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .select_button:hover {
+            color: white;
+            text-decoration: none; }
+        body.login #main_wrapper .wrapper section#champion .video_button,
+        body.ranking #main_wrapper .wrapper section#champion .video_button,
+        body.index #main_wrapper .wrapper section#champion .video_button {
+          display: none; }
+        body.login #main_wrapper .wrapper section#champion .hide,
+        body.ranking #main_wrapper .wrapper section#champion .hide,
+        body.index #main_wrapper .wrapper section#champion .hide {
+          display: none !important; }
+        body.login #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button,
+        body.ranking #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button,
+        body.index #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          position: absolute;
+          top: 75px;
+          left: 48px;
+          background: #f07700;
+          z-index: 3;
+          display: block;
+          padding: 5px;
+          cursor: pointer; }
+          body.login #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button:hover,
+          body.ranking #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button:hover,
+          body.index #main_wrapper .wrapper section#champion .school_uniform:hover .deselect_button:hover {
+            color: white;
+            text-decoration: none; }
+      body.login #main_wrapper .wrapper #koushien_guide .note,
+      body.ranking #main_wrapper .wrapper #koushien_guide .note,
+      body.index #main_wrapper .wrapper #koushien_guide .note {
+        text-align: right;
+        margin-right: 195px; }
+      body.login #main_wrapper .wrapper #koushien_guide span,
+      body.ranking #main_wrapper .wrapper #koushien_guide span,
+      body.index #main_wrapper .wrapper #koushien_guide span {
+        color: #f07700; }
+      body.login #main_wrapper .wrapper #koushien_guide h1,
+      body.ranking #main_wrapper .wrapper #koushien_guide h1,
+      body.index #main_wrapper .wrapper #koushien_guide h1 {
+        text-align: center;
+        font-size: 37px;
+        position: absolute;
+        top: 80px;
+        left: 300px; }
+      body.login #main_wrapper .wrapper #koushien_guide .step_img,
+      body.ranking #main_wrapper .wrapper #koushien_guide .step_img,
+      body.index #main_wrapper .wrapper #koushien_guide .step_img {
+        position: absolute;
+        top: 128px;
+        left: 190px; }
+      body.login #main_wrapper .wrapper #koushien_guide .step_1,
+      body.ranking #main_wrapper .wrapper #koushien_guide .step_1,
+      body.index #main_wrapper .wrapper #koushien_guide .step_1 {
+        position: absolute;
+        top: 140px;
+        color: white;
+        font-size: 18px;
+        left: 225px; }
+      body.login #main_wrapper .wrapper #koushien_guide .step_2,
+      body.ranking #main_wrapper .wrapper #koushien_guide .step_2,
+      body.index #main_wrapper .wrapper #koushien_guide .step_2 {
+        position: absolute;
+        top: 140px;
+        color: white;
+        font-size: 18px;
+        left: 426px; }
+      body.login #main_wrapper .wrapper #koushien_guide .step_3,
+      body.ranking #main_wrapper .wrapper #koushien_guide .step_3,
+      body.index #main_wrapper .wrapper #koushien_guide .step_3 {
+        position: absolute;
+        top: 140px;
+        color: white;
+        font-size: 18px;
+        left: 589px; }
+      body.login #main_wrapper .wrapper #koushien_guide .choose_team,
+      body.ranking #main_wrapper .wrapper #koushien_guide .choose_team,
+      body.index #main_wrapper .wrapper #koushien_guide .choose_team {
+        float: left;
+        position: relative;
+        margin-left: 30px;
+        color: white; }
+        body.login #main_wrapper .wrapper #koushien_guide .choose_team .first_step_text,
+        body.ranking #main_wrapper .wrapper #koushien_guide .choose_team .first_step_text,
+        body.index #main_wrapper .wrapper #koushien_guide .choose_team .first_step_text {
+          position: absolute;
+          top: 45%;
+          left: 27%; }
+      body.login #main_wrapper .wrapper #koushien_guide .arrow_step_1,
+      body.ranking #main_wrapper .wrapper #koushien_guide .arrow_step_1,
+      body.index #main_wrapper .wrapper #koushien_guide .arrow_step_1 {
+        float: left;
+        margin-left: 40px;
+        margin-top: 55px; }
+      body.login #main_wrapper .wrapper #koushien_guide .place_bets .second_step_text,
+      body.ranking #main_wrapper .wrapper #koushien_guide .place_bets .second_step_text,
+      body.index #main_wrapper .wrapper #koushien_guide .place_bets .second_step_text {
+        position: absolute;
+        top: 45%;
+        left: 31%; }
+      body.login #main_wrapper .wrapper #koushien_guide .real_zenny .third_step_text,
+      body.ranking #main_wrapper .wrapper #koushien_guide .real_zenny .third_step_text,
+      body.index #main_wrapper .wrapper #koushien_guide .real_zenny .third_step_text {
+        position: absolute;
+        top: 45%;
+        left: 20%; }
+      body.login #main_wrapper .wrapper #koushien_match .stadium,
+      body.ranking #main_wrapper .wrapper #koushien_match .stadium,
+      body.index #main_wrapper .wrapper #koushien_match .stadium {
+        margin-top: 100px; }
+      body.login #main_wrapper .wrapper #koushien_match #first_match_school,
+      body.ranking #main_wrapper .wrapper #koushien_match #first_match_school,
+      body.index #main_wrapper .wrapper #koushien_match #first_match_school {
+        position: absolute;
+        top: -80px;
+        left: 192px; }
+      body.login #main_wrapper .wrapper #koushien_match #second_match_school,
+      body.ranking #main_wrapper .wrapper #koushien_match #second_match_school,
+      body.index #main_wrapper .wrapper #koushien_match #second_match_school {
+        position: absolute;
+        top: -80px;
+        left: 560px; }
+      body.login #main_wrapper .wrapper #koushien_match .vs_img,
+      body.ranking #main_wrapper .wrapper #koushien_match .vs_img,
+      body.index #main_wrapper .wrapper #koushien_match .vs_img {
+        position: absolute;
+        top: 90px;
+        left: 457px; }
+      body.login #main_wrapper .wrapper #side_navi,
+      body.ranking #main_wrapper .wrapper #side_navi,
+      body.index #main_wrapper .wrapper #side_navi {
+        width: 15%;
+        margin-top: 30px;
+        float: left; }
+        body.login #main_wrapper .wrapper #side_navi ul li a,
+        body.ranking #main_wrapper .wrapper #side_navi ul li a,
+        body.index #main_wrapper .wrapper #side_navi ul li a {
+          padding: 5px 0px;
+          display: block;
+          color: #58b8d1;
+          font-weight: bold; }
+          body.login #main_wrapper .wrapper #side_navi ul li a.item,
+          body.ranking #main_wrapper .wrapper #side_navi ul li a.item,
+          body.index #main_wrapper .wrapper #side_navi ul li a.item {
+            background: transparent url("../img/treeview.png") scroll -38px -68px no-repeat;
+            padding: 7px 0 7px 13px; }
+      body.login #main_wrapper .wrapper #user_page,
+      body.ranking #main_wrapper .wrapper #user_page,
+      body.index #main_wrapper .wrapper #user_page {
+        width: 803px; }
+        body.login #main_wrapper .wrapper #user_page table,
+        body.ranking #main_wrapper .wrapper #user_page table,
+        body.index #main_wrapper .wrapper #user_page table {
+          border-collapse: collapse; }
+          body.login #main_wrapper .wrapper #user_page table thead,
+          body.ranking #main_wrapper .wrapper #user_page table thead,
+          body.index #main_wrapper .wrapper #user_page table thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit; }
+            body.login #main_wrapper .wrapper #user_page table thead th,
+            body.ranking #main_wrapper .wrapper #user_page table thead th,
+            body.index #main_wrapper .wrapper #user_page table thead th {
+              background: #e0e0e0;
+              border-bottom: none; }
+          body.login #main_wrapper .wrapper #user_page table td,
+          body.ranking #main_wrapper .wrapper #user_page table td,
+          body.index #main_wrapper .wrapper #user_page table td {
+            padding: 8px 5px;
+            border: 1px solid #c2c2c2; }
+            body.login #main_wrapper .wrapper #user_page table td:first-child,
+            body.ranking #main_wrapper .wrapper #user_page table td:first-child,
+            body.index #main_wrapper .wrapper #user_page table td:first-child {
+              border-left: none;
+              text-align: center; }
+            body.login #main_wrapper .wrapper #user_page table td:last-child,
+            body.ranking #main_wrapper .wrapper #user_page table td:last-child,
+            body.index #main_wrapper .wrapper #user_page table td:last-child {
+              border-right: none; }
+          body.login #main_wrapper .wrapper #user_page table .highlight,
+          body.ranking #main_wrapper .wrapper #user_page table .highlight,
+          body.index #main_wrapper .wrapper #user_page table .highlight {
+            background-color: #f3f3f3; }
+      body.login #main_wrapper .wrapper #user_page .user_info,
+      body.ranking #main_wrapper .wrapper #user_page .user_info,
+      body.index #main_wrapper .wrapper #user_page .user_info {
+        background-color: #ccc;
+        padding: 20px;
+        width: 763px;
+        margin: 0 0 1px 0; }
+        body.login #main_wrapper .wrapper #user_page .user_info .user_img,
+        body.ranking #main_wrapper .wrapper #user_page .user_info .user_img,
+        body.index #main_wrapper .wrapper #user_page .user_info .user_img {
+          width: 100px;
+          height: 100px;
+          float: left; }
+        body.login #main_wrapper .wrapper #user_page .user_info .info,
+        body.ranking #main_wrapper .wrapper #user_page .user_info .info,
+        body.index #main_wrapper .wrapper #user_page .user_info .info {
+          margin-top: 20px;
+          width: 300px;
+          float: left; }
+          body.login #main_wrapper .wrapper #user_page .user_info .info .current_ranking,
+          body.ranking #main_wrapper .wrapper #user_page .user_info .info .current_ranking,
+          body.index #main_wrapper .wrapper #user_page .user_info .info .current_ranking {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 0 0 0 10px; }
+            body.login #main_wrapper .wrapper #user_page .user_info .info .current_ranking span,
+            body.ranking #main_wrapper .wrapper #user_page .user_info .info .current_ranking span,
+            body.index #main_wrapper .wrapper #user_page .user_info .info .current_ranking span {
+              font-size: 50px;
+              font-family: Georia;
+              color: #fff; }
+        body.login #main_wrapper .wrapper #user_page .user_info .sharing,
+        body.ranking #main_wrapper .wrapper #user_page .user_info .sharing,
+        body.index #main_wrapper .wrapper #user_page .user_info .sharing {
+          float: right;
+          width: 290px; }
+          body.login #main_wrapper .wrapper #user_page .user_info .sharing .info,
+          body.ranking #main_wrapper .wrapper #user_page .user_info .sharing .info,
+          body.index #main_wrapper .wrapper #user_page .user_info .sharing .info {
+            margin-top: 20px;
+            float: right;
+            width: 205px; }
+          body.login #main_wrapper .wrapper #user_page .user_info .sharing .social_sharing,
+          body.ranking #main_wrapper .wrapper #user_page .user_info .sharing .social_sharing,
+          body.index #main_wrapper .wrapper #user_page .user_info .sharing .social_sharing {
+            float: right; }
+      body.login #main_wrapper .wrapper #user_page .your_rank_list,
+      body.ranking #main_wrapper .wrapper #user_page .your_rank_list,
+      body.index #main_wrapper .wrapper #user_page .your_rank_list {
+        width: 803px; }
+        body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table,
+        body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table,
+        body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table {
+          border-collapse: collapse; }
+          body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead,
+          body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead,
+          body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit; }
+            body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead th,
+            body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead th,
+            body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table thead th {
+              background: #e0e0e0;
+              border-bottom: none; }
+          body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td,
+          body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td,
+          body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td {
+            padding: 8px 5px;
+            border: 1px solid #c2c2c2; }
+            body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:first-child,
+            body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:first-child,
+            body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:first-child {
+              border-left: none;
+              text-align: center; }
+            body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:last-child,
+            body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:last-child,
+            body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table td:last-child {
+              border-right: none; }
+          body.login #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table .highlight,
+          body.ranking #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table .highlight,
+          body.index #main_wrapper .wrapper #user_page .your_rank_list #your_ranking_table .highlight {
+            background-color: #f3f3f3; }
+  body.login .video_background,
+  body.ranking .video_background,
+  body.index .video_background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(158, 158, 158, 0.56);
+    position: fixed;
+    z-index: 10000;
+    display: block;
+    top: 0;
+    cursor: pointer; }
+    body.login .video_background .video_container,
+    body.ranking .video_background .video_container,
+    body.index .video_background .video_container {
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+      top: 20%;
+      padding: 10px;
+      background-color: white;
+      z-index: 10001; }
+      body.login .video_background .video_container .video_desc,
+      body.ranking .video_background .video_container .video_desc,
+      body.index .video_background .video_container .video_desc {
+        background-color: white;
+        display: block;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        left: -210px;
+        height: 315px; }
+      body.login .video_background .video_container .close_button,
+      body.ranking .video_background .video_container .close_button,
+      body.index .video_background .video_container .close_button {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        display: inline-block;
+        overflow: hidden;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #1a99b7;
+        background: #1a99b7;
+        color: #fff;
+        text-align: center;
+        line-height: 20px; }
+  body.login #movie_page,
+  body.ranking #movie_page,
+  body.index #movie_page {
+    position: relative; }
+    body.login #movie_page h1,
+    body.ranking #movie_page h1,
+    body.index #movie_page h1 {
+      text-align: center;
+      font-size: 37px;
+      font-weight: bold; }
+    body.login #movie_page .movie_container,
+    body.ranking #movie_page .movie_container,
+    body.index #movie_page .movie_container {
+      width: 685px;
+      margin: 0 auto;
+      position: relative;
+      top: -133px; }
+      body.login #movie_page .movie_container .movie,
+      body.ranking #movie_page .movie_container .movie,
+      body.index #movie_page .movie_container .movie {
+        width: 130px;
+        margin: 0 2px;
+        display: inline-block; }
+        body.login #movie_page .movie_container .movie .movie_img,
+        body.ranking #movie_page .movie_container .movie .movie_img,
+        body.index #movie_page .movie_container .movie .movie_img {
+          cursor: pointer; }
+        body.login #movie_page .movie_container .movie .movie_title,
+        body.ranking #movie_page .movie_container .movie .movie_title,
+        body.index #movie_page .movie_container .movie .movie_title {
+          width: 126px;
+          padding: 2px 2px;
+          height: 30px;
+          background-color: #ccc;
+          margin-bottom: 30px; }
+    body.login #movie_page #movie_form,
+    body.ranking #movie_page #movie_form,
+    body.index #movie_page #movie_form {
+      text-align: center;
+      margin-top: 20px; }
+      body.login #movie_page #movie_form select,
+      body.ranking #movie_page #movie_form select,
+      body.index #movie_page #movie_form select {
+        width: 200px; }
+  body.login #user_choice_dashboard,
+  body.ranking #user_choice_dashboard,
+  body.index #user_choice_dashboard {
+    width: 169px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 5px;
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    right: 0px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+    body.login #user_choice_dashboard .confirm_chosen_school,
+    body.ranking #user_choice_dashboard .confirm_chosen_school,
+    body.index #user_choice_dashboard .confirm_chosen_school {
+      background-color: #f07700;
+      margin: 0 auto;
+      cursor: pointer;
+      display: block;
+      padding: 5px 10px;
+      width: 80px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px; }
+    body.login #user_choice_dashboard h2,
+    body.ranking #user_choice_dashboard h2,
+    body.index #user_choice_dashboard h2 {
+      text-align: center;
+      font-weight: bold;
+      line-height: 40px;
+      font-size: 20px; }
+    body.login #user_choice_dashboard p,
+    body.ranking #user_choice_dashboard p,
+    body.index #user_choice_dashboard p {
+      margin-top: 8px; }
+      body.login #user_choice_dashboard p a,
+      body.ranking #user_choice_dashboard p a,
+      body.index #user_choice_dashboard p a {
+        color: #f07700; }
+    body.login #user_choice_dashboard span.deselect_button,
+    body.ranking #user_choice_dashboard span.deselect_button,
+    body.index #user_choice_dashboard span.deselect_button {
+      cursor: pointer; }
+      body.login #user_choice_dashboard span.deselect_button:hover,
+      body.ranking #user_choice_dashboard span.deselect_button:hover,
+      body.index #user_choice_dashboard span.deselect_button:hover {
+        text-decoration: line-through;
+        color: #f07700; }
+    body.login #user_choice_dashboard img,
+    body.ranking #user_choice_dashboard img,
+    body.index #user_choice_dashboard img {
+      margin-right: 2px; }
+    body.login #user_choice_dashboard .title,
+    body.ranking #user_choice_dashboard .title,
+    body.index #user_choice_dashboard .title {
+      font-weight: bold; }
+  body.login .video_page ul li,
+  body.ranking .video_page ul li,
+  body.index .video_page ul li {
+    max-width: 172px;
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 0 6px;
+    display: inline-block; }
+  body.login footer .footer-content,
+  body.ranking footer .footer-content,
+  body.index footer .footer-content {
+    width: 100%;
+    padding: 0 auto;
+    margin: 0 auto;
+    text-align: center; }
+  body.login.matchBet #main_wrapper .wrapper #koushien_match .vs_img,
+  body.ranking.matchBet #main_wrapper .wrapper #koushien_match .vs_img,
+  body.index.matchBet #main_wrapper .wrapper #koushien_match .vs_img {
+    top: 90px;
+    left: 457px; }
+  body.login.matchBet #main_wrapper .wrapper section .school .odd_vote,
+  body.ranking.matchBet #main_wrapper .wrapper section .school .odd_vote,
+  body.index.matchBet #main_wrapper .wrapper section .school .odd_vote {
+    width: 74px;
+    margin: 0 auto;
+    margin-top: 5px; }
