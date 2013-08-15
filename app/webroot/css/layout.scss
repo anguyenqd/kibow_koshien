@@ -1,3 +1,8 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	background-color: #f4f4f4;
+}
 body{
   font-size:12px;
     h2{
@@ -6,47 +11,19 @@ body{
     #main_wrapper{
     width:100%;
     position:relative;
-    #user_menu {
-      width: 940px;
-      margin: 0 auto;
-      position: relative;
-      #user_nav{
-        position:absolute;
-        top:-40px;
-        right:0px;
-        li{
-          float:left;
-          margin-left:2px;
-          background-color:#666666;
-          a{
-            color:white;
-            padding:5px 10px;
-            display:block;
-          }
-        }
-      }
-    }
+   
     header{
       background-color:white;
       border:1px solid #ccc;
       height:71px;
       width:940px;
-      margin:40px auto 5px;
+      margin:30px auto 5px;
       #logo{
         float:left;
         border-right:1px solid #ccc;
         padding: 8px 2px;
       }
-      #main_sns{
-        float:left;
-        min-width:700px;
-        min-height:24px;
-        li{
-          padding:5px;
-          margin-left:5px;
-          float:left;
-        }
-      }
+      
       #main_nav{
         min-width:873px;
         float:left;
@@ -209,7 +186,7 @@ body{
         }
       }
       #main_banner{
-        margin-top:5px;
+        padding-top:5px;
         img{
           border:1px solid #ccc;
         }
@@ -671,9 +648,9 @@ body{
           tbody{
             tr{
               &.even{
-                  background-color:lighten(#ccc,10%);
+/*                   background-color:lighten(#ccc,10%); */
                   &:hover{
-                    background-color:#ccc;
+/*                     background-color:#ccc; */
                   }
                 }
               td{
@@ -683,7 +660,7 @@ body{
           }
           tr{
             &:hover{
-              background-color:#ccc;
+/*               background-color:#ccc; */
             }
           }
           td{
@@ -982,4 +959,1031 @@ body{
     }
   }
 }
+}
+
+
+#user_menu {
+	  width: 940px;
+	  margin: 0 auto;
+	  position: relative;
+	  #user_nav{
+	    position:absolute;
+	    top:-30px;
+	    right:0px;
+	    li{
+	      float:left;
+	      margin-left:0px;
+		  background-color: #fff;
+	
+	      a{
+	        color:white;
+	        padding:5px 10px;
+	        display:block;
+	
+	        &:hover {
+	        background-color: #999999;
+	        }
+	      }
+	      
+	      &.login {
+	      	a {
+	      display: block;
+	margin-left: 1px;
+	padding: 8px 15px 8px;
+	color: #fff;
+	background: #666666;
+	         border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	            text-transform: uppercase;
+	&:hover {
+	         background-color: #999999;
+	               text-decoration: none;
+	         }
+	        }
+	        &.first {
+	        	a {
+	           border-radius: 0 0 0 5px;
+	  -webkit-border-radius: 0 0 0 5px;
+	  -moz-border-radius: 0 0 0 5px;
+	            }
+	        }
+	      }
+	      &.logout {
+	      	a {
+	      display: block;
+	margin-left: 1px;
+	padding: 8px 15px 8px;
+	color: #fff;
+	background: #666666;
+	         border-radius: 0 0 5px 0;
+	-webkit-border-radius: 0 0 5px 0;
+	-moz-border-radius: 0 0 5px 0;
+	            text-transform: uppercase;
+	&:hover {
+	         background-color: #999999;
+	               text-decoration: none;
+	         }
+	        }
+	      }
+	    }
+	  }
+	}
+	
+#main_sns{
+        float:left;
+        min-width:700px;
+        min-height:24px;
+        li{
+          float:left;
+          &.follow {
+	        width: 148px;
+            padding: 6px 0 0 10px;
+          }
+          &.tweet {
+	        padding: 6px 0 0 5px;
+            width: 76px;
+          }
+          &.facelike {
+	        padding: 4px 0 0 5px;
+			width: 52px;
+			overflow: hidden;
+          }
+        }
+      }
+
+/* user pages */
+body.Users.login,
+body.Users.signup,
+body.Users.ranking,
+body.Users.index
+{
+  #main_wrapper{
+    width:100%;
+    position:relative;
+    
+    
+    header{
+      
+      
+      #main_nav{
+        min-width:873px;
+        float:left;
+        border-bottom:1px solid #ccc;
+        li{
+          float:left;
+          border-right:1px solid #ccc;
+          a{
+	        text-transform: uppercase;
+			font-size: 16px;
+			padding: 10px;
+			background: transparent url(../img/baseball.png) scroll 10px 13px no-repeat;
+			display: block;
+			padding: 10px 10px 10px 20px;
+			font-weight: bold;
+          }
+        }
+      }
+    }
+    #main_visual{
+      width:100%;
+      height:579px;
+      position:relative;
+      margin-top:30px;
+      overflow:hidden;
+      .slide{
+        float:left;
+      }
+      .main_control{
+        position:absolute;
+        top:0;
+        background-color: rgba(0, 0, 0, 0.8);
+        cursor:pointer;
+        width:50%;
+        height:579px;
+        img{
+          position:absolute;
+          top: 47%;
+        }
+      }
+      .next{
+        right: -640px;
+      }
+      .prev{
+        left:-640px;
+        img{
+          right: 0;
+        }
+      }
+    }
+    .wrapper{
+      margin: 0 auto;
+      margin-bottom:40px;
+      width:986px;
+      &:before{
+        height:10px;
+        display:block;
+        content: ' ';
+        height: 10px;
+		background: url("../img/bg_wrapper_top.png") no-repeat left top;
+      }
+      &:after{
+        display:block;
+        content: ' ';
+        height: 15px;
+        background: url("../img/bg_wrapper_btm.png") no-repeat left bottom;
+      }
+      .inner_wrapper{
+      	position: relative;
+      	width: 947px;
+		padding: 0px 20px 20px 20px;
+		background: transparent url("https://kibow.net/img/bg_wrapper.png") scroll 0px 0px repeat-y;
+      	
+        .confirm_chosen_school{
+          background-color:$hover_color;
+          margin:0 auto;
+          cursor:pointer;
+          display:block;
+          padding:10px 20px;
+          width:250px;
+          color:white;
+          font-weight:bold;
+          text-align:center;
+        }
+        input.btn_confirm_chosen_school{
+          background-color:$hover_color;
+          margin:0 auto;
+          cursor:pointer;
+          display:block;
+          padding:10px 20px;
+          width:250px;
+          color:white;
+          font-weight:bold;
+          text-align:center;
+          border:none;
+          font-size:14px;
+        }
+        .confirm_text{
+          text-align:center;
+          font-size:14px;
+          margin-top: 80px;
+          padding:10px 0px 10px 0px;
+        }
+        #champion_place_bet{
+          .crown{
+            width:37px;
+            height:37px;
+            overflow:hidden;
+            margin:0 auto;
+            margin-top:10px;
+          }
+          .school{
+            width:119px;
+            margin:20px auto;
+            display:block;
+          }
+          .champion_school{
+            width:282px;
+            margin:0 auto;
+            margin-top:20px;
+            position:relative;
+            .champion_image{
+            position:absolute;
+            top:65px;
+            left:85px;
+            }
+          }
+        }
+        
+        .breadcrumbs{
+            color: #555555;
+            margin: 0 0 0 20px;
+            padding:0px 0 5px 0;
+        
+            ul li{
+              display: inline-block;
+              &:before{
+                content: ' > ';
+                padding: 0 5px;
+              }
+              &.home{
+              	background: none;
+                padding: 0;
+              
+                &:before{
+                  content: '';
+                }
+              }
+            }
+        }
+        .currentbalance {
+	      	position: absolute;
+			top: 0px;
+			right: 20px;
+        }
+        h1 {
+	      height: 40px;
+          background: transparent url(../img/baseball.png) scroll 12px 16px no-repeat;
+          border: 1px solid #b2b2b2;
+          -webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+        	-webkit-box-shadow: 0px 0px 1px rgba(50, 50, 50, 0.8);
+			-moz-box-shadow:    0px 0px 1px rgba(50, 50, 50, 0.8);
+			box-shadow:         0px 0px 1px rgba(50, 50, 50, 0.8);
+        	font-size: 20px;
+        	font-weight: bold;
+			padding: 10px 0 0 30px;
+			height: 30px;
+        }
+        .description_text{
+          text-align: center;
+          padding: 20px;
+          font-size: 20px;
+          margin: 0 auto;
+          width: 100%;
+          p{
+            text-align: left;
+            width: 885px;
+            margin: 0 auto;
+            padding-bottom:10px;
+          }
+          a{
+            color:$hover_color;
+          }
+        }
+      }
+      #main_banner{
+/*         margin-top:5px; */
+        img{
+          border:1px solid #ccc;
+        }
+      }
+      section{
+        margin-top: 30px;
+        position:relative;
+        h2{
+            text-align:center;
+            font-weight:bold;
+            font-size:40px;
+        }
+        table{
+          width:100%;
+          td{
+            padding:10px 20px;
+          }
+          .left{
+            text-align:right;
+            width:50%;
+          }
+          .right{
+            text-align:left;
+            width:50%;
+          }
+        }
+        .left_four {
+          width: 372px;
+          float: left;
+        }
+        .middle_sns {
+          width: 196px;
+          float: left;
+          ul{
+            margin-top:100px;
+            li{
+              display:inline-block;
+              margin-left:10px;
+            }
+          }
+        }
+        .right_four {
+          width: 372px;
+          float: right;
+        }
+        .school{
+          float: left;
+          padding: 0 6px;
+          height: 239px;
+          margin-top: 60px;
+          .school_sns{
+              width:172px;
+              li{
+                display:inline-block;
+                margin-left:8px;
+                margin-top:10px;
+              }
+            }
+          .stake{
+              font-size:12px;
+            }
+          .school_name{
+            text-align:center;
+            font-weight:bold;
+            display:block;
+            font-size:14px;
+          }
+          .school_uniform{
+            width:172px;
+            height:172px;
+            position:relative;
+            overflow:hidden;
+            .background_uniform{
+              position:absolute;
+              top:0;
+              left:0;
+              z-index:0;
+            }
+            .uniform_image{
+              position:absolute;
+              top:12px;
+              left:27px;
+              z-index:1;
+            }
+          }
+          a{
+            img{
+            }
+            @extend .school_name;
+          }
+          .select_button{
+            display:none;
+          }
+          .video_button{
+            display:none;
+          }
+          .deselect_button{
+            display:none;
+          }
+          .school_address{
+            @extend .school_name;
+            font-weight:normal;
+            margin-top:4px;
+            font-size:14px;
+          }
+          .odd_vote{
+            margin-left:10px;
+            margin-top:5px;
+            position:relative;
+            background:url(../img/odd_vote.png) no-repeat;
+            height:16px;
+            overflow:hidden;
+            span{
+              left:50px;
+              font-size:12px;
+              color:$hover_color;
+              &.odd_number{
+                position:absolute;
+                font-size:16px;
+              }
+              &.vote_number{
+                position:absolute;
+                bottom:3px;
+                display:none;
+              }
+            }
+          }
+        }
+        .hover{
+          background-color:black;
+          width:172px;
+          padding:4px;
+          position:absolute;
+          z-index:5;
+          .arrow{
+            position:absolute;
+            bottom:-10px;
+            left:45%;
+          }
+          p{
+            color:white;
+            font-size:12px;
+          }
+        }
+        &#koushien_match{
+          .deselect_button{
+            display:none;
+          }
+          .school_uniform:hover{
+            .select_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:50px;
+              left:60px;
+              background:$hover_color;
+              display:block;
+              z-index:3;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+            
+            .video_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:85px;
+              left:40px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+          }
+        }
+        &#koushien_first_round{
+          .deselect_button{
+            display:none;
+          }
+          .hide{
+            display:none !important;
+          }
+          .school_uniform:hover{
+            .select_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:50px;
+              left:60px;
+              background:$hover_color;
+              display:block;
+              z-index:3;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+            
+            .video_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:85px;
+              left:40px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+          }
+        }
+        &#koushien_second_round{
+          .video_button{
+            display:none;
+          }
+          .hide{
+            display:none !important;
+          }
+          .school_uniform:hover{
+            .deselect_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:85px;
+              left:50px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+            .select_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:50px;
+              left:60px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+          }
+        }
+        &#koushien_third_round{
+          .video_button{
+              display:none;
+          }
+          .hide{
+            display:none !important;
+          }
+          .school_uniform:hover{
+            .deselect_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:85px;
+              left:50px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+            .select_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:50px;
+              left:60px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+          }
+        }
+        &#champion{
+          .video_button{
+              display:none;
+          }
+          .hide{
+            display:none !important;
+          }
+          .school_uniform:hover{
+            .deselect_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:75px;
+              left:48px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+            }
+          }
+        }
+      }
+      #koushien_guide{
+        .note{
+          text-align: right;
+          margin-right: 195px;
+        }
+        span{
+          color:$hover_color;
+        }
+        h1 {
+          text-align: center;
+          font-size: 37px;
+          position: absolute;
+          top: 80px;
+          left: 300px;
+        }
+        .step_img {
+          position: absolute;
+          top: 128px;
+          left: 190px;
+        }
+        .step_1 {
+          position: absolute;
+          top: 140px;
+          color: white;
+          font-size: 18px;
+          left: 225px;
+        }
+        .step_2 {
+          position: absolute;
+          top: 140px;
+          color: white;
+          font-size: 18px;
+          left: 426px;
+        }
+        .step_3 {
+          position: absolute;
+          top: 140px;
+          color: white;
+          font-size: 18px;
+          left: 589px;
+        }
+        .choose_team{
+          float:left;
+          position:relative;
+          margin-left:30px;
+          color:white;
+          .first_step_text{
+            position:absolute;
+            top:45%;
+            left:27%;
+          }
+        }
+        .arrow_step_1{
+          float:left;
+          margin-left:40px;
+          margin-top:55px;
+        }
+        .place_bets{
+          @extend .choose_team;
+          .second_step_text{
+            position:absolute;
+            top:45%;
+            left:31%;
+          }
+        }
+        .arrow_step_2{
+          @extend .arrow_step_1;
+        }
+        .real_zenny{
+          @extend .choose_team;
+          .third_step_text{
+            position:absolute;
+            top:45%;
+            left:20%;
+          }
+        }
+      }
+      #koushien_match{
+        .stadium{
+          margin-top:100px;
+        }
+        #first_match_school{
+          position:absolute;
+          top: -80px;
+          left: 192px;
+        }
+        #second_match_school{
+          position:absolute;
+          top: -80px;
+          left:560px;
+        }
+        .vs_img{
+          position:absolute;
+          top: 90px;
+          left: 457px;
+        }
+      }
+      #side_navi{
+        width:15%;
+        margin-top: 30px;
+        float:left;
+        ul{
+          li{
+            a{
+              padding:5px 0px;
+              display:block;
+              color: #58b8d1;
+              font-weight: bold;
+              
+              &.item {
+	            background: transparent url("../img/treeview.png") scroll -38px -68px no-repeat;
+                padding: 7px 0 7px 13px;
+              }
+            }
+          }
+        }
+      }
+      
+	#user_page {
+          width: 803px;
+        	
+          table {
+            border-collapse: collapse;
+            
+            thead {
+	            display: table-header-group;
+				vertical-align: middle;
+				border-color: inherit;
+            
+                th {
+	              background: #e0e0e0;
+                  border-bottom: none;
+                }
+            }
+            
+            tbody {
+				tr {
+				}
+            }
+            
+            td {
+            	padding: 8px 5px;
+				border: 1px solid #c2c2c2;
+
+            	&:first-child {
+	              	border-left: none;
+            	    text-align: center;
+            	}
+                &:last-child {  
+	              	border-right: none;
+            	}
+            }
+            
+            .highlight {
+	           background-color: #f3f3f3;
+            }
+          }
+      }
+        
+      #user_page{
+        .user_info{
+          	background-color: #ccc;
+			padding: 20px;
+			width: 763px;
+            margin: 0 0 1px 0;
+        
+          .user_img{
+            width:100px;
+            height:100px;
+            float:left;
+          }
+          .info{
+            margin-top:20px;
+            width:300px;
+            float:left;
+            .current_ranking{
+              font-weight:bold;
+              font-size:14px;
+              padding: 0 0 0 10px;
+              
+              span {
+	            font-size: 50px;
+                font-family: Georia;
+                color: #fff;
+              }
+            }
+          }
+          .sharing{
+            float:right;
+            width:290px;
+            .info{
+              margin-top:20px;
+              float:right;
+              width:205px;
+            }
+            .social_sharing{
+              float:right;
+            }
+          }
+        }
+        
+        .your_rank_list {
+          width: 803px;
+        	
+          #your_ranking_table {
+            border-collapse: collapse;
+            
+            thead {
+	            display: table-header-group;
+				vertical-align: middle;
+				border-color: inherit;
+            
+                th {
+	              background: #e0e0e0;
+                  border-bottom: none;
+                }
+            }
+            
+            td {
+            	padding: 8px 5px;
+				border: 1px solid #c2c2c2;
+
+            	&:first-child {
+	              	border-left: none;
+            	    text-align: center;
+            	}
+                &:last-child {
+	              	border-right: none;
+            	}
+            }
+            
+            .highlight {
+	           background-color: #f3f3f3;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+
+  .video_background{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(158, 158, 158, 0.56);
+    position: fixed;
+    z-index: 10000;
+    display: block;
+    top: 0;
+    cursor:pointer;
+    .video_container{
+      max-width:560px;
+      margin:0 auto;
+      position:relative;
+      top:20%;
+      padding:10px;
+      background-color:white;
+      z-index: 10001;
+      .video_desc {
+        background-color: white;
+        display: block;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        left: -210px;
+        height: 315px;
+      }
+      .close_button{
+        @include rounded_corners(10px);
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        display: inline-block;
+        overflow: hidden;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #1a99b7;
+        background: #1a99b7;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+      }
+    }
+  }
+  #movie_page{
+    position:relative;
+    h1{
+      text-align: center;
+      font-size: 37px;
+      font-weight: bold;
+    }
+    .movie_container{
+      width:685px;
+      margin:0 auto;
+      position: relative;
+      top: -133px;
+      .movie{
+        width:130px;
+        margin: 0 2px;
+        display:inline-block;
+        .movie_img{
+          cursor:pointer;
+        }
+        .movie_title{
+          width: 126px;
+          padding: 2px 2px;
+          height: 30px;
+          background-color: #ccc;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    #movie_form{
+      text-align: center;
+      margin-top: 20px;
+      select{
+        width:200px;
+      }
+    }
+  }
+  #user_choice_dashboard{
+    width:169px;
+    background-color:#fff;
+    border-top:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    padding:5px;
+    position: fixed;
+    z-index:5;
+    bottom: 0;
+    right: 0px;
+    @include rounded_corners(5px);
+      .confirm_chosen_school{
+        background-color:$hover_color;
+        margin:0 auto;
+        cursor:pointer;
+        display:block;
+        padding:5px 10px;
+        width:80px;
+        color:white;
+        font-weight:bold;
+        text-align:center;
+        margin-top:10px;
+      }
+    h2{
+      text-align:center;
+      font-weight:bold;
+      line-height:40px;
+      font-size: 20px;
+    }
+    p{
+      margin-top:8px;
+      a{
+        color:$hover_color;
+      }
+    }
+    span.deselect_button{
+      cursor:pointer;
+      &:hover{
+        text-decoration:line-through;
+        color:$hover_color;
+      }
+    }
+    img{
+      margin-right:2px;
+    }
+    .title{
+      font-weight:bold;
+    }
+  }
+  .video_page{
+    ul{
+      li{
+        max-width: 172px;
+        overflow: hidden;
+        margin-top: 40px;
+        padding: 0 6px;
+        display: inline-block;
+      }
+    }
+  }
+  footer{
+    .footer-content {
+        width:100%;
+        padding:0 auto;
+        margin:0 auto;
+        text-align:center;
+    }
+  }
+	//page--------------------------
+	&.matchBet{
+	  #main_wrapper .wrapper #koushien_match .vs_img{
+	    top: 90px;
+	    left: 457px;
+	  }
+	  #main_wrapper .wrapper section .school .odd_vote{
+	    width:74px;
+	    margin:0 auto;
+	    margin-top:5px;
+	  }
+	}
 }

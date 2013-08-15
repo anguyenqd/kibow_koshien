@@ -77,7 +77,7 @@ $title_for_layout = 'Summer Koushien Betting';
 			  	document.createElement('footer');
 			 <![endif]-->
 	</head>
-	<body class="<?= $this->action; ?>">
+	<body class="page<?= ' ' . $this->name; ?><?= ' ' . $this->action; ?>">
 		<script>
 			$(document).ready(function(){
 				$('#facebook_signup').click(function(e){
@@ -165,7 +165,7 @@ $title_for_layout = 'Summer Koushien Betting';
 				<div class="inner_wrapper">
 				  <?php 
 				    if($this->name == "Users"){
-				      echo $this -> element('main_banner_2');
+				      //echo $this -> element('main_banner_2');
 				    } else if($this->name == "Schools"){
 				      echo $this -> element('main_banner_schools');
 				    } else if($this->name == 'Informations'){
