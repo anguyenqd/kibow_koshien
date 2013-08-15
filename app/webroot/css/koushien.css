@@ -723,8 +723,20 @@ body {
     body.result table .round_vertical {
       width: 100px;
       background-color: #2aa8b3; }
+    body.result table#first_round .winning_team {
+      position: absolute;
+      top: -27px;
+      left: -49px; }
+    body.result table#second_round .winning_team {
+      position: absolute;
+      top: -27px;
+      left: -36px; }
     body.result table#second_round .round_vertical {
       background-color: #0c2848; }
+    body.result table#third_round .winning_team {
+      position: absolute;
+      top: -27px;
+      left: -43px; }
     body.result table#third_round .round_vertical {
       background-color: #c5c5bd; }
     body.result table#top8_round .round_vertical {
@@ -745,8 +757,12 @@ body {
       font-size: 26px;
       color: white; }
     body.result table .school_result {
-      margin-top: 10px;
+      margin-top: 15px;
       position: relative; }
+      body.result table .school_result .winning_team {
+        position: absolute;
+        top: -27px;
+        left: -43px; }
       body.result table .school_result .result_desc {
         width: 155px;
         height: 35px;

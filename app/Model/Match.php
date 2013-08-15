@@ -34,7 +34,7 @@ class Match extends AppModel {
 	}
 
 	public function getDateListFinishMatch($round = 1) {
-		return $this -> query('SELECT DISTINCT CONCAT(YEAR(match_date),"-",MONTH(match_date),"-",DAY(match_date)) AS md FROM matchs WHERE winning_team_id != 0 AND match_round = '. $round);
+		return $this -> query('SELECT DISTINCT CONCAT(YEAR(match_date),"-",MONTH(match_date),"-",DAY(match_date)) AS md FROM matchs WHERE winning_team_id != 0 AND match_round = '. $round . ' ORDER BY match_date DESC');
 	}
 
 	public function getMatchByIdToEdit($id = 0) {

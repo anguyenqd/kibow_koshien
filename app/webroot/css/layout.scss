@@ -907,12 +907,29 @@ body{
       width: 100px;
       background-color: #2aa8b3;
     }
+    &#first_round{
+      .winning_team {
+          position: absolute;
+          top: -27px;
+          left: -49px;
+        }
+    }
     &#second_round{
+      .winning_team {
+          position: absolute;
+          top: -27px;
+          left: -36px;
+        }
       .round_vertical {
         background-color: #0c2848;
       }
     }
     &#third_round{
+      .winning_team {
+          position: absolute;
+          top: -27px;
+          left: -43px;
+        }
       .round_vertical {
         background-color: #c5c5bd;
       }
@@ -942,8 +959,13 @@ body{
       color: white;
     }
     .school_result {
-      margin-top:10px;
+      margin-top:15px;
       position: relative;
+      .winning_team {
+          position: absolute;
+          top: -27px;
+          left: -43px;
+        }
       .result_desc {
         width: 155px;
         height: 35px;
@@ -951,6 +973,7 @@ body{
         top: 14px;
         padding: 2px;
         left: 130px;
+        
         .school_name{
           font-size:18px;
         }
