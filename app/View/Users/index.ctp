@@ -1,13 +1,15 @@
 <?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
-    'My Page' => array('controller' => 'Users', 'action' => 'index'), 'History' => ''
+    'MY PAGE' => array('controller' => 'Users', 'action' => 'index'), 'History' => ''
 )))) ?>
+<h1>History</h1>
 <div id="side_navi">
 	<ul>
-		<li>
-			<?=$this -> Html -> Link('History', array('controller' => 'Users', 'action' => 'index')) ?>
+		<li><?php echo $this -> Html -> Link('My Page', array('controller' => 'Users', 'action' => 'index')); ?></li>
+		<li class="item">
+			<?php echo $this -> Html -> Link('History', array('controller' => 'Users', 'action' => 'index'), array('class' => 'item')); ?>
 		</li>
-		<li>
-			<?php //$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'ranking')) ?>
+		<li class="item">
+			<?=$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'ranking'), array('class' => 'item')) ?>
 		</li>
 	</ul>
 </div>
@@ -69,3 +71,4 @@
 		</tbody>
 	</table>
 </section>
+<div style="clear:both;height: 0px;">&nbsp;</div>

@@ -1,6 +1,7 @@
 <?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
     'User' => array('controller' => 'Users', 'action' => 'index'), 'Sign up' => ''
 )))) ?>
+<h1>Sign up</h1>
 <div style="text-align:center">
 <p style="font-size:20px;padding:30px 0px 30px 0px">Please Sign up with your SNS account</p>
 <p style="padding-bottom: 30px"><?php
