@@ -746,12 +746,13 @@ body{
       .video_desc {
         background-color: white;
         display: block;
-        width: 200px;
+        width: 560px;
         position: absolute;
-        top: 0;
+        bottom: -65px;
         padding: 10px;
-        left: -210px;
-        height: 315px;
+        overflow: auto;
+        left: 0px;
+        height: 50px;
       }
       .close_button{
         @include rounded_corners(10px);
