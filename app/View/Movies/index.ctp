@@ -8,7 +8,7 @@
       {
         $cat = $category['MovieCategory'];
         ?>
-        <option value="<?php echo $cat['id']; ?>"<?php if($cur_category == $cat['id']) echo ' selected="selected"'; ?>><?php echo $cat['title']; ?></option>
+        <option value="<?php echo $cat['id']; ?>"<?php if(isset($cur_category) && $cur_category == $cat['id']) echo ' selected="selected"'; ?>><?php echo $cat['title']; ?></option>
         <?php 
       } 
       ?>
