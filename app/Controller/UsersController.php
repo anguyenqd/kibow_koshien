@@ -20,7 +20,7 @@ class UsersController extends AppController {
 	public function index() {
 		//Load bet history
 		if (!$this -> Session -> check('User')) {
-			//$this -> redirect(array('action' => 'login'));
+			$this -> redirect(array('action' => 'login'));
 		}
 		$user = $this -> Session -> read('User');
 		$this -> set('history', $this -> BetDetail -> getBetDetailByUser($user['User']['user_id']));
@@ -30,7 +30,7 @@ class UsersController extends AppController {
 		//$this -> redirect(array('action' => 'index'));
 		
 		 if (!$this -> Session -> check('User')) {
-		 //$this -> redirect(array('action' => 'login'));
+		     $this -> redirect(array('action' => 'login'));
 		 }
 		 $user = $this -> Session -> read('User');
 		 $this->set('userBalance', $user['User']['balance']);
