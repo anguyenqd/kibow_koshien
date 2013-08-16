@@ -3,5 +3,6 @@
 <?php
 echo $this -> Form -> create('MovieCategory', array('type' => 'file'));
 echo $this -> Form -> input('title',array('default' => ''));
+echo $this -> Form -> input('bgcolor',array('default' => ''));
 echo $this -> Form -> end('Add');
 ?>
