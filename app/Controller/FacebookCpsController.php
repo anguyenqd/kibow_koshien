@@ -42,7 +42,7 @@ class FacebookCpsController extends AppController {
 				$logout = $facebook -> getLogoutUrl($params);
 				//$this -> Session -> write('User', $user_profile);
 				$this -> Session -> write('logout', $logout);
-
+				
 				//Insert User to database
 				//Check user exist
 				$userIdList = $this -> User -> isExist($user_profile['email'], 'facebook');
@@ -51,10 +51,12 @@ class FacebookCpsController extends AppController {
 					$userData['User']['sns_account'] = $user_profile['email'];
 					$userData['User']['sns_type'] = 'facebook';
 					$userData['User']['balance'] = 1000;
+					$userData['User']['username'] = $user_profile['name'];
 					$userID = $this -> User -> insertUser($userData);
 					$userData['User']['user_id'] = $userID;
 					$this -> Session -> write('User', $userData);
 				} else {
+					$this->User->updateUserName($userId, $user_profile['name']);
 					$this -> Session -> write('User', $userIdList);
 				}
 				$this -> Session -> write('User-fb-id', $user_profile['id']);

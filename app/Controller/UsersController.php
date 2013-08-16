@@ -67,10 +67,9 @@ class UsersController extends AppController {
 
 	private function __successfulExtAuth($incomingProfile, $accessToken) {
 
-		$incomingProfile['username'];
 		$logout = BASE_URL . DS . 'Users' . DS . 'logout';
 		$this -> Session -> write('logout', $logout);
-
+		
 		//Insert User to database
 		//Check user exist
 		$userIdList = $this -> User -> isExist($incomingProfile['username'], 'twitter');
@@ -79,10 +78,12 @@ class UsersController extends AppController {
 			$userData['User']['sns_account'] = $incomingProfile['username'];
 			$userData['User']['sns_type'] = 'twitter';
 			$userData['User']['balance'] = 1000;
+			$userData['User']['username'] = $incomingProfile['username'];
 			$userID = $this -> User -> insertUser($userData);
 			$userData['User']['user_id'] = $userID;
 			$this -> Session -> write('User', $userData);
 		} else {
+			$this->User->updateUserName($userId, $incomingProfile['username']);
 			$this -> Session -> write('User', $userIdList);
 		}
 		$this -> Session -> write('User-twitter-img', $incomingProfile['picture']);

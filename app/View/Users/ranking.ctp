@@ -58,7 +58,7 @@
 				?>
 				<tr class="line<?=($rank[0]['rank'] % 2 == 0) ? ' even' : '' ?><?php if ($i%2==0) echo ' highlight'?>">
 					<td><?=$rank[0]['rank'] ?></td>
-					<td><?=$rank['users']['sns_account'] ?></td>
+					<td><?=$rank['users']['username'] ?></td>
 					<td><?=$rank['users']['bl'] ?></td>
 				</tr>
 				<?php
@@ -83,7 +83,7 @@
 				?>
 				<tr class="line<?=($rank[0]['rank'] % 2 == 0) ? ' even' : '' ?><?php if ($i%2==0) echo ' highlight'?>">
 					<td><?=$rank[0]['rank'] ?></td>
-					<td><?=$rank['users']['sns_account'] ?></td>
+					<td><?=($rank['users']['username'] != '') ? $rank['users']['username'] : $rank['users']['sns_account'] ?></td>
 					<td><?=$rank['users']['bl'] ?></td>
 				</tr>
 				<?php
