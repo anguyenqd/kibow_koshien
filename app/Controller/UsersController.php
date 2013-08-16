@@ -23,6 +23,7 @@ class UsersController extends AppController {
 			$this -> redirect(array('action' => 'login'));
 		}
 		$user = $this -> Session -> read('User');
+		$this->set('userBalance', $user['User']['balance']);
 		$this -> set('history', $this -> BetDetail -> getBetDetailByUser($user['User']['user_id']));
 	}
 
