@@ -1,4 +1,9 @@
-<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+<?php 
+$this->set('meta_title', __('Matches | Summer Koshien Betting'));
+$this->set('meta_description', __('View the matches for the Koshien Japanese High School Baseball Championship Tournament here. Bet on your best teams and win BIG prizes.'));
+$this->set('meta_keywords', __('Koshien Japanese High School Baseball Championship Betting, matches'));
+
+$this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
     'Matches' => '',
 )))) ?>
 <h2 style="text-align: center;padding-top:20px;">The next matches</h2>

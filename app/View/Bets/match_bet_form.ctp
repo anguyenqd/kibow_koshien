@@ -1,3 +1,8 @@
+<?php
+$this->set('meta_title', __('Matches | Summer Koshien Betting'));
+$this->set('meta_description', __('View the matches for the Koshien Japanese High School Baseball Championship Tournament here. Bet on your best teams and win BIG prizes.'));
+$this->set('meta_keywords', __('Koshien Japanese High School Baseball Championship Betting, matches'));
+?>
 <section class="initial_deposit clearfix">
 	<h2>Initial Deposit <span>1000</span> zenny</h2>
 	<?php if($this->Session->check('User')){?>

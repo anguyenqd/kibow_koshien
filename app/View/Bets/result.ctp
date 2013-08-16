@@ -1,4 +1,9 @@
-<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+<?php 
+$this->set('meta_title', __('Results | Summer Koshien Betting'));
+$this->set('meta_description', __('See the latest results of the Koshien Japanese High School Baseball Championship betting here.'));
+$this->set('meta_keywords', __('Koshien Japanese High School Baseball Championship Betting, result, lose, win, winner, champion'));
+
+$this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
     'Result' => '',
 )))) ?>
 <?php if($match_list_final_round != null) {?>
@@ -37,9 +42,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_1']['team_1_name'] ?></span>
@@ -56,9 +61,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 2) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 2) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_2']['team_2_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_2']['team_2_name'] ?></span>
@@ -112,9 +117,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_1']['team_1_name'] ?></span>
@@ -131,9 +136,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 2) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 2) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_2']['team_2_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_2']['team_2_name'] ?></span>
@@ -186,9 +191,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
 
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
@@ -205,9 +210,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 2) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 2) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
 
                   <span class="school_city"><?=$m['team_2']['team_2_address'] ?></span></br>
@@ -261,9 +266,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
 
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
@@ -281,9 +286,9 @@
               	
                 <p>
                 	<?php
-				if ($winning_team == 2) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 2) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_2']['team_2_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_2']['team_2_name'] ?></span>
@@ -337,9 +342,9 @@ if($match_list_second_round != null){?>
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
 
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
@@ -356,9 +361,9 @@ if($match_list_second_round != null){?>
               	
                 <p>
                 	<?php
-				if ($winning_team == 2) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 2) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
 
                   <span class="school_city"><?=$m['team_2']['team_2_address'] ?></span></br>
@@ -413,9 +418,9 @@ if($match_list_second_round != null){?>
               	
                 <p>
                 	<?php
-				if ($winning_team == 1) {
-					echo "<span class='winning_team'>Win</span>";
-				}
+					if ($winning_team == 1) {
+						echo "<span class='winning_team'>Win</span>";
+					}
 		        ?>
                   <span class="school_city"><?=$m['team_1']['team_1_address'] ?></span></br>
                   <span class="school_name"><?=$m['team_1']['team_1_name'] ?></span>
