@@ -1,3 +1,4 @@
+<ul id="user_nav">
 <?php
 	if(!$this -> Session -> check('User')){
 	?>
