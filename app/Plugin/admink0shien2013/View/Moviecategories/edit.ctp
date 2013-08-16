@@ -4,5 +4,6 @@
 <?php
 echo $this -> Form -> create('MovieCategory', array('type' => 'file'));
 echo $this -> Form -> input('title');
+echo $this -> Form -> input('bgcolor');
 echo $this -> Form -> end('Update');
 ?>
