@@ -1,3 +1,7 @@
+<?php $this->assign('breadcrumbs', $this->element('breadcrumbs', array('list'=>array(
+    'Movie' => array()
+)))) ?>
+<h1 class="heading">Movies</h1>
 <section id="movie_page">
   <h1>Find your favorite Koshien video</h1>
   <form id="movie_form" method="get" name="movieform">
@@ -25,7 +29,7 @@
         ?>
         <div class="movie">
           <div data-video-id="<?php echo $mo['youtube_id']; ?>" data-video-desc="<?php echo $mo['description']; ?>" class="movie_img video_popup">
-            <?= $this->Html->image($mo['image'], array("width"=>130)) ?>
+            <?= $this->Html->image($mo['image'], array("width"=>195)) ?>
           </div>
           <div class="movie_title">
             <?php echo $mo['title']; ?>
