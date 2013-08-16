@@ -45,6 +45,7 @@ $title_for_layout = 'Summer Koushien Betting';
 	<meta property="og:image" content="<?=BASE_URL ?>img/Koshien_OGP_1.png" />
 	<meta property="og:type" content="website" /><meta property="og:url" content="<?=BASE_URL ?>" />
 	<meta property="og:site_name" content="Koshien" /><meta property="fb:app_id" content="537593262973234" />
+	<meta property="fb:admins" content="100002031737148" />
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@BaseballKibow">
 	<meta name="twitter:title" content="Summer Koshien Betting">
