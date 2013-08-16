@@ -2,15 +2,18 @@
     'MY PAGE' => array('controller' => 'Users', 'action' => 'index'), 'History' => ''
 )))) ?>
 <h1>History</h1>
+<span class="currentbalance">Current balance : <?=$userBalance ?> Zenny</span>
 <div id="side_navi">
 	<ul>
 		<li><?php echo $this -> Html -> Link('My Page', array('controller' => 'Users', 'action' => 'index')); ?></li>
 		<li class="item">
 			<?php echo $this -> Html -> Link('History', array('controller' => 'Users', 'action' => 'index'), array('class' => 'item')); ?>
 		</li>
+		<!-- 
 		<li class="item">
 			<?=$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'ranking'), array('class' => 'item')) ?>
 		</li>
+		 -->
 	</ul>
 </div>
 <section id="user_page" class="clearfix">

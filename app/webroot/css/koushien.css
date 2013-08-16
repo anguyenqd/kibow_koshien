@@ -559,9 +559,15 @@ body {
         body #main_wrapper .wrapper #user_page .user_info {
           width: 100%; }
           body #main_wrapper .wrapper #user_page .user_info .user_img {
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
             float: left; }
+            body #main_wrapper .wrapper #user_page .user_info .user_img img {
+              width: 60px;
+              height: 60px;
+              border: 1px solid #777;
+              padding: 2px;
+              background-color: #fff; }
           body #main_wrapper .wrapper #user_page .user_info .info {
             margin-top: 20px;
             width: 300px;
