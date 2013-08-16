@@ -16,9 +16,37 @@ class MoviesController extends AppController {
 	    
 	    $catid = isset($_GET['moviecategory']) ? $_GET['moviecategory'] : '';
 	    if ($catid != '') {
-	      $movies = $this -> Movie -> getMovieByCategoryId ($catid);
+	      $movies =  $this->Movie->find('all', array(
+	              'joins' => array(
+	                      array(
+	                              'table' => 'moviecategories',
+	                              'alias' => 'moviecategoriesJoin',
+	                              'type' => 'INNER',
+	                              'conditions' => array(
+	                                      'moviecategoriesJoin.id = Movie.movie_category_id'
+	                              )
+	                      )
+	              ),
+	              'conditions' => array(
+	                      'Movie.movie_category_id' => $catid
+	              ),
+	              'fields' => array('moviecategoriesJoin.*', 'Movie.*')
+	      ));
 	    } else {
-	      $movies = $this -> Movie -> getAll();
+	      $movies  = $this->Movie->find('all', array(
+	              'joins' => array(
+	                      array(
+	                              'table' => 'moviecategories',
+	                              'alias' => 'moviecategoriesJoin',
+	                              'type' => 'INNER',
+	                              'conditions' => array(
+	                                      'moviecategoriesJoin.id = Movie.movie_category_id'
+	                              )
+	                      )
+	              ),
+	              'conditions' => array(),
+	              'fields' => array('moviecategoriesJoin.*', 'Movie.*')
+	      ));
 	    }
 	    
 	    $this -> set('cur_category', $catid);

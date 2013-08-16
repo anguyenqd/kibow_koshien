@@ -26,12 +26,13 @@
       foreach ($movies as $movie)
       {
         $mo = $movie['Movie'];
+        $mocat = $movie['moviecategoriesJoin'];
         ?>
         <div class="movie">
           <div data-video-id="<?php echo $mo['youtube_id']; ?>" data-video-desc="<?php echo $mo['description']; ?>" class="movie_img video_popup">
             <?= $this->Html->image($mo['image'], array("width"=>195)) ?>
           </div>
-          <div class="movie_title">
+          <div class="movie_title" style="background-color: #<?php echo $mocat['bgcolor']; ?>">
             <?php echo $mo['title']; ?>
           </div>
         </div>
