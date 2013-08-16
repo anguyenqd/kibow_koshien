@@ -52,6 +52,16 @@
 	//echo $this->fetch('css');
 	//echo $this->fetch('script');
 			?>
+			<style>
+			  @-moz-document url-prefix() {
+    body #main_wrapper .wrapper #koushien_match #first_match_school, body #main_wrapper .wrapper #koushien_match #second_match_school {
+      top: 0px;
+    }
+    body.matchBet #main_wrapper .wrapper #koushien_match .vs_img {
+      top: 185px;
+    }
+  }
+			</style>
 			<!--[if lt IE]>
 				document.createElement('header');
 			  	document.createElement('section');
