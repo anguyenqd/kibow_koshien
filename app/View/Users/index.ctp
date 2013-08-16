@@ -2,6 +2,7 @@
     'MY PAGE' => array('controller' => 'Users', 'action' => 'index'), 'History' => ''
 )))) ?>
 <h1>History</h1>
+<span class="currentbalance">Current balance : <?=$userBalance ?> Zenny</span>
 <div id="side_navi">
 	<ul>
 		<li><?php echo $this -> Html -> Link('My Page', array('controller' => 'Users', 'action' => 'index')); ?></li>
