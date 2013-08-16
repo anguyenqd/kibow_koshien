@@ -20,7 +20,7 @@
 			<img src="https://graph.facebook.com/<?=$this -> Session -> read('User-fb-id') ?>/picture" width="100"/>
 		</div>
 		<div class="info">
-			<span class="current_ranking">Currently Ranking #<?php echo $userRank[0][0]['rank']; ?> <span>234</span></span>
+			<span class="current_ranking">Currently Ranking # <span><?php echo $userRank[0][0]['rank']; ?></span></span>
 			<br/>
 		</div>
 <!-- 		<div class="sharing"> -->
