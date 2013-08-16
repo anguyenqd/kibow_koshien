@@ -1,5 +1,5 @@
 //google font --------------------
-
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 //clearfix -----------------------
 .clearfix {
   zoom:1;
@@ -14,7 +14,7 @@
   }
 }
 // font-family --------------------
-$koushien_font:Arial,Helvetica,sans-serif;
+$koushien_font:'Droid Sans', sans-serif;
 $font_size:10pt;
 //Color variables --------------------
 $main_color:#000000;
