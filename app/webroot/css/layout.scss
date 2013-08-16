@@ -976,26 +976,33 @@ body{
 		  background-color: #fff;
 	
 	      a{
-	        color:white;
-	        padding:5px 10px;
-	        display:block;
+	        display: block;
+            margin-left: 1px;
+            padding: 8px 15px 8px;
+            color: #fff;
+            background: #666666;
+            border-radius: 0 0 5px 5px;
+            -webkit-border-radius: 0 0 5px 5px;
+            -moz-border-radius: 0 0 5px 5px;
+            text-transform: uppercase;
 	
 	        &:hover {
 	        background-color: #999999;
+                 text-decoration: none;
 	        }
 	      }
 	      
 	      &.login {
 	      	a {
-	      display: block;
-	margin-left: 1px;
-	padding: 8px 15px 8px;
-	color: #fff;
-	background: #666666;
-	         border-radius: 0 0 5px 5px;
-	-webkit-border-radius: 0 0 5px 5px;
-	-moz-border-radius: 0 0 5px 5px;
-	            text-transform: uppercase;
+    	      display: block;
+          	margin-left: 1px;
+          	padding: 8px 15px 8px;
+          	color: #fff;
+          	background: #666666;
+            border-radius: 0 0 5px 5px;
+           	-webkit-border-radius: 0 0 5px 5px;
+           	-moz-border-radius: 0 0 5px 5px;
+            text-transform: uppercase;
 	&:hover {
 	         background-color: #999999;
 	               text-decoration: none;
@@ -1047,7 +1054,7 @@ body{
           &.facelike {
 	        padding: 4px 0 0 5px;
 			width: 52px;
-			overflow: hidden;
+
           }
         }
       }

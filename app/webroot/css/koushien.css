@@ -795,11 +795,18 @@ body {
       margin-left: 0px;
       background-color: #fff; }
       #user_menu #user_nav li a {
-        color: white;
-        padding: 5px 10px;
-        display: block; }
+        display: block;
+        margin-left: 1px;
+        padding: 8px 15px 8px;
+        color: #fff;
+        background: #666666;
+        border-radius: 0 0 5px 5px;
+        -webkit-border-radius: 0 0 5px 5px;
+        -moz-border-radius: 0 0 5px 5px;
+        text-transform: uppercase; }
         #user_menu #user_nav li a:hover {
-          background-color: #999999; }
+          background-color: #999999;
+          text-decoration: none; }
       #user_menu #user_nav li.login a {
         display: block;
         margin-left: 1px;
@@ -845,8 +852,7 @@ body {
       width: 82px; }
     #main_sns li.facelike {
       padding: 4px 0 0 5px;
-      width: 52px;
-      overflow: hidden; }
+      width: 52px; }
 
 /* user pages */
 body.Users.login #main_wrapper,
