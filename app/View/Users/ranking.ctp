@@ -9,9 +9,11 @@
 		<li class="item">
 			<?php echo $this -> Html -> Link('History', array('controller' => 'Users', 'action' => 'index'), array('class' => 'item')); ?>
 		</li>
+		<!-- 
 		<li class="item">
 			<?=$this -> Html -> Link('Ranking', array('controller' => 'Users', 'action' => 'ranking'), array('class' => 'item')) ?>
 		</li>
+		 -->
 	</ul>
 </div>
 <section id="user_page">
@@ -20,7 +22,7 @@
 			<img src="https://graph.facebook.com/<?=$this -> Session -> read('User-fb-id') ?>/picture" width="100"/>
 		</div>
 		<div class="info">
-			<span class="current_ranking">Currently Ranking #<?php echo $userRank[0][0]['rank']; ?> <span>234</span></span>
+			<span class="current_ranking">Currently Ranking # <span><?php echo $userRank[0][0]['rank']; ?></span></span>
 			<br/>
 		</div>
 <!-- 		<div class="sharing"> -->
