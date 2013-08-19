@@ -14,6 +14,9 @@
 	<li>
 		<a href="<?=BASE_URL.'Bets/result'?>">Results</a>
 	</li>
+	<li>
+		<a href="<?=BASE_URL.'Movies'?>">Movies</a>
+	</li>
 </ul>
 <ul id="main_sns">
     <li class="follow">
