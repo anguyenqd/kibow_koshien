@@ -5,8 +5,8 @@ class BetsController extends AppController {
 
 	public function index() {
 		//Load all school with votes
-		$this -> Set('schools', $this -> School -> getWinningSchoolsListWithBetAmount());
-
+		//1 : top 8 ; 2 : top 4 ; 3 : champion ; 4 : waiting ; 5 : losed
+		$this -> Set('schools', $this -> School -> getWinningSchoolsListWithBetAmount(2));
 	}
 
 	private function print_pre($data) {

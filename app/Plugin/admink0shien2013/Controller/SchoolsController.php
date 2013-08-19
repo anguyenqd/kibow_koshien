@@ -123,12 +123,12 @@ class SchoolsController extends AppController {
 					$data['background_url'] = $backgroundUrl;
 				if ($resultImageUrl != '')
 					$data['result_img_url'] = $resultImageUrl;
-					
+
 				unset($data['map_img_url_file']);
 				unset($data['logo_url_file']);
 				unset($data['background_url_file']);
 				unset($data['result_img_url_file']);
-				
+
 				$this -> School -> updateSchool($id, $data);
 				$this -> redirect(array('action' => 'index'));
 			}
@@ -178,7 +178,7 @@ class SchoolsController extends AppController {
 						//update losed bet
 						$betDetailIDList = $this -> School -> getBetDetailIDListBySchoolID($id);
 						foreach ($betDetailIDList as $bet_id) {
-							$this -> User -> updateUserBalanceByResult($bet_id['bet_details']['bet_detail_id'], 2);
+							$this -> User -> updateBetStatusForLosed($bet_id['bet_details']['bet_detail_id'], 2);
 						}
 					}
 

@@ -156,7 +156,7 @@ class MatchsController extends AppController {
 					}
 
 					foreach ($lostBetDetailID as $bet) {
-						$this -> User -> updateUserBalanceByResult($bet['bet_details']['bet_detail_id'], 2);
+						$this -> User -> updateBetStatusForLosed($bet['bet_details']['bet_detail_id'], 2);
 					}
 					$this -> Session -> setFlash('Your change was success');
 				} else {

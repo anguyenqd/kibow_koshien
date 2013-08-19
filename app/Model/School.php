@@ -47,7 +47,7 @@ class School extends AppModel {
 								AND schools.school_id = SI) AS 'count_school' FROM schools");
 	}
 	
-	public function getWinningSchoolsListWithBetAmount() {
+	public function getWinningSchoolsListWithBetAmount($type = 4) {
 		return $this -> query("SELECT schools.school_id AS SI, school_name, logo_url,
 								map_img_url,video_url,background_url,address, description, odds_top8, odds_top4, odds_top1, 
 								(SELECT COUNT(DISTINCT bet_details.bet_id)
@@ -55,7 +55,7 @@ class School extends AppModel {
 								WHERE schools.school_id = bet_details.school_id 
 								AND schools.school_id = SI) AS 'count_school' 
 								FROM schools
-								WHERE schools.school_status != 5");
+								WHERE schools.school_status = " .$type);
 	}
 
 	public function getSchoolsListWithBetAmountByID($id = 0) {
