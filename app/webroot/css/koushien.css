@@ -402,7 +402,7 @@ body {
           left: 50px;
           background: #f07700;
           z-index: 3;
-          display: block;
+          display: none;
           padding: 5px;
           cursor: pointer; }
           body #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button:hover {
@@ -649,6 +649,7 @@ body {
           width: 190px;
           padding: 2px 2px;
           height: 30px;
+          color: white;
           background-color: #ccc;
           margin-bottom: 30px; }
     body #movie_page #movie_form {
@@ -1502,7 +1503,7 @@ body.Users.index #main_wrapper {
         left: 50px;
         background: #f07700;
         z-index: 3;
-        display: block;
+        display: none;
         padding: 5px;
         cursor: pointer; }
         body.Users.login #main_wrapper .wrapper section#koushien_third_round .school_uniform:hover .deselect_button:hover,
@@ -1937,6 +1938,7 @@ body.Users.index #movie_page {
         width: 126px;
         padding: 2px 2px;
         height: 30px;
+        color: white;
         background-color: #ccc;
         margin-bottom: 30px; }
   body.Users.login #movie_page #movie_form,
