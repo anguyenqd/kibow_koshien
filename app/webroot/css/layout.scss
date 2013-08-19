@@ -465,7 +465,7 @@ body{
               left:50px;
               background:$hover_color;
               z-index:3;
-              display:block;
+              display:none;
               padding:5px;
               cursor:pointer;
               &:hover{
@@ -778,6 +778,7 @@ body{
           width: 190px;
           padding: 2px 2px;
           height: 30px;
+          color:white;
           background-color: #ccc;
           margin-bottom: 30px;
         }
@@ -1564,7 +1565,7 @@ body.Users.index,
               left:50px;
               background:$hover_color;
               z-index:3;
-              display:block;
+              display:none;
               padding:5px;
               cursor:pointer;
               &:hover{
@@ -1923,6 +1924,7 @@ body.Users.index,
           width: 126px;
           padding: 2px 2px;
           height: 30px;
+          color:white;
           background-color: #ccc;
           margin-bottom: 30px;
         }

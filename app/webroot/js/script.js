@@ -146,6 +146,7 @@ $(document).ready(function(){
             if(item_champ>0){
               $(champion_section).css("display","block");
               $(".top-1").css("display","block");
+              $("#user_choice_dashboard").css("display","block");
             }
             break;
           }
@@ -367,6 +368,7 @@ $("#user_choice_dashboard").on("click",".deselect_button",function(){
               
           }
           $("#user_choice_dashboard .total_choices_1").html(item_champ);
+          $("#user_choice_dashboard").css("display","none");
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
           break;
         }
