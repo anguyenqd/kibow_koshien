@@ -1,6 +1,6 @@
 <?= $this -> element('guide_2'); ?>
-<section id="koushien_first_round">
-	<h2 id="first">1. Choose the best 8 teams of the tournament.</h2>
+<section id="koushien_third_round">
+	<h2 id="first">1. Choose the champion team of the tournament.</h2>
 	<?php 
 	$i = 1;
 	foreach ($schools as $school) {?>
@@ -53,19 +53,6 @@
 	</div>
 </section>
 <div class='clearfix'></div>
-<section style="display:none" id="koushien_second_round" class="clearfix" >
-	<h2 id="top-8-move">2. Choose the best 4 teams of the tournament.</h2>
-	<div class="left_four"></div>
-	<?= $this -> element('sns_bet_index'); ?>
-	<div class="right_four"></div>
-</section>
-<section style="display:none" id="koushien_third_round" class="clearfix" >
-	<h2 id="top-4-move">3. Choose the champion team of the tournament.</h2>
-	<div class="left_four"></div>
-	<?= $this -> element('sns_bet_index'); ?>
-	<div class="right_four"></div>
-</section>
-<div class='clearfix'></div>
 <section id="champion" >
 	<div class="champion_selected"></div>
 </section>
@@ -94,13 +81,13 @@
 <div id="user_choice_dashboard" style="display:none">
   <h2>Your choice</h2>
   <div class="top-8">
-    <p><span class="title">Top 8:</span> <span class="total_choices_8">0</span>/8 &nbsp&nbsp&nbsp&nbsp <a href="#first">Go to Top 8</a></p>
+    <!-- <p><span class="title">Top 8:</span> <span class="total_choices_8">0</span>/8 &nbsp&nbsp&nbsp&nbsp <a href="#first">Go to Top 8</a></p> -->
   </div>
   <div style="display:none" class="top-4">
     <p><span class="title">Top 4:</span> <span class="total_choices_4">0</span>/4 &nbsp&nbsp&nbsp&nbsp <a href="#top-8-move">Go to Top 4</a></p>
   </div>
   <div style="display:none" class="top-1">
-    <p><span class="title">Top 1:</span> <span class="total_choices_1">0</span>/1 &nbsp&nbsp&nbsp&nbsp <a href="#top-4-move">Go to Top 1</a></p>
+    <p><span class="title">Top 1:</span> <span class="total_choices_1">0</span>/1 &nbsp&nbsp&nbsp&nbsp <!-- <a href="#top-4-move">Go to Top 1</a> --></p>
   </div>
   <div style="display:none" class="confirm_chosen_school">
   Go to betslip
