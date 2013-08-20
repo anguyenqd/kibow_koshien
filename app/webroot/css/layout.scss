@@ -1,7 +1,6 @@
 html {
 	margin: 0px;
 	padding: 0px;
-	background-color: #f4f4f4;
 }
 body{
   font-size:12px;
@@ -451,9 +450,7 @@ body{
           }
         }
         &#koushien_third_round{
-          .video_button{
-              display:none;
-          }
+          
           .hide{
             display:none !important;
           }
@@ -488,6 +485,22 @@ body{
                 text-decoration:none;
               }
             }
+            
+            .video_button{
+              @include rounded_corners(5px);
+              position:absolute;
+              top:85px;
+              left:40px;
+              background:$hover_color;
+              z-index:3;
+              display:block;
+              padding:5px;
+              cursor:pointer;
+              &:hover{
+                color:white;
+                text-decoration:none;
+              }
+          }
           }
         }
         &#champion{

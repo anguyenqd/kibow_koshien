@@ -20,7 +20,7 @@ $(document).ready(function(){
   var item_second_selected = 0;
   var item_third_selected = 0;
   var item_champ = 0;
-  $(hover_schools).hover(
+  $('#koushien_third_round .school .school_uniform').hover(
     function(){//over
       $(this).animate({opacity:.7},70);
       var map_url = $(this).attr("data-map");
@@ -146,6 +146,7 @@ $(document).ready(function(){
             if(item_champ>0){
               $(champion_section).css("display","block");
               $(".top-1").css("display","block");
+              $(".confirm_chosen_school").css("display","block");
               $("#user_choice_dashboard").css("display","block");
             }
             break;
@@ -255,6 +256,8 @@ $(document).ready(function(){
           if(item_champ<=0){
               $(champion_section).css("display","none");
               $(".top-1").css("display","none");
+              $(".confirm_chosen_school").css("display","none");
+              $("#user_choice_dashboard").css("display","none");
           }
           $("#user_choice_dashboard .total_choices_1").html(item_champ);
           $("#user_choice_dashboard .top-1 p[data-school-id=\""+data_school_id+"\"]").remove();
