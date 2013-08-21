@@ -6,6 +6,11 @@ class User extends AppModel {
 		$userObj = $this -> find('all');
 		return $userObj;
 	}
+	
+	public function getAllUserSortByBalance()
+	{
+		return $this -> find('all', array('order' => array('User.balance DESC')));
+	}
 
 	public function getUserByLogin($username = '') {
 		if ($username != '') {

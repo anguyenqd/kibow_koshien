@@ -11,13 +11,18 @@ class PagesController extends AppController {
 			$username = $this -> request -> data['username'];
 			$password = $this -> request -> data['password'];
 			if ($username == 'kibow' && $password == '123456') {
+				
 				$admin['username'] = 'kibow';
 				$this -> Session -> write('admin', $admin);
 				$this -> Session -> setFlash('Your login is success');
+				$_SESSION['KCFINDER'] = array();
+				$_SESSION['KCFINDER']['disabled'] = false;
 			} else {
 				$this -> Session -> setFlash('Your information is not correct');
 			}
 		}
+		
+		
 	}
 
 }

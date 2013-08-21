@@ -1,3 +1,7 @@
+<ul>
+	<li><?=$this->Html->link('Normal', array('controller' => 'Users', 'action' => 'index'))?></li>
+	<li><?=$this->Html->link('Sort by Balance', array('controller' => 'Users', 'action' => 'index', 'balance'))?></li>
+</ul>
 <table class="data_list">
 	<tr>
 		<td>Num</td>

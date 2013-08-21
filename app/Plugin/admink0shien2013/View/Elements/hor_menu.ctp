@@ -6,5 +6,7 @@
 	<li><?=$this -> Html -> link('Add Match', array('controller' => 'Matchs', 'action' => 'add')); ?></li>
 	<li><?=$this -> Html -> link('Movies', array('controller' => 'Movies', 'action' => 'index')); ?></li>
 	<li><?=$this -> Html -> link('Movie Categories', array('controller' => 'Moviecategories', 'action' => 'index')); ?></li>
-	<li><?=$this -> Html -> link('Logut', array('controller' => 'Users', 'action' => 'logout')); ?></li>
+	<li><?=$this -> Html -> link('Blog list', array('controller' => 'Blogs', 'action' => 'index')); ?></li>
+	<li><?=$this -> Html -> link('Add blog', array('controller' => 'Blogs', 'action' => 'add')); ?></li>
+	<li><?=$this -> Html -> link('Logout', array('controller' => 'Users', 'action' => 'logout')); ?></li>
 </ul>

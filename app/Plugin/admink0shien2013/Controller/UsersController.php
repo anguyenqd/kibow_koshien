@@ -1,12 +1,16 @@
 <?php
 class UsersController extends AppController {
 	public $uses = array('User');
-	public function index() {
+	public function index($param = '') {
 		if (!$this -> Session -> check('admin')) {
 			$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 		}
 		//load all users
-		$result = $this -> User -> getAllUser();
+		$result = array();
+		if($param == '')
+			$result = $this -> User -> getAllUser();
+		else
+			$result = $this -> User -> getAllUserSortByBalance();
 		$this -> set('users', $result);
 	}
 
@@ -34,6 +38,8 @@ class UsersController extends AppController {
 
 	public function logout() {
 		$this -> Session -> delete('admin');
+		$_SESSION['KCFINDER']['disabled']=true;
+		$this -> Session -> delete('KCFINDER');
 		$this -> redirect(array('controller' => 'pages', 'action' => 'display'));
 	}
 
