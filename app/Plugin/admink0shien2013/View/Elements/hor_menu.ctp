@@ -8,5 +8,7 @@
 	<li><?=$this -> Html -> link('Movie Categories', array('controller' => 'Moviecategories', 'action' => 'index')); ?></li>
 	<li><?=$this -> Html -> link('Blog list', array('controller' => 'Blogs', 'action' => 'index')); ?></li>
 	<li><?=$this -> Html -> link('Add blog', array('controller' => 'Blogs', 'action' => 'add')); ?></li>
+	<li><?=$this -> Html -> link('Blog Category list', array('controller' => 'BlogCategories', 'action' => 'index')); ?></li>
+	<li><?=$this -> Html -> link('Add Blog Category', array('controller' => 'BlogCategories', 'action' => 'add')); ?></li>
 	<li><?=$this -> Html -> link('Logout', array('controller' => 'Users', 'action' => 'logout')); ?></li>
 </ul>

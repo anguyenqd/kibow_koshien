@@ -5,6 +5,11 @@ class Blog extends AppModel {
 	public function getAllBlogs() {
 		return $this -> find('all', array('order' => array('Blog.date_add DESC')));
 	}
+	
+	public function getAllBlogsWithCategory()
+	{
+		return $this->query('SELECT `blogs`.blog_id, `blogs`.blog_title, `blogs`.meta_description, `blogs`.date_add, `blogs`.status, `blog_categories`.category_name FROM `blogs`, `blog_categories` WHERE `blogs`.`category_id` = `blog_categories`.`category_id`');
+	}
 
 	public function insertBlog($data = null) {
 		if ($data != null) {

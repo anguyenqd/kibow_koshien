@@ -183,6 +183,22 @@ body{
             color:$hover_color;
           }
         }
+        
+        #blog{
+          font-family:arial,helvetica,sans-serif;
+          .blog_title{
+            font-weight:bold;
+          }
+          
+          .blog_content{
+            line-height: 25px;
+            font-size: 12px;
+            padding:10px;
+            strong, b{
+              font-weight:bold;
+            }
+          }
+        }
       }
       #main_banner{
         padding-top:5px;
