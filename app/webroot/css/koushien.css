@@ -184,6 +184,20 @@ body {
             padding: 10px; }
             body #main_wrapper .wrapper .inner_wrapper #blog .blog_content strong, body #main_wrapper .wrapper .inner_wrapper #blog .blog_content b {
               font-weight: bold; }
+          body #main_wrapper .wrapper .inner_wrapper #blog .blog_list {
+            float: left;
+            width: 70%; }
+          body #main_wrapper .wrapper .inner_wrapper #blog .blog_search {
+            float: left;
+            width: 30%; }
+            body #main_wrapper .wrapper .inner_wrapper #blog .blog_search ul li {
+              line-height: 30px;
+              font-size: 14px; }
+              body #main_wrapper .wrapper .inner_wrapper #blog .blog_search ul li a {
+                color: #f07700; }
+            body #main_wrapper .wrapper .inner_wrapper #blog .blog_search .section {
+              float: left;
+              width: 50%; }
       body #main_wrapper .wrapper #main_banner {
         padding-top: 5px; }
         body #main_wrapper .wrapper #main_banner img {
@@ -771,8 +785,14 @@ body {
       left: -43px; }
     body.result table#third_round .round_vertical {
       background-color: #c5c5bd; }
+    body.result table#final_round .winning_team {
+      left: -38px; }
+    body.result table#top8_round .winning_team {
+      left: -35px; }
     body.result table#top8_round .round_vertical {
       background-color: #b41b46; }
+    body.result table#top4_round .winning_team {
+      left: -35px; }
     body.result table#top4_round .round_vertical {
       background-color: #eec63a; }
     body.result table .round_horizontal {

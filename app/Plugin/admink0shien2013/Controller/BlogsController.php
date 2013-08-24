@@ -15,7 +15,7 @@ class BlogsController extends AppController {
 	public function add() {
 		if (!empty($this -> request -> data)) {
 			$data = $this -> request -> data['Blog'];
-			$data['date_add'] = date('Y-m-d H:i:s');
+			//$data['date_add'] = date('Y-m-d H:i:s');
 			$this -> Blog -> insertBlog($data);
 			$this -> redirect(array('action' => 'index'));
 		} else {
@@ -44,6 +44,8 @@ class BlogsController extends AppController {
 				$this -> set('blog_content', $data['Blog']['blog_content']);
 			} else {
 				$data = $this -> request -> data;
+				$date_add = $data['Blog']['date_add'];
+				$data['Blog']['date_add'] = $date_add['year'] . "-" . $date_add['month'] . "-" . $date_add['day'] . " " . $date_add['hour'] . ":" . $date_add['min'] . ":00";
 				$this -> Blog -> editBlog($id, $data['Blog']);
 				$this -> set('blog_content', $data['Blog']['blog_content']);
 				$this -> Session -> setFlash('Your change was success');

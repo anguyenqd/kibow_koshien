@@ -10,10 +10,22 @@ a:hover {
 ul.hor_menu
 {
 	width:100%;
+	
 }
 
 ul.hor_menu li
 {
 	display:inline;
 	padding:0px 10px 0px 10px;
+}
+body{
+	text-align:center;
+	margin: 0 auto;
+	width:100%;
+}
+#container
+{
+	width:940px;	
+	margin: 0 auto;
+	text-align:left;
 }

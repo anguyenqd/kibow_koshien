@@ -5,6 +5,14 @@ class BlogCategory extends AppModel {
 	public function getAllCategory() {
 		return $this -> find('all');
 	}
+	
+	public function getCategoryWithPostCount()
+	{
+		return $this->query('SELECT COUNT(blog_id) as post_count, `blog_categories`.category_id, category_name 
+							FROM `blog_categories`, `blogs` 
+							WHERE `blog_categories`.`category_id` = `blogs`.`category_id` 
+							GROUP BY `blog_categories`.category_id, category_name');
+	}
 
 	public function insertCategory($data = null) {
 		if ($data != null) {

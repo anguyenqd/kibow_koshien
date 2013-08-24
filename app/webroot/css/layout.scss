@@ -198,7 +198,31 @@ body{
               font-weight:bold;
             }
           }
+          
+          .blog_list{
+            float:left;
+            width:70%;
+          }
+          .blog_search{
+            float:left;
+            width:30%;
+            ul{
+              li{
+                line-height: 30px;
+                font-size: 14px;
+                a{
+                  color:$hover_color;
+                }
+              }
+            }
+            
+            .section{
+              float:left;
+              width:50%;
+            }
+          }
         }
+        
       }
       #main_banner{
         padding-top:5px;
@@ -949,12 +973,23 @@ body{
         background-color: #c5c5bd;
       }
     }
+    &#final_round {
+      .winning_team {
+        left: -38px;
+      }
+    }
     &#top8_round{
+      .winning_team{
+        left:-35px;
+      }
       .round_vertical {
         background-color: #b41b46;
       }
     }
     &#top4_round{
+      .winning_team{
+        left:-35px;
+      }
       .round_vertical {
         background-color: #eec63a;
       }

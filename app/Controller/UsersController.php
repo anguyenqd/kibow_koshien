@@ -78,9 +78,11 @@ class UsersController extends AppController {
 			$userData['User']['sns_account'] = $incomingProfile['username'];
 			$userData['User']['sns_type'] = 'twitter';
 			$userData['User']['balance'] = 1000;
+			$userData['User']['date_add'] = date('Y-m-d H:i:s');
 			$userData['User']['username'] = $incomingProfile['username'];
 			$userID = $this -> User -> insertUser($userData);
 			$userData['User']['user_id'] = $userID;
+			
 			$this -> Session -> write('User', $userData);
 		} else {
 			$this->User->updateUserName($userId, $incomingProfile['username']);

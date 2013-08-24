@@ -1,4 +1,16 @@
-<?= $this -> element('guide_2'); ?>
+<section id="champion_place_bet" class="clearfix">
+		<h2>The champion school</h2>
+		<div class="champion_school">
+			<img src="/img/crown_1.png" alt="">
+			<img src="/img/uploads/Maebashiikuei.png" class="champion_image" alt="">
+		</div>
+		<div class="school" style="float: none">
+			<div class="school_name">Maebashi Ikuei</div>
+			<div class="school_address">Gunma</div>
+		</div>
+	</section>
+<?php if(false){?>
+	<?= $this -> element('guide_2'); ?>
 <section id="koushien_third_round">
 	<h2 id="first">1. Choose the champion team of the tournament.</h2>
 	<?php 
@@ -30,20 +42,22 @@
 			<span class="vote_number"><?=$school['0']['count_school'] ?></span>
 		</div>
 	</div>
-	<?php if($i == 2){
-    echo $this -> element('sns_bet_index_2');
-  } ?>
+	<?php
+	if ($i == 2) {
+		echo $this -> element('sns_bet_index_2');
+	}
+ ?>
 	<?php if($i == 32){?>
-		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this->Html->image('banner_areyouasportslover.png')?></a></div></div>
+		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this -> Html -> image('banner_areyouasportslover.png') ?></a></div></div>
 	<?php } ?>
 	<?php if($i == 8){?>
-		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this->Html->image('banner_maketheinnings.png')?></a></div></div>
+		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this -> Html -> image('banner_maketheinnings.png') ?></a></div></div>
 	<?php } ?>
 	<?php if($i == 9){?>
-		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this->Html->image('banner_tryallsports.png')?></a></div></div>
+		<div class="school"><div><a href="https://kibow.net/_sb/" target="_blank"><?=$this -> Html -> image('banner_tryallsports.png') ?></a></div></div>
 	<?php } ?>
 	<?php $i++;
-			}
+		}
  ?>
  <div class='clearfix'></div>
 	<div style="display: none;" class="hover">
@@ -93,4 +107,5 @@
   Go to betslip
 </div>
 </div>
+<?php } ?>
 <div class='clearfix'></div>
